@@ -202,33 +202,6 @@ class NewsCharityMatcher:
             print(f"Error in similarity search: {str(e)}")
             return []
 
-    def analyze_article(self, article):
-        # Use the already found similar charities instead of searching again
-        charity_names = [c['name'] for c in article.get('similar_charities', [])]
-        
-        if not charity_names:
-            return "No matching charities found to analyze."
-        
-        system_message = f"""You are an assistant that MUST ONLY suggest charities from this specific list: {', '.join(charity_names)}."""
-
-        prompt = f"""
-        Choose exactly ONE charity from this list that best matches the news article.
-        Format your response exactly as: "Charity Name: one-line reason"
-
-        Article Title: {article['title']}
-        Article Description: {article['description']}
-        """
-
-        response = self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": prompt}
-            ]
-        )
-        
-        return response.choices[0].message.content
-
     def save_processed_articles(self):
         with open('processed_articles.json', 'w') as f:
             json.dump(list(self.processed_articles), f)
@@ -490,9 +463,6 @@ Brief Reason: [one-line explanation]"
                         # Add similar charities to article before GPT analysis
                         article['similar_charities'] = similar_charities
                         
-                        print("Charity Suggestion from GPT:")
-                        suggestion = self.analyze_article(article)
-                        print(suggestion)
                     else:
                         print("No similar charities found.")
                     
