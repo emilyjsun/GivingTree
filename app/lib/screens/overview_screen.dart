@@ -55,9 +55,7 @@ class _OverviewTabState extends State<OverviewTab> {
                   height: 56,
                   child: ElevatedButton(
                     onPressed: _isMaxDepthReached ? null : () {
-                      print('Button pressed');
                       final state = _treeKey.currentState;
-                      print('Tree state: $state');
                       state?.addBranch();
                     },
                     style: ElevatedButton.styleFrom(

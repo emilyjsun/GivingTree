@@ -107,14 +107,14 @@ class GrowingTreeState extends State<GrowingTree> {
 
 class TreePainter extends CustomPainter {
   final List<Branch> branches;
-  static const baseWidth = 24.0;
+  static const baseWidth = 28.0;
   static const widthFactor = 0.6;
   static const branchColor = Color(0xFF934E53);
   
   TreePainter({required this.branches});
   
   double _getEndWidth(double startWidth, int depth) {
-    final taperFactor = math.max(0.3, 0.8 - depth * 0.15);
+    final taperFactor = math.max (0.5, 0.5 - depth * 0.1);
     return startWidth * taperFactor;
   }
 
