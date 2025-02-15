@@ -1,42 +1,62 @@
 {
-  "user_1739651686_5456": {
-    "uid": "user_1739651686_5456",
-    "wallet_address": "support education for lower income communities",
+  "user_1739656117_1394": {
+    "uid": "user_1739656117_1394",
+    "wallet_address": "0x1",
     "categories": [
       [
-        "Education Support",
-        0.7621773481369019
+        "Disaster Relief",
+        0.2687946557998657
       ],
       [
-        "Child Welfare",
-        0.5201194286346436
+        "Housing & Shelter",
+        0.20188245177268982
       ],
+      [
+        "Environmental Conservation",
+        0.1549324095249176
+      ]
+    ],
+    "instant_updates": true,
+    "portfolio": []
+  },
+  "user_1739656131_9191": {
+    "uid": "user_1739656131_9191",
+    "wallet_address": "ukraine refugees",
+    "categories": [
       [
         "Refugee Assistance",
-        0.42991966009140015
+        0.6521641612052917
+      ],
+      [
+        "Housing & Shelter",
+        0.3789137005805969
+      ],
+      [
+        "Disaster Relief",
+        0.350543349981308
       ]
     ],
     "instant_updates": false,
     "portfolio": []
   },
-  "user_1739651725_8357": {
-    "uid": "user_1739651725_8357",
-    "wallet_address": "0x23438915723052",
+  "user_1739656145_2318": {
+    "uid": "user_1739656145_2318",
+    "wallet_address": "0x23",
     "categories": [
       [
-        "Disaster Relief",
-        0.27987098693847656
+        "Human Rights",
+        0.6348767280578613
       ],
       [
-        "Environmental Conservation",
-        0.25247305631637573
+        "Women's Empowerment",
+        0.6027448177337646
       ],
       [
-        "Housing & Shelter",
-        0.1905078887939453
+        "Child Welfare",
+        0.3071485757827759
       ]
     ],
-    "instant_updates": true,
+    "instant_updates": false,
     "portfolio": []
   }
 }

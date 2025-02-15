@@ -244,7 +244,7 @@ Answer:"""
                     print(f"\n📢 Subscribers for {category}:")
                     print(f"Found {len(subscribers)} subscribers: {subscribers}")
         
-        return categories
+        return categories, subscribers
 
     def get_urgency_score(self, article):
         """Get urgency score from 1-10 for the article using GPT."""
@@ -283,6 +283,80 @@ Brief Reason: [one-line explanation]"
         except Exception as e:
             print(f"Error getting urgency score: {e}")
             return "Urgency Score: N/A\nBrief Reason: Error in assessment"
+
+    def update_user_portfolios(self, subscribers, category, similar_charities, article_urgency):
+        """Update user portfolios with relevant charities and scores"""
+        try:
+            # Parse urgency score from string
+            urgency_line = article_urgency.split('\n')[0]
+            try:
+                urgency_score = float(urgency_line.split(': ')[1])
+            except:
+                urgency_score = 5.0  # Default if parsing fails
+            
+            # Load user database
+            with open('user_database.json', 'r') as f:
+                user_db = json.load(f)
+            
+            # For each subscriber
+            for user_id in subscribers:
+                print(f"user_id: {user_id}")
+                print(f"Updating portfolio for user {user_id}")
+                if user_id not in user_db:
+                    continue
+                
+                # Get existing portfolio
+                existing_portfolio = user_db[user_id].get('portfolio', [])
+                
+                # Calculate relevance scores for each charity
+                portfolio_updates = []
+                for charity in similar_charities:
+                    # Calculate relevance score using:
+                    # - Charity similarity score (0-1)
+                    # - Article urgency (1-10)
+                    # - User's category confidence (0-1)
+                    similarity = 1 - charity['similarity_score']  # Convert distance to similarity
+                    
+                    # Get user's confidence for the category
+                    user_categories = user_db[user_id]['categories']
+                    category_confidence = 0.5  # Default if category not found
+                    for cat, conf in user_categories:
+                        if cat == category:
+                            category_confidence = float(conf)
+                            break
+                    
+                    # Combine factors into final relevance score
+                    relevance = (similarity * 0.4 + 
+                               (urgency_score/10) * 0.3 + 
+                               category_confidence * 0.3)
+                    
+                    charity_dict = {
+                        'charity_name': charity['name'],
+                        'charity_url': charity['url'],
+                        'relevance_score': relevance
+                    }
+                    
+                    # Add to portfolio updates with priority (1 - relevance for min heap)
+                    portfolio_updates.append((1.0 - relevance, charity_dict))
+                
+                # Combine existing portfolio with new updates
+                combined_portfolio = existing_portfolio + portfolio_updates
+                
+                # Sort by priority and keep top 10 (or another suitable number)
+                user_db[user_id]['portfolio'] = sorted(combined_portfolio, key=lambda x: x[0])[:10]
+                
+                print(f"\nUpdated portfolio for user {user_id}:")
+                for priority, charity in user_db[user_id]['portfolio']:
+                    print(f"Charity: {charity['charity_name']}")
+                    print(f"Relevance Score: {1.0 - priority:.2%}")  # Convert back to relevance score
+                    print("-" * 30)
+            
+            # Save updated user database
+            with open('user_database.json', 'w') as f:
+                json.dump(user_db, f, indent=2)
+            
+        except Exception as e:
+            print(f"Error updating user portfolios: {e}")
 
     def process_feed(self, feed_url):
         """Process RSS feed and find charity matches."""
@@ -323,8 +397,8 @@ Brief Reason: [one-line explanation]"
                         'link': entry.link
                     }
                     
-                    # Find matching categories
-                    matching_categories = self.find_matching_categories(article)
+                    # Find matching categories and subscribers
+                    matching_categories, subscribers = self.find_matching_categories(article)
                     print("\nMatching Categories:")
                     for i, cat in enumerate(matching_categories, 1):
                         print(f"{i}. {cat['category']}")
@@ -333,20 +407,15 @@ Brief Reason: [one-line explanation]"
                     # Find similar charities
                     similar_charities = self.find_similar_charities(article)
                     
-                    if similar_charities:
-                        print("\nTop Similar Charities:")
-                        for i, charity in enumerate(similar_charities, 1):
-                            print(f"{i}. {charity['name']}")
-                            print(f"   Similarity Score: {charity['similarity_score']:.4f}")
-                            print(f"   URL: {charity['url']}\n")
-
-                    else:
-                        print("No similar charities found.")
-                    
-                    # Add after finding matching categories:
-                    print("\nUrgency Assessment:")
-                    urgency_result = self.get_urgency_score(article)
-                    print(urgency_result)
+                    if similar_charities and subscribers:
+                        # Get urgency score
+                        urgency_result = self.get_urgency_score(article)
+                        print("\nUrgency Assessment:")
+                        print(urgency_result)
+                        
+                        # Update user portfolios
+                        print(f"Updating portfolios for {len(subscribers)} subscribers")
+                        self.update_user_portfolios(subscribers, matching_categories[0]['category'],similar_charities, urgency_result)
                     
                     # Mark article as processed
                     self.processed_articles.add(entry.link)
@@ -377,8 +446,8 @@ Brief Reason: [one-line explanation]"
                     print("Article deemed relevant - continuing analysis...")
                     print(f"\nAnalyzing article: {article['title']}")
                     
-                    # Find matching categories
-                    matching_categories = self.find_matching_categories(article)
+                    # Find matching categories and subscribers
+                    matching_categories, subscribers = self.find_matching_categories(article)
                     print("\nMatching Categories:")
                     for i, cat in enumerate(matching_categories, 1):
                         print(f"{i}. {cat['category']}")
@@ -387,20 +456,17 @@ Brief Reason: [one-line explanation]"
                     # Find similar charities
                     similar_charities = self.find_similar_charities(article)
                     
-                    if similar_charities:
-                        print("\nTop Similar Charities:")
-                        for i, charity in enumerate(similar_charities, 1):
-                            print(f"{i}. {charity['name']}")
-                            print(f"   Similarity Score: {charity['similarity_score']:.4f}")
-                            print(f"   URL: {charity['url']}\n")
+                    if similar_charities and subscribers:
+                        # Get urgency score
+                        urgency_result = self.get_urgency_score(article)
+                        print("\nUrgency Assessment:")
+                        print(urgency_result)
                         
+                        # Update user portfolios
+                        self.update_user_portfolios(subscribers, matching_categories[0]['category'],similar_charities, urgency_result)
+                    
                     else:
                         print("No similar charities found.")
-                    
-                    # Add after finding matching categories:
-                    print("\nUrgency Assessment:")
-                    urgency_result = self.get_urgency_score(article)
-                    print(urgency_result)
                     
                     # Mark article as processed
                     self.processed_articles.add(article['link'])

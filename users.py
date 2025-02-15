@@ -49,6 +49,7 @@ class UserDatabase:
             json.dump({uid: user.to_dict() for uid, user in self.users.items()}, f, indent=2)
 
     def add_user(self, wallet_address, categories, instant_updates):
+        """Add a new user to the database"""
         uid = f"user_{int(datetime.now().timestamp())}_{hash(wallet_address) % 10000:04d}"
         user = User(uid, wallet_address, categories, instant_updates)
         self.users[uid] = user
@@ -174,12 +175,13 @@ class CharityInputCategorizer:
         print("returning top 3 categories and similarity scores")
         return results
 
-    def store_input(self, user_input: str, categories: list, instant_updates: str = 'false'):
+    def store_input(self, user_input: str, categories: list, instant_updates: str = 'false', user_id: str = None):
         """Store user input and update category subscribers"""
         print("storing input")
         
-        # Generate a unique user ID (using timestamp + random number for uniqueness)
-        user_id = f"user_{int(datetime.now().timestamp())}_{hash(user_input) % 10000:04d}"
+        if not user_id:
+            print("Error: No user_id provided")
+            return None
         
         if user_id not in self.processed_inputs:
             # Store in ChromaDB
@@ -192,10 +194,10 @@ class CharityInputCategorizer:
                     "all_scores": ",".join([f"{score:.4f}" for _, score in categories]),
                     "timestamp": datetime.now().isoformat(),
                     "instant_updates": instant_updates,
-                    "user_id": user_id  # Store the user ID in metadata
+                    "user_id": user_id  # Use provided user_id
                 }],
                 embeddings=[embedding],
-                ids=[user_id]  # Use user_id as the document ID
+                ids=[user_id]
             )
             
             # Update category subscribers with user ID
@@ -210,13 +212,13 @@ class CharityInputCategorizer:
             
             return user_id  # Return the generated user ID
 
-    def process_input(self, user_input: str, instant_updates: str = 'false') -> dict:
+    def process_input(self, user_input: str, instant_updates: str = 'false', user_id: str = None) -> dict:
         """
         Process a single user input and return results.
         """
         print("processing input")
         categories = self.categorize_input(user_input)
-        user_id = self.store_input(user_input, categories, instant_updates)
+        self.store_input(user_input, categories, instant_updates, user_id)
         
         return {
             "user_id": user_id,
@@ -310,15 +312,24 @@ def main():
                         break
                     print("Please enter 'yes' or 'no'")
                 
-                # Process input
-                result = categorizer.process_input(user_input)
-                
-                # Add user to database
+                # First add user to database to get user_id
                 uid = user_db.add_user(
                     wallet_address=wallet_address,
-                    categories=result['categories'],
+                    categories=[],  # Empty initially
                     instant_updates=(updates_choice == 'yes')
                 )
+                
+                # Then process input with the user_id
+                result = categorizer.process_input(
+                    user_input=user_input,
+                    instant_updates=updates_choice,
+                    user_id=uid
+                )
+                
+                # Update user's categories in database
+                user = user_db.get_user(uid)
+                user.categories = result['categories']
+                user_db.save_database()
                 
                 # Display results
                 print(f"\n🆔 User ID: {uid}")
