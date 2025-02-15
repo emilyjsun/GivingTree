@@ -1,0 +1,42 @@
+{
+  "user_1739651686_5456": {
+    "uid": "user_1739651686_5456",
+    "wallet_address": "support education for lower income communities",
+    "categories": [
+      [
+        "Education Support",
+        0.7621773481369019
+      ],
+      [
+        "Child Welfare",
+        0.5201194286346436
+      ],
+      [
+        "Refugee Assistance",
+        0.42991966009140015
+      ]
+    ],
+    "instant_updates": false,
+    "portfolio": []
+  },
+  "user_1739651725_8357": {
+    "uid": "user_1739651725_8357",
+    "wallet_address": "0x23438915723052",
+    "categories": [
+      [
+        "Disaster Relief",
+        0.27987098693847656
+      ],
+      [
+        "Environmental Conservation",
+        0.25247305631637573
+      ],
+      [
+        "Housing & Shelter",
+        0.1905078887939453
+      ]
+    ],
+    "instant_updates": true,
+    "portfolio": []
+  }
+}

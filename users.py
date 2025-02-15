@@ -3,6 +3,75 @@ import chromadb
 import numpy as np
 import json
 from datetime import datetime
+from queue import PriorityQueue
+import heapq
+
+class User:
+    def __init__(self, uid, wallet_address, categories=None, instant_updates=False):
+        self.uid = uid
+        self.wallet_address = wallet_address
+        self.categories = categories or []  # List of (category, confidence) tuples
+        self.instant_updates = instant_updates
+        self.portfolio = []  # List of (priority, charity) tuples for heapq
+
+    def to_dict(self):
+        return {
+            "uid": self.uid,
+            "wallet_address": self.wallet_address,
+            "categories": [(cat, float(conf)) for cat, conf in self.categories],
+            "instant_updates": self.instant_updates,
+            "portfolio": [(float(pri), char) for pri, char in self.portfolio],
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        user = cls(data['uid'], data['wallet_address'])
+        user.categories = [(cat, float(conf)) for cat, conf in data['categories']]
+        user.instant_updates = data['instant_updates']
+        user.portfolio = [(float(pri), char) for pri, char in data['portfolio']]
+        return user
+
+class UserDatabase:
+    def __init__(self, filename='user_database.json'):
+        self.filename = filename
+        self.users = self.load_database()
+
+    def load_database(self):
+        try:
+            with open(self.filename, 'r') as f:
+                data = json.load(f)
+                return {uid: User.from_dict(user_data) for uid, user_data in data.items()}
+        except FileNotFoundError:
+            return {}
+
+    def save_database(self):
+        with open(self.filename, 'w') as f:
+            json.dump({uid: user.to_dict() for uid, user in self.users.items()}, f, indent=2)
+
+    def add_user(self, wallet_address, categories, instant_updates):
+        uid = f"user_{int(datetime.now().timestamp())}_{hash(wallet_address) % 10000:04d}"
+        user = User(uid, wallet_address, categories, instant_updates)
+        self.users[uid] = user
+        self.save_database()
+        return uid
+
+    def update_user_portfolio(self, uid, charities):
+        """Update user's charity portfolio with priority queue"""
+        if uid in self.users:
+            # Clear existing portfolio
+            self.users[uid].portfolio = []
+            # Add new charities with priorities
+            for priority, charity in charities:
+                heapq.heappush(self.users[uid].portfolio, (float(priority), charity))
+            self.save_database()
+
+    def get_user(self, uid):
+        return self.users.get(uid)
+
+    def get_users_by_category(self, category):
+        """Get all users interested in a specific category"""
+        return [user for user in self.users.values() 
+                if any(cat == category for cat, _ in user.categories)]
 
 class CharityInputCategorizer:
     def __init__(self):
@@ -211,6 +280,7 @@ class CharityInputCategorizer:
 
 def main():
     categorizer = CharityInputCategorizer()
+    user_db = UserDatabase()
     
     print("\nhello")
     print("Type 'quit' to exit.\n")
@@ -226,10 +296,11 @@ def main():
             
             if choice == "1":
                 print("\n" + "-"*50)
+                wallet_address = input("Please enter your wallet address: ")
                 user_input = input("Please describe your humanitarian concern: ")
                 
-                if not user_input.strip():
-                    print("Please enter a valid input.")
+                if not user_input.strip() or not wallet_address.strip():
+                    print("Please enter valid input and wallet address.")
                     continue
                 
                 # Ask about instant updates
@@ -239,13 +310,18 @@ def main():
                         break
                     print("Please enter 'yes' or 'no'")
                 
-                # Convert yes/no to true/false
-                instant_updates = "true" if updates_choice == "yes" else "false"
-                    
                 # Process input
-                result = categorizer.process_input(user_input, instant_updates)
+                result = categorizer.process_input(user_input)
                 
-                # Display results in a more readable format
+                # Add user to database
+                uid = user_db.add_user(
+                    wallet_address=wallet_address,
+                    categories=result['categories'],
+                    instant_updates=(updates_choice == 'yes')
+                )
+                
+                # Display results
+                print(f"\n🆔 User ID: {uid}")
                 print("\n📊 Top 3 Matching Categories:")
                 print("━"*50)
                 for i, (category, confidence) in enumerate(result['categories'], 1):
@@ -253,10 +329,31 @@ def main():
                     print(f"   ✨ Confidence: {confidence:.2%}")
                 
             elif choice == "2":
-                categorizer.view_database()
+                print("\n📊 User Database Contents:")
+                print("━" * 50)
+                for uid, user in user_db.users.items():
+                    print(f"\nUser ID: {uid}")
+                    print(f"Wallet: {user.wallet_address}")
+                    print("Categories:")
+                    for category, confidence in user.categories:
+                        print(f"  - {category}: {confidence:.2%}")
+                    print(f"Instant Updates: {'✅' if user.instant_updates else '❌'}")
+                    if user.portfolio:
+                        print("Charity Portfolio:")
+                        for priority, charity in sorted(user.portfolio):
+                            print(f"  - {charity}: {priority:.2f}")
+                    print("-" * 30)
                 
             elif choice == "3":
-                categorizer.view_category_subscribers()
+                category = input("Enter category to view subscribers: ")
+                users = user_db.get_users_by_category(category)
+                print(f"\nSubscribers for {category}:")
+                for user in users:
+                    print(f"User ID: {user.uid}")
+                    print(f"Wallet: {user.wallet_address}")
+                    confidence = next(conf for cat, conf in user.categories if cat == category)
+                    print(f"Confidence: {confidence:.2%}")
+                    print("-" * 30)
                 
             elif choice == "4" or choice.lower() == 'quit':
                 print("\nquitting")

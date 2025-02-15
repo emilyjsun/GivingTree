@@ -101,7 +101,7 @@ class NewsCharityMatcher:
                 print(f"Error processing RSS feed {url}: {str(e)}")
         return articles
 
-    def find_similar_charities(self, article, n_results=10):
+    def find_similar_charities(self, article, n_results=5):
         """Find charities similar to the article using semantic search."""
         query_text = f"{article['title']} {article['description']}"
         try:
