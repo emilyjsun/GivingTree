@@ -86,7 +86,7 @@ class CharityInputCategorizer:
         print("returning top 3 categories and similarity scores")
         return results
 
-    def store_input(self, user_input: str, categories: list):
+    def store_input(self, user_input: str, categories: list, instant_updates: str = 'false'):
         """
         Store user input and its categorization in the vector database.
         """
@@ -95,14 +95,15 @@ class CharityInputCategorizer:
             # Generate embedding for user input
             embedding = self.model.encode(user_input).tolist()
             
-            # Store in ChromaDB with top category
+            # Store in ChromaDB with top category and instant_updates flag
             self.collection.add(
                 documents=[user_input],
                 metadatas=[{
                     "primary_category": categories[0][0],
                     "all_categories": ",".join([cat for cat, _ in categories]),
                     "all_scores": ",".join([f"{score:.4f}" for _, score in categories]),
-                    "timestamp": datetime.now().isoformat()
+                    "timestamp": datetime.now().isoformat(),
+                    "instant_updates": instant_updates
                 }],
                 embeddings=[embedding],
                 ids=[str(hash(user_input))]
@@ -112,17 +113,18 @@ class CharityInputCategorizer:
             self.processed_inputs.add(hash(user_input))
             self.save_processed_inputs()
 
-    def process_input(self, user_input: str) -> dict:
+    def process_input(self, user_input: str, instant_updates: str = 'false') -> dict:
         """
         Process a single user input and return results.
         """
         print("processing input")
         categories = self.categorize_input(user_input)
-        self.store_input(user_input, categories)
+        self.store_input(user_input, categories, instant_updates)
         
         return {
             "input": user_input,
-            "categories": categories
+            "categories": categories,
+            "instant_updates": instant_updates
         }
 
     def view_database(self):
@@ -142,6 +144,7 @@ class CharityInputCategorizer:
             print(f"\nEntry {i+1}:")
             print(f"Text: {results['documents'][i]}")
             print(f"Primary Category: {results['metadatas'][i]['primary_category']}")
+            print(f"Instant Updates: {'✅' if results['metadatas'][i]['instant_updates'] == 'true' else '❌'}")
             
             # Split and display all categories and scores
             categories = results['metadatas'][i]['all_categories'].split(',')
@@ -157,8 +160,7 @@ class CharityInputCategorizer:
 def main():
     categorizer = CharityInputCategorizer()
     
-    print("\nWelcome to the Charity Input Categorizer!")
-    print("This system will categorize your input into humanitarian/charity categories.")
+    print("\nhello")
     print("Type 'quit' to exit.\n")
     
     while True:
@@ -176,9 +178,19 @@ def main():
                 if not user_input.strip():
                     print("Please enter a valid input.")
                     continue
+                
+                # Ask about instant updates
+                while True:
+                    updates_choice = input("Would you like instant updates for this concern? (yes/no): ").lower()
+                    if updates_choice in ['yes', 'no']:
+                        break
+                    print("Please enter 'yes' or 'no'")
+                
+                # Convert yes/no to true/false
+                instant_updates = "true" if updates_choice == "yes" else "false"
                     
                 # Process input
-                result = categorizer.process_input(user_input)
+                result = categorizer.process_input(user_input, instant_updates)
                 
                 # Display results in a more readable format
                 print("\n📊 Top 3 Matching Categories:")
@@ -191,7 +203,7 @@ def main():
                 categorizer.view_database()
                 
             elif choice == "3" or choice.lower() == 'quit':
-                print("\nThank you for using the Charity Input Categorizer!")
+                print("\nqutting")
                 break
                 
             else:
