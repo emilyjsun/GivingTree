@@ -85,6 +85,38 @@ class NewsCharityMatcher:
         except FileNotFoundError:
             self.processed_articles = set()
 
+        # Add categories
+        self.CATEGORIES = [
+            "Disaster Relief",
+            "Education Support",
+            "Healthcare Access",
+            "Food Security",
+            "Refugee Assistance",
+            "Child Welfare",
+            "Environmental Conservation",
+            "Women's Empowerment",
+            "Housing & Shelter",
+            "Clean Water Access",
+            "Mental Health Support",
+            "Poverty Alleviation",
+            "Human Rights",
+            "Community Development"
+        ]
+        
+        # Create categories collection
+        self.category_collection = self.chroma_client.get_or_create_collection(
+            name="category_embeddings",
+            embedding_function=openai_ef
+        )
+        
+        # Initialize categories if empty
+        if self.category_collection.count() == 0:
+            self.category_collection.add(
+                documents=self.CATEGORIES,
+                metadatas=[{"category": cat} for cat in self.CATEGORIES],
+                ids=[str(i) for i in range(len(self.CATEGORIES))]
+            )
+
     def get_rss_feeds(self, rss_urls):
         articles = []
         for url in rss_urls:
@@ -191,6 +223,75 @@ Answer:"""
             print(f"Error checking article relevance: {e}")
             return True  # Default to including article if check fails
 
+    def find_matching_categories(self, article):
+        """Find top 3 matching categories for an article."""
+        # Combine title and description for better matching
+        article_text = f"{article['title']} {article.get('description', '')}"
+        
+        # Query the category collection
+        results = self.category_collection.query(
+            query_texts=[article_text],
+            n_results=3
+        )
+        
+        # Format results
+        categories = []
+        distances = results['distances'][0]
+        
+        # Normalize distances to similarities (0 to 1 range)
+        max_distance = max(distances)
+        min_distance = min(distances)
+        range_distance = max_distance - min_distance if max_distance != min_distance else 1
+        
+        for i in range(len(distances)):
+            category = results['metadatas'][0][i]['category']
+            # Convert distance to normalized similarity score
+            normalized_similarity = 1 - ((distances[i] - min_distance) / range_distance)
+            categories.append({
+                'category': category,
+                'similarity': normalized_similarity
+            })
+        
+        return categories
+
+    def get_urgency_score(self, article):
+        """Get urgency score from 1-10 for the article using GPT."""
+        prompt = f"""Article Title: {article['title']}
+Description: {article['description']}
+
+On a scale of 1-10, rate the urgency of this situation in terms of immediate funding needs, where:
+1 = No immediate funding urgency
+10 = Extremely urgent, immediate funding crucial
+
+Consider factors like:
+- Immediate threat to life or well-being
+- Time-sensitivity of the situation
+- Scale of impact
+- Current resource availability
+- Vulnerability of affected populations
+
+Provide your response in this exact format:
+"Urgency Score: [number 1-10]
+Brief Reason: [one-line explanation]"
+"""
+
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are an expert at assessing humanitarian and charitable funding urgency. Be objective and analytical in your assessment."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3
+            )
+            
+            result = response.choices[0].message.content.strip()
+            return result
+            
+        except Exception as e:
+            print(f"Error getting urgency score: {e}")
+            return "Urgency Score: N/A\nBrief Reason: Error in assessment"
+
     def process_feed(self, feed_url):
         """Process RSS feed and find charity matches."""
         try:
@@ -230,6 +331,13 @@ Answer:"""
                         'link': entry.link
                     }
                     
+                    # Find matching categories
+                    matching_categories = self.find_matching_categories(article)
+                    print("\nMatching Categories:")
+                    for i, cat in enumerate(matching_categories, 1):
+                        print(f"{i}. {cat['category']}")
+                        print(f"   Similarity Score: {cat['similarity']:.4f}")
+                    
                     # Find similar charities
                     similar_charities = self.find_similar_charities(article)
                     
@@ -245,6 +353,11 @@ Answer:"""
                         print(suggestion)
                     else:
                         print("No similar charities found.")
+                    
+                    # Add after finding matching categories:
+                    print("\nUrgency Assessment:")
+                    urgency_result = self.get_urgency_score(article)
+                    print(urgency_result)
                     
                     # Mark article as processed
                     self.processed_articles.add(entry.link)
@@ -275,6 +388,14 @@ Answer:"""
                     print("Article deemed relevant - continuing analysis...")
                     print(f"\nAnalyzing article: {article['title']}")
                     
+                    # Find matching categories
+                    matching_categories = self.find_matching_categories(article)
+                    print("\nMatching Categories:")
+                    for i, cat in enumerate(matching_categories, 1):
+                        print(f"{i}. {cat['category']}")
+                        print(f"   Similarity Score: {cat['similarity']:.4f}")
+                    
+                    # Find similar charities
                     similar_charities = self.find_similar_charities(article)
                     
                     if similar_charities:
@@ -289,6 +410,11 @@ Answer:"""
                         print(suggestion)
                     else:
                         print("No similar charities found.")
+                    
+                    # Add after finding matching categories:
+                    print("\nUrgency Assessment:")
+                    urgency_result = self.get_urgency_score(article)
+                    print(urgency_result)
                     
                     # Mark article as processed
                     self.processed_articles.add(article['link'])
