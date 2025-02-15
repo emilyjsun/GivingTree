@@ -153,6 +153,110 @@ class NewsCharityMatcher:
         with open('processed_articles.json', 'w') as f:
             json.dump(list(self.processed_articles), f)
 
+    def is_relevant_article(self, title: str, description: str) -> bool:
+        """Use GPT to determine if an article is relevant to charity impact."""
+        prompt = f"""Article Title: {title}
+Description: {description}
+
+Question: Based on this article's title and description, could this news potentially impact charitable giving, fundraising, or the work of charitable organizations? Answer with only 'yes' or 'no'.
+
+Consider:
+- Could this affect people's willingness or ability to donate?
+- Might this create new needs for charitable assistance?
+- Could this influence how charities operate or deliver services?
+- Might this affect specific charitable causes or communities?
+
+Answer:"""
+
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a charity impact analyst. Evaluate if news could affect charitable giving or operations. Answer only 'yes' or 'no'."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_tokens=5
+            )
+            
+            answer = response.choices[0].message.content.strip().lower()
+            is_relevant = answer == 'yes'
+            
+            print(f"\nArticle: {title[:60]}...")
+            print(f"GPT Response: {answer.upper()}")
+            
+            return is_relevant
+            
+        except Exception as e:
+            print(f"Error checking article relevance: {e}")
+            return True  # Default to including article if check fails
+
+    def process_feed(self, feed_url):
+        """Process RSS feed and find charity matches."""
+        try:
+            feed = feedparser.parse(feed_url)
+            print(f"\nProcessing feed: {feed.feed.title}")
+            
+            for entry in feed.entries:
+                # Skip if already processed
+                if entry.link in self.processed_articles:
+                    continue
+                
+                title = entry.get('title', '')
+                description = entry.get('description', '')
+                
+                print("\n" + "="*50)  # Add separator for clarity
+                print(f"Processing new article...")
+                
+                # Use GPT to check relevance
+                if not self.is_relevant_article(title, description):
+                    print("Skipping article based on GPT response")
+                    continue
+                
+                print("Article deemed relevant - continuing analysis...")
+                
+                try:
+                    # Get full article text
+                    article_text = self.get_article_text(entry.link)
+                    if not article_text:
+                        print("Could not fetch article text - skipping")
+                        continue
+                    
+                    # Create article dict for analysis
+                    article = {
+                        'title': title,
+                        'description': description,
+                        'text': article_text,
+                        'link': entry.link
+                    }
+                    
+                    # Find similar charities
+                    similar_charities = self.find_similar_charities(article)
+                    
+                    if similar_charities:
+                        print("\nTop Similar Charities:")
+                        for i, charity in enumerate(similar_charities, 1):
+                            print(f"{i}. {charity['name']}")
+                            print(f"   Similarity Score: {charity['similarity_score']:.4f}")
+                            print(f"   URL: {charity['url']}\n")
+                        
+                        print("Charity Suggestion from GPT:")
+                        suggestion = self.analyze_article(article)
+                        print(suggestion)
+                    else:
+                        print("No similar charities found.")
+                    
+                    # Mark article as processed
+                    self.processed_articles.add(entry.link)
+                    self.save_processed_articles()
+                    
+                except Exception as e:
+                    print(f"Error processing article: {e}")
+                    continue
+                
+        except Exception as e:
+            print(f"Error processing feed: {e}")
+
     def run(self, rss_urls, interval=300):  # interval in seconds (default 5 minutes)
         while True:
             try:
@@ -160,7 +264,17 @@ class NewsCharityMatcher:
                 articles = self.get_rss_feeds(rss_urls)
                 
                 for article in articles:
+                    print("\n" + "="*50)
+                    print(f"Processing new article...")
+                    
+                    # Check if article is relevant using GPT
+                    if not self.is_relevant_article(article['title'], article.get('description', '')):
+                        print("Skipping article based on GPT response")
+                        continue
+                    
+                    print("Article deemed relevant - continuing analysis...")
                     print(f"\nAnalyzing article: {article['title']}")
+                    
                     similar_charities = self.find_similar_charities(article)
                     
                     if similar_charities:
