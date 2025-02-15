@@ -1,4 +1,7 @@
-# Virtual Environment
+.env
+vector_db
+
+*.json# Virtual Environment
 venv/
 env/
 
