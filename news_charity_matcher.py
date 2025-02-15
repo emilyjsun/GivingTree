@@ -156,31 +156,6 @@ class NewsCharityMatcher:
             print(f"Error in similarity search: {str(e)}")
             return []
 
-    def analyze_article(self, article):
-        # Get similar charities
-        similar_charities = self.find_similar_charities(article)
-        charity_names = [c['name'] for c in similar_charities]
-        
-        system_message = f"""You are an assistant that MUST ONLY suggest charities from this specific list: {', '.join(charity_names)}."""
-
-        prompt = f"""
-        Choose exactly ONE charity from this list that best matches the news article.
-        Format your response exactly as: "Charity Name: one-line reason"
-
-        Article Title: {article['title']}
-        Article Description: {article['description']}
-        """
-
-        response = self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": prompt}
-            ]
-        )
-        
-        return response.choices[0].message.content
-
     def save_processed_articles(self):
         with open('processed_articles.json', 'w') as f:
             json.dump(list(self.processed_articles), f)
@@ -223,6 +198,16 @@ Answer:"""
             print(f"Error checking article relevance: {e}")
             return True  # Default to including article if check fails
 
+    def get_subscribers_for_category(self, category):
+        """Get list of subscribers for a category from category_subscribers.json"""
+        try:
+            with open('category_subscribers.json', 'r') as f:
+                subscribers = json.load(f)
+                return subscribers.get(category, [])
+        except FileNotFoundError:
+            print("No subscribers database found")
+            return []
+
     def find_matching_categories(self, article):
         """Find top 3 matching categories for an article."""
         # Combine title and description for better matching
@@ -251,6 +236,13 @@ Answer:"""
                 'category': category,
                 'similarity': normalized_similarity
             })
+            
+            # Get subscribers for top category
+            if i == 0:  # Only for the top category
+                subscribers = self.get_subscribers_for_category(category)
+                if subscribers:
+                    print(f"\n📢 Subscribers for {category}:")
+                    print(f"Found {len(subscribers)} subscribers: {subscribers}")
         
         return categories
 
@@ -347,10 +339,7 @@ Brief Reason: [one-line explanation]"
                             print(f"{i}. {charity['name']}")
                             print(f"   Similarity Score: {charity['similarity_score']:.4f}")
                             print(f"   URL: {charity['url']}\n")
-                        
-                        print("Charity Suggestion from GPT:")
-                        suggestion = self.analyze_article(article)
-                        print(suggestion)
+
                     else:
                         print("No similar charities found.")
                     
@@ -405,9 +394,6 @@ Brief Reason: [one-line explanation]"
                             print(f"   Similarity Score: {charity['similarity_score']:.4f}")
                             print(f"   URL: {charity['url']}\n")
                         
-                        print("Charity Suggestion from GPT:")
-                        suggestion = self.analyze_article(article)
-                        print(suggestion)
                     else:
                         print("No similar charities found.")
                     
