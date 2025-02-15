@@ -1,5 +1,6 @@
 .env
 vector_db
+chroma_db
 
 *.json# Virtual Environment
 venv/
