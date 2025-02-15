@@ -138,7 +138,7 @@ class NewsCharityMatcher:
         """Find charities similar to the article using semantic search."""
         try:
             # First, get the top category for the article
-            matching_categories = self.find_matching_categories(article)
+            matching_categories, subscribers = self.find_matching_categories(article)
             if not matching_categories:
                 return []
             
@@ -147,7 +147,7 @@ class NewsCharityMatcher:
             
             # Get all charities that match the category
             category_filtered = []
-            for charity in self.charities:  # Use self.charities instead of querying ChromaDB
+            for charity in self.charities:
                 charity_categories = charity.get('categories', [])
                 if any(cat['category'] == top_category for cat in charity_categories):
                     category_filtered.append({
@@ -159,10 +159,12 @@ class NewsCharityMatcher:
             print(f"Found {len(category_filtered)} charities in category '{top_category}'")
             
             if not category_filtered:
+                print("No charities found in this category")
                 return []
             
             # Now do similarity search between article and filtered charities' missions
             article_text = f"{article['title']} {article.get('description', '')}"
+            similar_charities = []  # Move this outside the try block
             
             # Create a temporary collection for similarity search
             temp_collection = self.chroma_client.get_or_create_collection(
@@ -170,36 +172,53 @@ class NewsCharityMatcher:
                 embedding_function=self.collection._embedding_function
             )
             
-            # Add filtered charities to temp collection
-            temp_collection.add(
-                documents=[c['mission'] for c in category_filtered],
-                metadatas=[{'name': c['name'], 'url': c['url']} for c in category_filtered],
-                ids=[str(i) for i in range(len(category_filtered))]
-            )
-            
-            # Perform similarity search
-            search_results = temp_collection.query(
-                query_texts=[article_text],
-                n_results=min(n_results, len(category_filtered))
-            )
-            
-            # Format results
-            similar_charities = []
-            for i in range(len(search_results['ids'][0])):
-                charity_data = {
-                    'name': search_results['metadatas'][0][i]['name'],
-                    'url': search_results['metadatas'][0][i]['url'],
-                    'similarity_score': 1 - (search_results['distances'][0][i] / 2)
-                }
-                similar_charities.append(charity_data)
-            
-            # Delete temporary collection
-            self.chroma_client.delete_collection("temp_category_search")
+            try:
+                # Add filtered charities to temp collection
+                temp_collection.add(
+                    documents=[c['mission'] for c in category_filtered],
+                    metadatas=[{'name': c['name'], 'url': c['url']} for c in category_filtered],
+                    ids=[str(i) for i in range(len(category_filtered))]
+                )
+                
+                print(f"Added {len(category_filtered)} charities to temp collection")
+                
+                # Perform similarity search
+                search_results = temp_collection.query(
+                    query_texts=[article_text],
+                    n_results=min(n_results, len(category_filtered))
+                )
+                
+                print(f"Query results: {len(search_results['ids'][0])} matches found")
+                
+                # Process results
+                if len(search_results['ids'][0]) > 0:
+                    for i in range(len(search_results['ids'][0])):
+                        charity_data = {
+                            'name': search_results['metadatas'][0][i]['name'],
+                            'url': search_results['metadatas'][0][i]['url'],
+                            'similarity_score': 1 - (search_results['distances'][0][i] / 2)
+                        }
+                        similar_charities.append(charity_data)
+                    print(f"Processed {len(similar_charities)} charity matches")
+                else:
+                    print("No matches found in similarity search")
+                
+            except Exception as e:
+                print(f"Error during similarity search: {e}")
+            finally:
+                # Delete temporary collection
+                try:
+                    self.chroma_client.delete_collection("temp_category_search")
+                    print("Temporary collection deleted")
+                except Exception as e:
+                    print(f"Error deleting temporary collection: {e}")
             
             return similar_charities
             
         except Exception as e:
-            print(f"Error in similarity search: {str(e)}")
+            print(f"Error in overall process: {e}")
+            print(f"Article text: {article_text[:100]}...")
+            print(f"Category filtered charities: {len(category_filtered)}")
             return []
 
     def save_processed_articles(self):
@@ -223,7 +242,7 @@ Answer:"""
 
         try:
             response = self.client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": "You are a charity impact analyst. Evaluate if news could affect charitable giving or operations. Answer only 'yes' or 'no'."},
                     {"role": "user", "content": prompt}
@@ -346,7 +365,6 @@ Brief Reason: [one-line explanation]"
             
             # For each subscriber
             for user_id in subscribers:
-                print(f"user_id: {user_id}")
                 print(f"Updating portfolio for user {user_id}")
                 if user_id not in user_db:
                     continue
@@ -361,7 +379,7 @@ Brief Reason: [one-line explanation]"
                     # - Charity similarity score (0-1)
                     # - Article urgency (1-10)
                     # - User's category confidence (0-1)
-                    similarity = 1 - charity['similarity_score']  # Convert distance to similarity
+                    similarity = charity['similarity_score']
                     
                     # Get user's confidence for the category
                     user_categories = user_db[user_id]['categories']
@@ -376,25 +394,29 @@ Brief Reason: [one-line explanation]"
                                (urgency_score/10) * 0.3 + 
                                category_confidence * 0.3)
                     
-                    charity_dict = {
-                        'charity_name': charity['name'],
-                        'charity_url': charity['url'],
-                        'relevance_score': relevance
-                    }
-                    
-                    # Add to portfolio updates with priority (1 - relevance for min heap)
-                    portfolio_updates.append((1.0 - relevance, charity_dict))
+                    # Add tuple of (charity_name, relevance_score)
+                    portfolio_updates.append((charity['name'], relevance))
                 
                 # Combine existing portfolio with new updates
-                combined_portfolio = existing_portfolio + portfolio_updates
+                # Convert existing portfolio items to tuples if they aren't already
+                existing_tuples = []
+                for item in existing_portfolio:
+                    if isinstance(item, tuple):
+                        existing_tuples.append(item)
+                    elif isinstance(item, list):
+                        existing_tuples.append(tuple(item))
                 
-                # Sort by priority and keep top 10 (or another suitable number)
-                user_db[user_id]['portfolio'] = sorted(combined_portfolio, key=lambda x: x[0])[:10]
+                combined_portfolio = existing_tuples + portfolio_updates
+                
+                # Sort by relevance score (descending) and keep top 10
+                user_db[user_id]['portfolio'] = sorted(combined_portfolio, 
+                                                     key=lambda x: x[1], 
+                                                     reverse=True)[:10]
                 
                 print(f"\nUpdated portfolio for user {user_id}:")
-                for priority, charity in user_db[user_id]['portfolio']:
-                    print(f"Charity: {charity['charity_name']}")
-                    print(f"Relevance Score: {1.0 - priority:.2%}")  # Convert back to relevance score
+                for charity_name, relevance in user_db[user_id]['portfolio']:
+                    print(f"Charity: {charity_name}")
+                    print(f"Relevance Score: {relevance:.2%}")
                     print("-" * 30)
             
             # Save updated user database

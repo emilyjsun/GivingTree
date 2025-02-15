@@ -17,7 +17,48 @@
       ]
     ],
     "instant_updates": true,
-    "portfolio": []
+    "portfolio": [
+      [
+        "Sea Turtle Conservancy",
+        0.34683589790231195
+      ],
+      [
+        "American Jewish Joint Distribution Committee",
+        0.3437924593896206
+      ],
+      [
+        "Team Rubicon",
+        0.3431496257754258
+      ],
+      [
+        "The Leukemia & Lymphoma Society",
+        0.3285283482575582
+      ],
+      [
+        "Ama International",
+        0.3274879050856298
+      ],
+      [
+        "Wildlife Conservation Society",
+        0.3093793850443384
+      ],
+      [
+        "Save the Chimps, Inc.",
+        0.3022634709786148
+      ],
+      [
+        "American Heart Association",
+        0.29550283428850765
+      ],
+      [
+        "American Bird Conservancy",
+        0.29440611411699413
+      ],
+      [
+        "WildAid",
+        0.28269005239775363
+      ]
+    ]
   },
   "user_1739656131_9191": {
     "uid": "user_1739656131_9191",
@@ -37,7 +78,48 @@
       ]
     ],
     "instant_updates": false,
-    "portfolio": []
+    "portfolio": [
+      [
+        "Sea Turtle Conservancy",
+        0.37136050615674465
+      ],
+      [
+        "American Jewish Joint Distribution Committee",
+        0.3683170676440533
+      ],
+      [
+        "Team Rubicon",
+        0.3676742340298585
+      ],
+      [
+        "The Leukemia & Lymphoma Society",
+        0.3530529565119909
+      ],
+      [
+        "Ama International",
+        0.3520125133400625
+      ],
+      [
+        "Good360",
+        0.26789376990498864
+      ],
+      [
+        "GiveDirectly",
+        0.2544283453801033
+      ],
+      [
+        "Rape, Abuse and Incest National Network (RAINN)",
+        0.24793959817476247
+      ],
+      [
+        "JOY International",
+        0.24251015305931944
+      ],
+      [
+        "American Jewish Joint Distribution Committee",
+        0.24148855765674443
+      ]
+    ]
   },
   "user_1739656145_2318": {
     "uid": "user_1739656145_2318",
@@ -57,6 +139,27 @@
       ]
     ],
     "instant_updates": false,
-    "portfolio": []
+    "portfolio": [
+      [
+        "Institute for Justice",
+        0.3681934489586186
+      ],
+      [
+        "Action on Smoking and Health",
+        0.35932327269672404
+      ],
+      [
+        "Unbound",
+        0.3392117528059715
+      ],
+      [
+        "Ama International",
+        0.33118232877861153
+      ],
+      [
+        "Committee to Protect Journalists",
+        0.3285698679122777
+      ]
+    ]
   }
 }
