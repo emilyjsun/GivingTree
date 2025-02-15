@@ -43,7 +43,7 @@ def test_single_article():
             print(f"   Similarity Score: {1 - distance:.4f}")
         
         # Add delay before GPT analysis
-        time.sleep(20)  # Wait 20 seconds before GPT call
+        time.sleep(5)  # Wait 20 seconds before GPT call
         
         print("\nGPT Charity Analysis:")
         suggestion = matcher.analyze_article(test_article)

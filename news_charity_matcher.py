@@ -34,8 +34,9 @@ class NewsCharityMatcher:
         
         # Load charities and add to ChromaDB if empty
         try:
-            with open('charities.json', 'r') as f:
-                self.charities = json.load(f)['charities']
+            with open('matched_charities.json', 'r') as f:
+                data = json.load(f)
+                self.charities = data['matched_charities']
                 
             if self.collection.count() == 0:
                 # Process in smaller batches
@@ -50,9 +51,18 @@ class NewsCharityMatcher:
                     
                     for j, charity in enumerate(batch):
                         # Combine name and mission for better semantic matching
-                        combined_text = f"{charity['name']}: {charity['mission']}"
+                        mission = charity.get('mission', '')
+                        if not mission or mission == "Mission statement not found":
+                            print(f"Warning: Missing mission for {charity['name']}")
+                            mission = f"This is a charity focused on {charity['name'].lower()}"
+                        
+                        combined_text = f"{charity['name']}: {mission}"
                         documents.append(combined_text)
-                        metadatas.append({"name": charity['name'], "url": charity['url']})
+                        metadatas.append({
+                            "name": charity['name'],
+                            "url": charity['url'],
+                            "score": charity.get('score', 0)
+                        })
                         ids.append(str(i + j))
                     
                     # Add batch to ChromaDB
@@ -65,7 +75,7 @@ class NewsCharityMatcher:
                     time.sleep(1)  # Rate limiting pause
                     
         except FileNotFoundError:
-            print("Error: charities.json not found")
+            print("Error: matched_charities.json not found")
             self.charities = []
             
         # Load processed articles history
