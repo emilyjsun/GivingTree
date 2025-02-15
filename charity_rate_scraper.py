@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
+import json
 import time
 
 def get_grade_score(grade):
@@ -71,17 +71,18 @@ def scrape_charitywatch():
                 time.sleep(0.1)  # Be polite to the server
         
         if charities:
-            # Create DataFrame
-            df = pd.DataFrame(charities)
-            
-            # Save to CSV
-            df.to_csv('charity_ratings.csv', index=False)
+            # Save to JSON
+            output = {'charities': charities}
+            with open('charity_ratings.json', 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=True)
+                
             print(f"\nSuccessfully scraped {len(charities)} charities")
-            print("Data saved to charity_ratings.csv")
+            print("Data saved to charity_ratings.json")
             
             # Display first few entries
             print("\nFirst few entries:")
-            print(df.head())
+            for charity in charities[:5]:
+                print(f"{charity['name']}: {charity['score']}")
         else:
             print("\nNo charities were successfully scraped")
             

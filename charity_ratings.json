@@ -1,0 +1,2212 @@
+{
+  "charities": [
+    {
+      "name": "Drug Policy Alliance",
+      "score": 3
+    },
+    {
+      "name": "Bat Conservation International",
+      "score": 2
+    },
+    {
+      "name": "Best Friends Animal Society",
+      "score": 2
+    },
+    {
+      "name": "Born Free USA united with Animal Protection Institute",
+      "score": 3
+    },
+    {
+      "name": "Dian Fossey Gorilla Fund International",
+      "score": 4
+    },
+    {
+      "name": "Friends of Animals",
+      "score": 5
+    },
+    {
+      "name": "Humane Farming Association",
+      "score": 3
+    },
+    {
+      "name": "Jane Goodall Institute",
+      "score": 2
+    },
+    {
+      "name": "Marine Mammal Center",
+      "score": 3
+    },
+    {
+      "name": "Mercy For Animals",
+      "score": 2
+    },
+    {
+      "name": "National Disaster Search Dog Foundation",
+      "score": 3
+    },
+    {
+      "name": "PetSmart Charities",
+      "score": 5
+    },
+    {
+      "name": "RedRover",
+      "score": 3
+    },
+    {
+      "name": "Save the Chimps",
+      "score": 3
+    },
+    {
+      "name": "The Humane League",
+      "score": 3
+    },
+    {
+      "name": "The Wild Animal Santuary",
+      "score": 4
+    },
+    {
+      "name": "Wildlife Conservation Society",
+      "score": 4
+    },
+    {
+      "name": "Asia Foundation",
+      "score": 4
+    },
+    {
+      "name": "Asia Society",
+      "score": 2
+    },
+    {
+      "name": "National Urban League (National Office)",
+      "score": 3
+    },
+    {
+      "name": "Foundation Fighting Blindness",
+      "score": 2
+    },
+    {
+      "name": "Guide Dog Foundation for the Blind",
+      "score": 4
+    },
+    {
+      "name": "Helen Keller International",
+      "score": 4
+    },
+    {
+      "name": "Learning Ally",
+      "score": 2
+    },
+    {
+      "name": "National Federation of the Blind",
+      "score": 4
+    },
+    {
+      "name": "Perkins School For The Blind",
+      "score": 2
+    },
+    {
+      "name": "Prevent Blindness",
+      "score": 2
+    },
+    {
+      "name": "Seva Foundation",
+      "score": 3
+    },
+    {
+      "name": "Breast Cancer Prevention Partners",
+      "score": 2
+    },
+    {
+      "name": "Breast Cancer Research Foundation",
+      "score": 4
+    },
+    {
+      "name": "Cancer Research Institute",
+      "score": 4
+    },
+    {
+      "name": "CancerCare",
+      "score": 5
+    },
+    {
+      "name": "CureSearch for Children's Cancer",
+      "score": 2
+    },
+    {
+      "name": "Dana-Farber Cancer Institute",
+      "score": 4
+    },
+    {
+      "name": "Entertainment Industry Foundation / Stand Up To Cancer",
+      "score": 3
+    },
+    {
+      "name": "Leukemia & Lymphoma Society",
+      "score": 3
+    },
+    {
+      "name": "Marc Lustgarten Pancreatic Cancer Foundation",
+      "score": 2
+    },
+    {
+      "name": "Memorial Sloan Kettering Cancer Center",
+      "score": 3
+    },
+    {
+      "name": "Multiple Myeloma Research Foundation",
+      "score": 4
+    },
+    {
+      "name": "National Breast Cancer Coalition Fund",
+      "score": 4
+    },
+    {
+      "name": "Ovarian Cancer Research Alliance",
+      "score": 3
+    },
+    {
+      "name": "Pancreatic Cancer Action Network",
+      "score": 4
+    },
+    {
+      "name": "Prostate Cancer Foundation",
+      "score": 4
+    },
+    {
+      "name": "Child Find of America",
+      "score": 4
+    },
+    {
+      "name": "ChildFund International",
+      "score": 3
+    },
+    {
+      "name": "Children Incorporated",
+      "score": 4
+    },
+    {
+      "name": "Children International",
+      "score": 3
+    },
+    {
+      "name": "Children's Health Fund",
+      "score": 3
+    },
+    {
+      "name": "Compassion International",
+      "score": 4
+    },
+    {
+      "name": "Dave Thomas Foundation for Adoption",
+      "score": 4
+    },
+    {
+      "name": "Marine Toys for Tots Foundation",
+      "score": 3
+    },
+    {
+      "name": "National Center for Missing & Exploited Children",
+      "score": 3
+    },
+    {
+      "name": "Pearl S. Buck International",
+      "score": 4
+    },
+    {
+      "name": "Save the Children",
+      "score": 3
+    },
+    {
+      "name": "Unbound",
+      "score": 5
+    },
+    {
+      "name": "World Vision",
+      "score": 4
+    },
+    {
+      "name": "American Civil Liberties Union (ACLU)",
+      "score": 4
+    },
+    {
+      "name": "American Civil Liberties Union (ACLU) Foundation",
+      "score": 4
+    },
+    {
+      "name": "Center for Constitutional Rights",
+      "score": 2
+    },
+    {
+      "name": "Fortune Society",
+      "score": 3
+    },
+    {
+      "name": "Freedom From Religion Foundation",
+      "score": 5
+    },
+    {
+      "name": "Institute for Justice",
+      "score": 4
+    },
+    {
+      "name": "Interfaith Alliance Foundation",
+      "score": 2
+    },
+    {
+      "name": "Sikh Coalition",
+      "score": 4
+    },
+    {
+      "name": "Thousand Currents",
+      "score": 2
+    },
+    {
+      "name": "Action on Smoking and Health",
+      "score": 2
+    },
+    {
+      "name": "Media Research Center",
+      "score": 2
+    },
+    {
+      "name": "Physicians Committee for Responsible Medicine",
+      "score": 2
+    },
+    {
+      "name": "Project on Government Oversight (POGO)",
+      "score": 4
+    },
+    {
+      "name": "Public Citizen Foundation",
+      "score": 4
+    },
+    {
+      "name": "350.org",
+      "score": 4
+    },
+    {
+      "name": "African Wildlife Foundation",
+      "score": 2
+    },
+    {
+      "name": "Alaska Conservation Foundation",
+      "score": 2
+    },
+    {
+      "name": "Amazon Conservation Team",
+      "score": 4
+    },
+    {
+      "name": "American Bird Conservancy",
+      "score": 3
+    },
+    {
+      "name": "American Forests",
+      "score": 4
+    },
+    {
+      "name": "Center for Biological Diversity",
+      "score": 4
+    },
+    {
+      "name": "Conservation Fund",
+      "score": 5
+    },
+    {
+      "name": "Conservation International Foundation",
+      "score": 4
+    },
+    {
+      "name": "Ducks Unlimited",
+      "score": 3
+    },
+    {
+      "name": "Earth Island Institute",
+      "score": 4
+    },
+    {
+      "name": "Earthjustice",
+      "score": 3
+    },
+    {
+      "name": "Earthworks",
+      "score": 4
+    },
+    {
+      "name": "Environmental Defense Action Fund",
+      "score": 4
+    },
+    {
+      "name": "Environmental Defense Fund",
+      "score": 2
+    },
+    {
+      "name": "Environmental Working Group",
+      "score": 4
+    },
+    {
+      "name": "Friends of the Earth",
+      "score": 2
+    },
+    {
+      "name": "Green America",
+      "score": 4
+    },
+    {
+      "name": "Izaak Walton League of America (National Office)",
+      "score": 4
+    },
+    {
+      "name": "National Audubon Society",
+      "score": 2
+    },
+    {
+      "name": "National Forest Foundation",
+      "score": 4
+    },
+    {
+      "name": "National Park Trust",
+      "score": 4
+    },
+    {
+      "name": "Natural Resources Defense Council (NRDC)",
+      "score": 3
+    },
+    {
+      "name": "Nature Conservancy",
+      "score": 2
+    },
+    {
+      "name": "NRDC Action Fund",
+      "score": 4
+    },
+    {
+      "name": "Oceana",
+      "score": 3
+    },
+    {
+      "name": "Rainforest Action Network",
+      "score": 3
+    },
+    {
+      "name": "Rainforest Alliance",
+      "score": 3
+    },
+    {
+      "name": "Save the Redwoods League",
+      "score": 4
+    },
+    {
+      "name": "Sierra Club Foundation",
+      "score": 3
+    },
+    {
+      "name": "Trout Unlimited (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Trust for Public Land",
+      "score": 3
+    },
+    {
+      "name": "Union of Concerned Scientists",
+      "score": 4
+    },
+    {
+      "name": "Water.org",
+      "score": 2
+    },
+    {
+      "name": "Waterkeeper Alliance",
+      "score": 5
+    },
+    {
+      "name": "WildAid",
+      "score": 4
+    },
+    {
+      "name": "World Resources Institute",
+      "score": 5
+    },
+    {
+      "name": "Yosemite Conservancy",
+      "score": 2
+    },
+    {
+      "name": "Brady Center to Prevent Gun Violence",
+      "score": 2
+    },
+    {
+      "name": "Everytown for Gun Safety Support Fund",
+      "score": 4
+    },
+    {
+      "name": "American Brain Tumor Association",
+      "score": 3
+    },
+    {
+      "name": "American Diabetes Association",
+      "score": 2
+    },
+    {
+      "name": "American Kidney Fund",
+      "score": 5
+    },
+    {
+      "name": "American Liver Foundation",
+      "score": 2
+    },
+    {
+      "name": "American Lung Association",
+      "score": 2
+    },
+    {
+      "name": "Breakthrough T1D",
+      "score": 3
+    },
+    {
+      "name": "CDC Foundation",
+      "score": 5
+    },
+    {
+      "name": "Christopher & Dana Reeve Foundation",
+      "score": 3
+    },
+    {
+      "name": "City of Hope & Affiliates",
+      "score": 3
+    },
+    {
+      "name": "Crohn's & Colitis Foundation",
+      "score": 3
+    },
+    {
+      "name": "Diabetes Action Research and Education Foundation",
+      "score": 4
+    },
+    {
+      "name": "Elizabeth Glaser Pediatric AIDS Foundation",
+      "score": 4
+    },
+    {
+      "name": "Epilepsy Foundation",
+      "score": 3
+    },
+    {
+      "name": "Hearing Health Foundation",
+      "score": 4
+    },
+    {
+      "name": "Huntington's Disease Society of America",
+      "score": 4
+    },
+    {
+      "name": "Lupus Foundation of America (National Office)",
+      "score": 2
+    },
+    {
+      "name": "Lupus Research Alliance",
+      "score": 4
+    },
+    {
+      "name": "Michael J. Fox Foundation for Parkinson's Research",
+      "score": 5
+    },
+    {
+      "name": "MiracleFeet",
+      "score": 3
+    },
+    {
+      "name": "National Bleeding Disorders Foundation",
+      "score": 3
+    },
+    {
+      "name": "National Jewish Health",
+      "score": 3
+    },
+    {
+      "name": "National Kidney Foundation",
+      "score": 4
+    },
+    {
+      "name": "National Multiple Sclerosis Society",
+      "score": 2
+    },
+    {
+      "name": "National Psoriasis Foundation",
+      "score": 2
+    },
+    {
+      "name": "Parkinson's Foundation",
+      "score": 3
+    },
+    {
+      "name": "Salk Institute for Biological Studies",
+      "score": 4
+    },
+    {
+      "name": "Hispanic Federation",
+      "score": 4
+    },
+    {
+      "name": "Hispanic Scholarship Fund",
+      "score": 5
+    },
+    {
+      "name": "Bowery Residents' Committee (BRC)",
+      "score": 4
+    },
+    {
+      "name": "Coalition for the Homeless",
+      "score": 4
+    },
+    {
+      "name": "Center for Victims of Torture",
+      "score": 2
+    },
+    {
+      "name": "Committee to Protect Journalists",
+      "score": 2
+    },
+    {
+      "name": "Human Rights First",
+      "score": 4
+    },
+    {
+      "name": "Rape, Abuse & Incest National Network (RAINN)",
+      "score": 4
+    },
+    {
+      "name": "American Red Cross",
+      "score": 3
+    },
+    {
+      "name": "Farm Aid",
+      "score": 2
+    },
+    {
+      "name": "Good360",
+      "score": 3
+    },
+    {
+      "name": "The Y (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Action Against Hunger-USA",
+      "score": 4
+    },
+    {
+      "name": "City Harvest",
+      "score": 2
+    },
+    {
+      "name": "Feed My Starving Children",
+      "score": 4
+    },
+    {
+      "name": "Feeding America",
+      "score": 3
+    },
+    {
+      "name": "Food Bank For New York City",
+      "score": 3
+    },
+    {
+      "name": "Food for the Hungry",
+      "score": 2
+    },
+    {
+      "name": "The Hunger Project",
+      "score": 3
+    },
+    {
+      "name": "Alight",
+      "score": 4
+    },
+    {
+      "name": "All Hands and Hearts",
+      "score": 5
+    },
+    {
+      "name": "American Friends Service Committee",
+      "score": 3
+    },
+    {
+      "name": "American Near East Refugee Aid (ANERA)",
+      "score": 3
+    },
+    {
+      "name": "Americares",
+      "score": 3
+    },
+    {
+      "name": "Brother's Brother Foundation",
+      "score": 2
+    },
+    {
+      "name": "CARE",
+      "score": 4
+    },
+    {
+      "name": "Catholic Medical Mission Board",
+      "score": 2
+    },
+    {
+      "name": "Catholic Relief Services",
+      "score": 5
+    },
+    {
+      "name": "Central Asia Institute",
+      "score": 3
+    },
+    {
+      "name": "charity: water",
+      "score": 4
+    },
+    {
+      "name": "Church World Service (CWS)",
+      "score": 3
+    },
+    {
+      "name": "Comic Relief",
+      "score": 4
+    },
+    {
+      "name": "Direct Relief & Direct Relief Foundation",
+      "score": 5
+    },
+    {
+      "name": "Doctors Without Borders USA",
+      "score": 4
+    },
+    {
+      "name": "Engineers Without Borders - USA",
+      "score": 4
+    },
+    {
+      "name": "Episcopal Relief & Development",
+      "score": 4
+    },
+    {
+      "name": "FINCA International",
+      "score": 4
+    },
+    {
+      "name": "Fistula Foundation",
+      "score": 4
+    },
+    {
+      "name": "GiveDirectly",
+      "score": 4
+    },
+    {
+      "name": "Global Communities",
+      "score": 4
+    },
+    {
+      "name": "Grameen Foundation USA",
+      "score": 3
+    },
+    {
+      "name": "HealthRight International",
+      "score": 4
+    },
+    {
+      "name": "HIAS",
+      "score": 4
+    },
+    {
+      "name": "International Medical Corps",
+      "score": 4
+    },
+    {
+      "name": "International Rescue Committee",
+      "score": 4
+    },
+    {
+      "name": "Lutheran World Relief & IMA World Health",
+      "score": 4
+    },
+    {
+      "name": "MAP International",
+      "score": 4
+    },
+    {
+      "name": "Medical Teams International",
+      "score": 3
+    },
+    {
+      "name": "Mennonite Central Committee U.S.",
+      "score": 3
+    },
+    {
+      "name": "Mercy Corps",
+      "score": 4
+    },
+    {
+      "name": "Muslim Aid USA",
+      "score": 4
+    },
+    {
+      "name": "One Acre Fund",
+      "score": 4
+    },
+    {
+      "name": "Operation USA",
+      "score": 3
+    },
+    {
+      "name": "Opportunity International",
+      "score": 3
+    },
+    {
+      "name": "Partners In Health",
+      "score": 5
+    },
+    {
+      "name": "Project HOPE",
+      "score": 2
+    },
+    {
+      "name": "Refugees International",
+      "score": 4
+    },
+    {
+      "name": "Rotary Foundation of Rotary International",
+      "score": 5
+    },
+    {
+      "name": "Samaritan's Purse",
+      "score": 3
+    },
+    {
+      "name": "Sudan Relief Fund",
+      "score": 2
+    },
+    {
+      "name": "Team Rubicon",
+      "score": 4
+    },
+    {
+      "name": "TechnoServe",
+      "score": 4
+    },
+    {
+      "name": "United Methodist Committee on Relief (UMCOR)",
+      "score": 5
+    },
+    {
+      "name": "United States Fund for UNICEF",
+      "score": 4
+    },
+    {
+      "name": "World Central Kitchen",
+      "score": 5
+    },
+    {
+      "name": "World Neighbors",
+      "score": 4
+    },
+    {
+      "name": "Zakat Foundation of America",
+      "score": 5
+    },
+    {
+      "name": "American Jewish Committee (AJC)",
+      "score": 2
+    },
+    {
+      "name": "American Jewish Joint Distribution Committee",
+      "score": 5
+    },
+    {
+      "name": "American Jewish World Service",
+      "score": 3
+    },
+    {
+      "name": "Anti-Defamation League & Foundation",
+      "score": 3
+    },
+    {
+      "name": "B'nai B'rith International",
+      "score": 2
+    },
+    {
+      "name": "Bend the Arc - A Jewish Partnership for Justice",
+      "score": 4
+    },
+    {
+      "name": "Friends of the Israel Defense Forces (FIDF)",
+      "score": 4
+    },
+    {
+      "name": "Hadassah",
+      "score": 5
+    },
+    {
+      "name": "MAZON: A Jewish Response to Hunger",
+      "score": 4
+    },
+    {
+      "name": "New Israel Fund",
+      "score": 4
+    },
+    {
+      "name": "Simon Wiesenthal Center",
+      "score": 2
+    },
+    {
+      "name": "Astraea Lesbian Foundation for Justice",
+      "score": 4
+    },
+    {
+      "name": "ProLiteracy Worldwide",
+      "score": 3
+    },
+    {
+      "name": "Alzheimer's Association",
+      "score": 2
+    },
+    {
+      "name": "American Foundation for Suicide Prevention",
+      "score": 4
+    },
+    {
+      "name": "Arc of the United States (National Office)",
+      "score": 3
+    },
+    {
+      "name": "Brain & Behavior Research Foundation",
+      "score": 4
+    },
+    {
+      "name": "Mental Health America (MHA)",
+      "score": 4
+    },
+    {
+      "name": "NAMI",
+      "score": 4
+    },
+    {
+      "name": "National Council on Aging (NCOA)",
+      "score": 4
+    },
+    {
+      "name": "AFS-USA",
+      "score": 3
+    },
+    {
+      "name": "Clinton Foundation",
+      "score": 2
+    },
+    {
+      "name": "International Peace Institute",
+      "score": 2
+    },
+    {
+      "name": "United States Olympic & Paralympic Committee",
+      "score": 3
+    },
+    {
+      "name": "Concerns of Police Survivors (COPS)",
+      "score": 5
+    },
+    {
+      "name": "Tunnel to Towers Foundation",
+      "score": 5
+    },
+    {
+      "name": "American Battlefield Trust",
+      "score": 4
+    },
+    {
+      "name": "Common Cause Education Fund",
+      "score": 4
+    },
+    {
+      "name": "Corporate Accountability",
+      "score": 4
+    },
+    {
+      "name": "League of Women Voters Education Fund",
+      "score": 3
+    },
+    {
+      "name": "Center for Reproductive Rights",
+      "score": 2
+    },
+    {
+      "name": "EngenderHealth",
+      "score": 3
+    },
+    {
+      "name": "Fos Feminista",
+      "score": 3
+    },
+    {
+      "name": "Guttmacher Institute",
+      "score": 3
+    },
+    {
+      "name": "PAI",
+      "score": 3
+    },
+    {
+      "name": "Pathfinder International",
+      "score": 4
+    },
+    {
+      "name": "Population Council",
+      "score": 4
+    },
+    {
+      "name": "Population Services International",
+      "score": 5
+    },
+    {
+      "name": "Reproductive Freedom for All Foundation (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Compassion & Choices",
+      "score": 4
+    },
+    {
+      "name": "Compassion & Choices Action Network",
+      "score": 5
+    },
+    {
+      "name": "Death with Dignity National Center",
+      "score": 3
+    },
+    {
+      "name": "Starlight Children's Foundation (National Office)",
+      "score": 2
+    },
+    {
+      "name": "Sunshine Foundation (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Armed Services YMCA of the USA",
+      "score": 3
+    },
+    {
+      "name": "Bob Woodruff Foundation",
+      "score": 3
+    },
+    {
+      "name": "Fisher House Foundation",
+      "score": 5
+    },
+    {
+      "name": "Folds of Honor Foundation",
+      "score": 5
+    },
+    {
+      "name": "Gary Sinise Foundation",
+      "score": 4
+    },
+    {
+      "name": "Homes For Our Troops",
+      "score": 4
+    },
+    {
+      "name": "Hope For The Warriors",
+      "score": 4
+    },
+    {
+      "name": "Intrepid Fallen Heroes Fund",
+      "score": 5
+    },
+    {
+      "name": "Iraq & Afghanistan Veterans of America",
+      "score": 3
+    },
+    {
+      "name": "K9s For Warriors",
+      "score": 2
+    },
+    {
+      "name": "National Military Family Association",
+      "score": 3
+    },
+    {
+      "name": "Semper Fi & America's Fund",
+      "score": 5
+    },
+    {
+      "name": "The Mission Continues",
+      "score": 2
+    },
+    {
+      "name": "Tragedy Assistance Program for Survivors (TAPS)",
+      "score": 4
+    },
+    {
+      "name": "Wounded Warriors Family Support",
+      "score": 4
+    },
+    {
+      "name": "Global Fund for Women",
+      "score": 4
+    },
+    {
+      "name": "Legal Momentum",
+      "score": 2
+    },
+    {
+      "name": "National Women's Law Center",
+      "score": 3
+    },
+    {
+      "name": "Women for Women International",
+      "score": 3
+    },
+    {
+      "name": "Camp Fire National Headquarters",
+      "score": 2
+    },
+    {
+      "name": "CEDARS",
+      "score": 4
+    },
+    {
+      "name": "Covenant House & Affiliates",
+      "score": 3
+    },
+    {
+      "name": "DonorsChoose.org",
+      "score": 5
+    },
+    {
+      "name": "Girl Scouts of the USA (National Office)",
+      "score": 3
+    },
+    {
+      "name": "Girls Incorporated (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Junior Achievement USA (National Office)",
+      "score": 4
+    },
+    {
+      "name": "National 4-H Council",
+      "score": 2
+    },
+    {
+      "name": "Scholarship America",
+      "score": 5
+    },
+    {
+      "name": "SOS Children's Villages - USA",
+      "score": 4
+    },
+    {
+      "name": "Drug Policy Alliance",
+      "score": 3
+    },
+    {
+      "name": "Bat Conservation International",
+      "score": 2
+    },
+    {
+      "name": "Best Friends Animal Society",
+      "score": 2
+    },
+    {
+      "name": "Born Free USA united with Animal Protection Institute",
+      "score": 3
+    },
+    {
+      "name": "Dian Fossey Gorilla Fund International",
+      "score": 4
+    },
+    {
+      "name": "Friends of Animals",
+      "score": 5
+    },
+    {
+      "name": "Humane Farming Association",
+      "score": 3
+    },
+    {
+      "name": "Jane Goodall Institute",
+      "score": 2
+    },
+    {
+      "name": "Marine Mammal Center",
+      "score": 3
+    },
+    {
+      "name": "Mercy For Animals",
+      "score": 2
+    },
+    {
+      "name": "National Disaster Search Dog Foundation",
+      "score": 3
+    },
+    {
+      "name": "PetSmart Charities",
+      "score": 5
+    },
+    {
+      "name": "RedRover",
+      "score": 3
+    },
+    {
+      "name": "Save the Chimps",
+      "score": 3
+    },
+    {
+      "name": "The Humane League",
+      "score": 3
+    },
+    {
+      "name": "The Wild Animal Santuary",
+      "score": 4
+    },
+    {
+      "name": "Wildlife Conservation Society",
+      "score": 4
+    },
+    {
+      "name": "Asia Foundation",
+      "score": 4
+    },
+    {
+      "name": "Asia Society",
+      "score": 2
+    },
+    {
+      "name": "National Urban League (National Office)",
+      "score": 3
+    },
+    {
+      "name": "Foundation Fighting Blindness",
+      "score": 2
+    },
+    {
+      "name": "Guide Dog Foundation for the Blind",
+      "score": 4
+    },
+    {
+      "name": "Helen Keller International",
+      "score": 4
+    },
+    {
+      "name": "Learning Ally",
+      "score": 2
+    },
+    {
+      "name": "National Federation of the Blind",
+      "score": 4
+    },
+    {
+      "name": "Perkins School For The Blind",
+      "score": 2
+    },
+    {
+      "name": "Prevent Blindness",
+      "score": 2
+    },
+    {
+      "name": "Seva Foundation",
+      "score": 3
+    },
+    {
+      "name": "Breast Cancer Prevention Partners",
+      "score": 2
+    },
+    {
+      "name": "Breast Cancer Research Foundation",
+      "score": 4
+    },
+    {
+      "name": "Cancer Research Institute",
+      "score": 4
+    },
+    {
+      "name": "CancerCare",
+      "score": 5
+    },
+    {
+      "name": "CureSearch for Children's Cancer",
+      "score": 2
+    },
+    {
+      "name": "Dana-Farber Cancer Institute",
+      "score": 4
+    },
+    {
+      "name": "Entertainment Industry Foundation / Stand Up To Cancer",
+      "score": 3
+    },
+    {
+      "name": "Leukemia & Lymphoma Society",
+      "score": 3
+    },
+    {
+      "name": "Marc Lustgarten Pancreatic Cancer Foundation",
+      "score": 2
+    },
+    {
+      "name": "Memorial Sloan Kettering Cancer Center",
+      "score": 3
+    },
+    {
+      "name": "Multiple Myeloma Research Foundation",
+      "score": 4
+    },
+    {
+      "name": "National Breast Cancer Coalition Fund",
+      "score": 4
+    },
+    {
+      "name": "Ovarian Cancer Research Alliance",
+      "score": 3
+    },
+    {
+      "name": "Pancreatic Cancer Action Network",
+      "score": 4
+    },
+    {
+      "name": "Prostate Cancer Foundation",
+      "score": 4
+    },
+    {
+      "name": "Child Find of America",
+      "score": 4
+    },
+    {
+      "name": "ChildFund International",
+      "score": 3
+    },
+    {
+      "name": "Children Incorporated",
+      "score": 4
+    },
+    {
+      "name": "Children International",
+      "score": 3
+    },
+    {
+      "name": "Children's Health Fund",
+      "score": 3
+    },
+    {
+      "name": "Compassion International",
+      "score": 4
+    },
+    {
+      "name": "Dave Thomas Foundation for Adoption",
+      "score": 4
+    },
+    {
+      "name": "Marine Toys for Tots Foundation",
+      "score": 3
+    },
+    {
+      "name": "National Center for Missing & Exploited Children",
+      "score": 3
+    },
+    {
+      "name": "Pearl S. Buck International",
+      "score": 4
+    },
+    {
+      "name": "Save the Children",
+      "score": 3
+    },
+    {
+      "name": "Unbound",
+      "score": 5
+    },
+    {
+      "name": "World Vision",
+      "score": 4
+    },
+    {
+      "name": "American Civil Liberties Union (ACLU)",
+      "score": 4
+    },
+    {
+      "name": "American Civil Liberties Union (ACLU) Foundation",
+      "score": 4
+    },
+    {
+      "name": "Center for Constitutional Rights",
+      "score": 2
+    },
+    {
+      "name": "Fortune Society",
+      "score": 3
+    },
+    {
+      "name": "Freedom From Religion Foundation",
+      "score": 5
+    },
+    {
+      "name": "Institute for Justice",
+      "score": 4
+    },
+    {
+      "name": "Interfaith Alliance Foundation",
+      "score": 2
+    },
+    {
+      "name": "Sikh Coalition",
+      "score": 4
+    },
+    {
+      "name": "Thousand Currents",
+      "score": 2
+    },
+    {
+      "name": "Action on Smoking and Health",
+      "score": 2
+    },
+    {
+      "name": "Media Research Center",
+      "score": 2
+    },
+    {
+      "name": "Physicians Committee for Responsible Medicine",
+      "score": 2
+    },
+    {
+      "name": "Project on Government Oversight (POGO)",
+      "score": 4
+    },
+    {
+      "name": "Public Citizen Foundation",
+      "score": 4
+    },
+    {
+      "name": "350.org",
+      "score": 4
+    },
+    {
+      "name": "African Wildlife Foundation",
+      "score": 2
+    },
+    {
+      "name": "Alaska Conservation Foundation",
+      "score": 2
+    },
+    {
+      "name": "Amazon Conservation Team",
+      "score": 4
+    },
+    {
+      "name": "American Bird Conservancy",
+      "score": 3
+    },
+    {
+      "name": "American Forests",
+      "score": 4
+    },
+    {
+      "name": "Center for Biological Diversity",
+      "score": 4
+    },
+    {
+      "name": "Conservation Fund",
+      "score": 5
+    },
+    {
+      "name": "Conservation International Foundation",
+      "score": 4
+    },
+    {
+      "name": "Ducks Unlimited",
+      "score": 3
+    },
+    {
+      "name": "Earth Island Institute",
+      "score": 4
+    },
+    {
+      "name": "Earthjustice",
+      "score": 3
+    },
+    {
+      "name": "Earthworks",
+      "score": 4
+    },
+    {
+      "name": "Environmental Defense Action Fund",
+      "score": 4
+    },
+    {
+      "name": "Environmental Defense Fund",
+      "score": 2
+    },
+    {
+      "name": "Environmental Working Group",
+      "score": 4
+    },
+    {
+      "name": "Friends of the Earth",
+      "score": 2
+    },
+    {
+      "name": "Green America",
+      "score": 4
+    },
+    {
+      "name": "Izaak Walton League of America (National Office)",
+      "score": 4
+    },
+    {
+      "name": "National Audubon Society",
+      "score": 2
+    },
+    {
+      "name": "National Forest Foundation",
+      "score": 4
+    },
+    {
+      "name": "National Park Trust",
+      "score": 4
+    },
+    {
+      "name": "Natural Resources Defense Council (NRDC)",
+      "score": 3
+    },
+    {
+      "name": "Nature Conservancy",
+      "score": 2
+    },
+    {
+      "name": "NRDC Action Fund",
+      "score": 4
+    },
+    {
+      "name": "Oceana",
+      "score": 3
+    },
+    {
+      "name": "Rainforest Action Network",
+      "score": 3
+    },
+    {
+      "name": "Rainforest Alliance",
+      "score": 3
+    },
+    {
+      "name": "Save the Redwoods League",
+      "score": 4
+    },
+    {
+      "name": "Sierra Club Foundation",
+      "score": 3
+    },
+    {
+      "name": "Trout Unlimited (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Trust for Public Land",
+      "score": 3
+    },
+    {
+      "name": "Union of Concerned Scientists",
+      "score": 4
+    },
+    {
+      "name": "Water.org",
+      "score": 2
+    },
+    {
+      "name": "Waterkeeper Alliance",
+      "score": 5
+    },
+    {
+      "name": "WildAid",
+      "score": 4
+    },
+    {
+      "name": "World Resources Institute",
+      "score": 5
+    },
+    {
+      "name": "Yosemite Conservancy",
+      "score": 2
+    },
+    {
+      "name": "Brady Center to Prevent Gun Violence",
+      "score": 2
+    },
+    {
+      "name": "Everytown for Gun Safety Support Fund",
+      "score": 4
+    },
+    {
+      "name": "American Brain Tumor Association",
+      "score": 3
+    },
+    {
+      "name": "American Diabetes Association",
+      "score": 2
+    },
+    {
+      "name": "American Kidney Fund",
+      "score": 5
+    },
+    {
+      "name": "American Liver Foundation",
+      "score": 2
+    },
+    {
+      "name": "American Lung Association",
+      "score": 2
+    },
+    {
+      "name": "Breakthrough T1D",
+      "score": 3
+    },
+    {
+      "name": "CDC Foundation",
+      "score": 5
+    },
+    {
+      "name": "Christopher & Dana Reeve Foundation",
+      "score": 3
+    },
+    {
+      "name": "City of Hope & Affiliates",
+      "score": 3
+    },
+    {
+      "name": "Crohn's & Colitis Foundation",
+      "score": 3
+    },
+    {
+      "name": "Diabetes Action Research and Education Foundation",
+      "score": 4
+    },
+    {
+      "name": "Elizabeth Glaser Pediatric AIDS Foundation",
+      "score": 4
+    },
+    {
+      "name": "Epilepsy Foundation",
+      "score": 3
+    },
+    {
+      "name": "Hearing Health Foundation",
+      "score": 4
+    },
+    {
+      "name": "Huntington's Disease Society of America",
+      "score": 4
+    },
+    {
+      "name": "Lupus Foundation of America (National Office)",
+      "score": 2
+    },
+    {
+      "name": "Lupus Research Alliance",
+      "score": 4
+    },
+    {
+      "name": "Michael J. Fox Foundation for Parkinson's Research",
+      "score": 5
+    },
+    {
+      "name": "MiracleFeet",
+      "score": 3
+    },
+    {
+      "name": "National Bleeding Disorders Foundation",
+      "score": 3
+    },
+    {
+      "name": "National Jewish Health",
+      "score": 3
+    },
+    {
+      "name": "National Kidney Foundation",
+      "score": 4
+    },
+    {
+      "name": "National Multiple Sclerosis Society",
+      "score": 2
+    },
+    {
+      "name": "National Psoriasis Foundation",
+      "score": 2
+    },
+    {
+      "name": "Parkinson's Foundation",
+      "score": 3
+    },
+    {
+      "name": "Salk Institute for Biological Studies",
+      "score": 4
+    },
+    {
+      "name": "Hispanic Federation",
+      "score": 4
+    },
+    {
+      "name": "Hispanic Scholarship Fund",
+      "score": 5
+    },
+    {
+      "name": "Bowery Residents' Committee (BRC)",
+      "score": 4
+    },
+    {
+      "name": "Coalition for the Homeless",
+      "score": 4
+    },
+    {
+      "name": "Center for Victims of Torture",
+      "score": 2
+    },
+    {
+      "name": "Committee to Protect Journalists",
+      "score": 2
+    },
+    {
+      "name": "Human Rights First",
+      "score": 4
+    },
+    {
+      "name": "Rape, Abuse & Incest National Network (RAINN)",
+      "score": 4
+    },
+    {
+      "name": "American Red Cross",
+      "score": 3
+    },
+    {
+      "name": "Farm Aid",
+      "score": 2
+    },
+    {
+      "name": "Good360",
+      "score": 3
+    },
+    {
+      "name": "The Y (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Action Against Hunger-USA",
+      "score": 4
+    },
+    {
+      "name": "City Harvest",
+      "score": 2
+    },
+    {
+      "name": "Feed My Starving Children",
+      "score": 4
+    },
+    {
+      "name": "Feeding America",
+      "score": 3
+    },
+    {
+      "name": "Food Bank For New York City",
+      "score": 3
+    },
+    {
+      "name": "Food for the Hungry",
+      "score": 2
+    },
+    {
+      "name": "The Hunger Project",
+      "score": 3
+    },
+    {
+      "name": "Alight",
+      "score": 4
+    },
+    {
+      "name": "All Hands and Hearts",
+      "score": 5
+    },
+    {
+      "name": "American Friends Service Committee",
+      "score": 3
+    },
+    {
+      "name": "American Near East Refugee Aid (ANERA)",
+      "score": 3
+    },
+    {
+      "name": "Americares",
+      "score": 3
+    },
+    {
+      "name": "Brother's Brother Foundation",
+      "score": 2
+    },
+    {
+      "name": "CARE",
+      "score": 4
+    },
+    {
+      "name": "Catholic Medical Mission Board",
+      "score": 2
+    },
+    {
+      "name": "Catholic Relief Services",
+      "score": 5
+    },
+    {
+      "name": "Central Asia Institute",
+      "score": 3
+    },
+    {
+      "name": "charity: water",
+      "score": 4
+    },
+    {
+      "name": "Church World Service (CWS)",
+      "score": 3
+    },
+    {
+      "name": "Comic Relief",
+      "score": 4
+    },
+    {
+      "name": "Direct Relief & Direct Relief Foundation",
+      "score": 5
+    },
+    {
+      "name": "Doctors Without Borders USA",
+      "score": 4
+    },
+    {
+      "name": "Engineers Without Borders - USA",
+      "score": 4
+    },
+    {
+      "name": "Episcopal Relief & Development",
+      "score": 4
+    },
+    {
+      "name": "FINCA International",
+      "score": 4
+    },
+    {
+      "name": "Fistula Foundation",
+      "score": 4
+    },
+    {
+      "name": "GiveDirectly",
+      "score": 4
+    },
+    {
+      "name": "Global Communities",
+      "score": 4
+    },
+    {
+      "name": "Grameen Foundation USA",
+      "score": 3
+    },
+    {
+      "name": "HealthRight International",
+      "score": 4
+    },
+    {
+      "name": "HIAS",
+      "score": 4
+    },
+    {
+      "name": "International Medical Corps",
+      "score": 4
+    },
+    {
+      "name": "International Rescue Committee",
+      "score": 4
+    },
+    {
+      "name": "Lutheran World Relief & IMA World Health",
+      "score": 4
+    },
+    {
+      "name": "MAP International",
+      "score": 4
+    },
+    {
+      "name": "Medical Teams International",
+      "score": 3
+    },
+    {
+      "name": "Mennonite Central Committee U.S.",
+      "score": 3
+    },
+    {
+      "name": "Mercy Corps",
+      "score": 4
+    },
+    {
+      "name": "Muslim Aid USA",
+      "score": 4
+    },
+    {
+      "name": "One Acre Fund",
+      "score": 4
+    },
+    {
+      "name": "Operation USA",
+      "score": 3
+    },
+    {
+      "name": "Opportunity International",
+      "score": 3
+    },
+    {
+      "name": "Partners In Health",
+      "score": 5
+    },
+    {
+      "name": "Project HOPE",
+      "score": 2
+    },
+    {
+      "name": "Refugees International",
+      "score": 4
+    },
+    {
+      "name": "Rotary Foundation of Rotary International",
+      "score": 5
+    },
+    {
+      "name": "Samaritan's Purse",
+      "score": 3
+    },
+    {
+      "name": "Sudan Relief Fund",
+      "score": 2
+    },
+    {
+      "name": "Team Rubicon",
+      "score": 4
+    },
+    {
+      "name": "TechnoServe",
+      "score": 4
+    },
+    {
+      "name": "United Methodist Committee on Relief (UMCOR)",
+      "score": 5
+    },
+    {
+      "name": "United States Fund for UNICEF",
+      "score": 4
+    },
+    {
+      "name": "World Central Kitchen",
+      "score": 5
+    },
+    {
+      "name": "World Neighbors",
+      "score": 4
+    },
+    {
+      "name": "Zakat Foundation of America",
+      "score": 5
+    },
+    {
+      "name": "American Jewish Committee (AJC)",
+      "score": 2
+    },
+    {
+      "name": "American Jewish Joint Distribution Committee",
+      "score": 5
+    },
+    {
+      "name": "American Jewish World Service",
+      "score": 3
+    },
+    {
+      "name": "Anti-Defamation League & Foundation",
+      "score": 3
+    },
+    {
+      "name": "B'nai B'rith International",
+      "score": 2
+    },
+    {
+      "name": "Bend the Arc - A Jewish Partnership for Justice",
+      "score": 4
+    },
+    {
+      "name": "Friends of the Israel Defense Forces (FIDF)",
+      "score": 4
+    },
+    {
+      "name": "Hadassah",
+      "score": 5
+    },
+    {
+      "name": "MAZON: A Jewish Response to Hunger",
+      "score": 4
+    },
+    {
+      "name": "New Israel Fund",
+      "score": 4
+    },
+    {
+      "name": "Simon Wiesenthal Center",
+      "score": 2
+    },
+    {
+      "name": "Astraea Lesbian Foundation for Justice",
+      "score": 4
+    },
+    {
+      "name": "ProLiteracy Worldwide",
+      "score": 3
+    },
+    {
+      "name": "Alzheimer's Association",
+      "score": 2
+    },
+    {
+      "name": "American Foundation for Suicide Prevention",
+      "score": 4
+    },
+    {
+      "name": "Arc of the United States (National Office)",
+      "score": 3
+    },
+    {
+      "name": "Brain & Behavior Research Foundation",
+      "score": 4
+    },
+    {
+      "name": "Mental Health America (MHA)",
+      "score": 4
+    },
+    {
+      "name": "NAMI",
+      "score": 4
+    },
+    {
+      "name": "National Council on Aging (NCOA)",
+      "score": 4
+    },
+    {
+      "name": "AFS-USA",
+      "score": 3
+    },
+    {
+      "name": "Clinton Foundation",
+      "score": 2
+    },
+    {
+      "name": "International Peace Institute",
+      "score": 2
+    },
+    {
+      "name": "United States Olympic & Paralympic Committee",
+      "score": 3
+    },
+    {
+      "name": "Concerns of Police Survivors (COPS)",
+      "score": 5
+    },
+    {
+      "name": "Tunnel to Towers Foundation",
+      "score": 5
+    },
+    {
+      "name": "American Battlefield Trust",
+      "score": 4
+    },
+    {
+      "name": "Common Cause Education Fund",
+      "score": 4
+    },
+    {
+      "name": "Corporate Accountability",
+      "score": 4
+    },
+    {
+      "name": "League of Women Voters Education Fund",
+      "score": 3
+    },
+    {
+      "name": "Center for Reproductive Rights",
+      "score": 2
+    },
+    {
+      "name": "EngenderHealth",
+      "score": 3
+    },
+    {
+      "name": "Fos Feminista",
+      "score": 3
+    },
+    {
+      "name": "Guttmacher Institute",
+      "score": 3
+    },
+    {
+      "name": "PAI",
+      "score": 3
+    },
+    {
+      "name": "Pathfinder International",
+      "score": 4
+    },
+    {
+      "name": "Population Council",
+      "score": 4
+    },
+    {
+      "name": "Population Services International",
+      "score": 5
+    },
+    {
+      "name": "Reproductive Freedom for All Foundation (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Compassion & Choices",
+      "score": 4
+    },
+    {
+      "name": "Compassion & Choices Action Network",
+      "score": 5
+    },
+    {
+      "name": "Death with Dignity National Center",
+      "score": 3
+    },
+    {
+      "name": "Starlight Children's Foundation (National Office)",
+      "score": 2
+    },
+    {
+      "name": "Sunshine Foundation (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Armed Services YMCA of the USA",
+      "score": 3
+    },
+    {
+      "name": "Bob Woodruff Foundation",
+      "score": 3
+    },
+    {
+      "name": "Fisher House Foundation",
+      "score": 5
+    },
+    {
+      "name": "Folds of Honor Foundation",
+      "score": 5
+    },
+    {
+      "name": "Gary Sinise Foundation",
+      "score": 4
+    },
+    {
+      "name": "Homes For Our Troops",
+      "score": 4
+    },
+    {
+      "name": "Hope For The Warriors",
+      "score": 4
+    },
+    {
+      "name": "Intrepid Fallen Heroes Fund",
+      "score": 5
+    },
+    {
+      "name": "Iraq & Afghanistan Veterans of America",
+      "score": 3
+    },
+    {
+      "name": "K9s For Warriors",
+      "score": 2
+    },
+    {
+      "name": "National Military Family Association",
+      "score": 3
+    },
+    {
+      "name": "Semper Fi & America's Fund",
+      "score": 5
+    },
+    {
+      "name": "The Mission Continues",
+      "score": 2
+    },
+    {
+      "name": "Tragedy Assistance Program for Survivors (TAPS)",
+      "score": 4
+    },
+    {
+      "name": "Wounded Warriors Family Support",
+      "score": 4
+    },
+    {
+      "name": "Global Fund for Women",
+      "score": 4
+    },
+    {
+      "name": "Legal Momentum",
+      "score": 2
+    },
+    {
+      "name": "National Women's Law Center",
+      "score": 3
+    },
+    {
+      "name": "Women for Women International",
+      "score": 3
+    },
+    {
+      "name": "Camp Fire National Headquarters",
+      "score": 2
+    },
+    {
+      "name": "CEDARS",
+      "score": 4
+    },
+    {
+      "name": "Covenant House & Affiliates",
+      "score": 3
+    },
+    {
+      "name": "DonorsChoose.org",
+      "score": 5
+    },
+    {
+      "name": "Girl Scouts of the USA (National Office)",
+      "score": 3
+    },
+    {
+      "name": "Girls Incorporated (National Office)",
+      "score": 4
+    },
+    {
+      "name": "Junior Achievement USA (National Office)",
+      "score": 4
+    },
+    {
+      "name": "National 4-H Council",
+      "score": 2
+    },
+    {
+      "name": "Scholarship America",
+      "score": 5
+    },
+    {
+      "name": "SOS Children's Villages - USA",
+      "score": 4
+    }
+  ]
+}
