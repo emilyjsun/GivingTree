@@ -32,11 +32,11 @@ class NewsCharityMatcher:
             embedding_function=openai_ef
         )
         
-        # Load charities and add to ChromaDB if empty
+        # Load charities from charities_final.json
         try:
-            with open('matched_charities.json', 'r') as f:
+            with open('charities_final.json', 'r') as f:
                 data = json.load(f)
-                self.charities = data['matched_charities']
+                self.charities = data['charities']
                 
             if self.collection.count() == 0:
                 # Process in smaller batches
@@ -61,7 +61,8 @@ class NewsCharityMatcher:
                         metadatas.append({
                             "name": charity['name'],
                             "url": charity['url'],
-                            "score": charity.get('score', 0)
+                            "score": charity.get('score', 0),
+                            "categories": json.dumps(charity.get('categories', []))  # Store categories in metadata
                         })
                         ids.append(str(i + j))
                     
@@ -75,7 +76,7 @@ class NewsCharityMatcher:
                     time.sleep(1)  # Rate limiting pause
                     
         except FileNotFoundError:
-            print("Error: matched_charities.json not found")
+            print("Error: charities_final.json not found")
             self.charities = []
             
         # Load processed articles history
@@ -133,33 +134,80 @@ class NewsCharityMatcher:
                 print(f"Error processing RSS feed {url}: {str(e)}")
         return articles
 
-    def find_similar_charities(self, article, n_results=10):
+    def find_similar_charities(self, article, n_results=5):
         """Find charities similar to the article using semantic search."""
-        query_text = f"{article['title']} {article['description']}"
         try:
-            results = self.collection.query(
-                query_texts=[query_text],
-                n_results=n_results
+            # First, get the top category for the article
+            matching_categories = self.find_matching_categories(article)
+            if not matching_categories:
+                return []
+            
+            top_category = matching_categories[0]['category']
+            print(f"\nFiltering charities by top category: {top_category}")
+            
+            # Get all charities that match the category
+            category_filtered = []
+            for charity in self.charities:  # Use self.charities instead of querying ChromaDB
+                charity_categories = charity.get('categories', [])
+                if any(cat['category'] == top_category for cat in charity_categories):
+                    category_filtered.append({
+                        'name': charity['name'],
+                        'url': charity['url'],
+                        'mission': charity['mission']
+                    })
+            
+            print(f"Found {len(category_filtered)} charities in category '{top_category}'")
+            
+            if not category_filtered:
+                return []
+            
+            # Now do similarity search between article and filtered charities' missions
+            article_text = f"{article['title']} {article.get('description', '')}"
+            
+            # Create a temporary collection for similarity search
+            temp_collection = self.chroma_client.get_or_create_collection(
+                name="temp_category_search",
+                embedding_function=self.collection._embedding_function
             )
             
+            # Add filtered charities to temp collection
+            temp_collection.add(
+                documents=[c['mission'] for c in category_filtered],
+                metadatas=[{'name': c['name'], 'url': c['url']} for c in category_filtered],
+                ids=[str(i) for i in range(len(category_filtered))]
+            )
+            
+            # Perform similarity search
+            search_results = temp_collection.query(
+                query_texts=[article_text],
+                n_results=min(n_results, len(category_filtered))
+            )
+            
+            # Format results
             similar_charities = []
-            for i in range(len(results['ids'][0])):
+            for i in range(len(search_results['ids'][0])):
                 charity_data = {
-                    'name': results['metadatas'][0][i]['name'],
-                    'url': results['metadatas'][0][i]['url'],
-                    'similarity_score': results['distances'][0][i] if 'distances' in results else None
+                    'name': search_results['metadatas'][0][i]['name'],
+                    'url': search_results['metadatas'][0][i]['url'],
+                    'similarity_score': 1 - (search_results['distances'][0][i] / 2)
                 }
                 similar_charities.append(charity_data)
-                
+            
+            # Delete temporary collection
+            self.chroma_client.delete_collection("temp_category_search")
+            
             return similar_charities
+            
         except Exception as e:
             print(f"Error in similarity search: {str(e)}")
             return []
 
     def analyze_article(self, article):
-        # Get similar charities
-        similar_charities = self.find_similar_charities(article)
-        charity_names = [c['name'] for c in similar_charities]
+        # Use the already found similar charities instead of searching again
+        charity_names = [c['name'] for c in article.get('similar_charities', [])]
+        
+        if not charity_names:
+            return "No matching charities found to analyze."
         
         system_message = f"""You are an assistant that MUST ONLY suggest charities from this specific list: {', '.join(charity_names)}."""
 
@@ -202,7 +250,7 @@ Answer:"""
 
         try:
             response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": "You are a charity impact analyst. Evaluate if news could affect charitable giving or operations. Answer only 'yes' or 'no'."},
                     {"role": "user", "content": prompt}
@@ -348,6 +396,9 @@ Brief Reason: [one-line explanation]"
                             print(f"   Similarity Score: {charity['similarity_score']:.4f}")
                             print(f"   URL: {charity['url']}\n")
                         
+                        # Add similar charities to article before GPT analysis
+                        article['similar_charities'] = similar_charities
+                        
                         print("Charity Suggestion from GPT:")
                         suggestion = self.analyze_article(article)
                         print(suggestion)
@@ -404,6 +455,9 @@ Brief Reason: [one-line explanation]"
                             print(f"{i}. {charity['name']}")
                             print(f"   Similarity Score: {charity['similarity_score']:.4f}")
                             print(f"   URL: {charity['url']}\n")
+                        
+                        # Add similar charities to article before GPT analysis
+                        article['similar_charities'] = similar_charities
                         
                         print("Charity Suggestion from GPT:")
                         suggestion = self.analyze_article(article)

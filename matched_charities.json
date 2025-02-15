@@ -4,655 +4,2181 @@
       "name": "The Michael J. Fox Foundation for Parkinsons Research",
       "mission": "The Michael J. Fox Foundation is dedicated to finding a cure for Parkinsons disease through an aggressively funded research agenda and to ensuring the development of improved therapies for those living with Parkinsons today.",
       "url": "https://thegivingblock.com/donate/the-michael-j-fox-foundation-for-parkinsons-research/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.6072423720462352
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "DeSci Foundation",
       "mission": "The DeSci Foundation supports scientific research and contributes to improvements in the scientific ecosystem.Scientific progress is the foundation for knowledge, economic growth, and continuing improvements in well-being and life span. It provides humanity with new tools to address the diverse challenges we are facing. As an essential public good, science needs to be reliable, transparent, independent, and openly accessible. Enhancements are necessary and possible across all of these dimensions.The Desci Foundation is an independent organization of leading scientists and innovators who support the development of a more verifiable, trustworthy, accessible, and fairer scientific ecosystem.",
       "url": "https://thegivingblock.com/donate/desci-foundation/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7561694377559839
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "SBCC Foundation",
       "mission": "The SBCC Foundation fuels the excellence of Santa Barbara City College by engaging the community, building relationships, and inviting the generosity of donors. The resources raised and managed by the Foundation enrich college programs, remove barriers, and empower students to succeed.",
       "url": "https://thegivingblock.com/donate/sbcc-foundation/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Community Development",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.2140921497385403
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "American Jewish Joint Distribution Committee",
       "mission": "JDC  the American Jewish Joint Distribution Committee or The Joint  is the leading Jewish humanitarian organization, working in 70 countries to lift lives and strengthen communities. We rescue Jews in danger, provide aid to vulnerable Jews, develop innovative solutions to Israels most complex social challenges, cultivate a Jewish future, and lead the Jewish communitys response to crises. For over 100 years, our work has put the timeless Jewish value of mutual responsibility into action, making JDC essential to the survival of millions of people and the advancement of Jewish life across the globe. For more information, please visit www.JDC.org.",
       "url": "https://thegivingblock.com/donate/jdc/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.5834395763420384
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Catholic Relief Services",
       "mission": "Catholic Relief Services carries out the commitment of the Bishops of the United States to assist the poor and vulnerable overseas. We are motivated by the Gospel of Jesus Christ to cherish, preserve and uphold the sacredness and dignity of all human life, foster charity and justice, and embody Catholic social and moral teaching as we act to:PROMOTE HUMAN DEVELOPMENT by responding to major emergencies, fighting disease and poverty, and nurturing peaceful and just societies and, SERVE CATHOLICS IN THE UNITED STATES as they live their faith in solidarity with their brothers and sisters around the world.As part of the universal mission of the Catholic Church, we work with local, national and international Catholic institutions and structures, as well as other organizations, to assist people on the basis of need, not creed, race or nationality.",
       "url": "https://thegivingblock.com/donate/catholic-relief-services/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.8512936495787331
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Cancer Cartel",
       "mission": "Cancer Cartel provides financial resources and relief to cancer Warriors. We want anyone in the battle against cancer to focus all of their energy on getting well and not on how much having cancer costs them. From gas money to groceries, power bills to mortgage payments, we are fighting to tear down financial barriers to wellness.In a world where traditional philanthropy often feels distant and opaque, Cancer Cartels farm to table giving resonates with the truly socially conscious donor.  Cancer Cartel is redefining how we can give, offering a disruptive and grassroots approach to support cancer Warriors. Founded by Katy, Kerry, and Shelly, three resilient female cancer survivors, Cancer Cartel merges their passion for luxury fashion and lifestyle with a heartfelt commitment to helping cancer Warriors manage the unexpected costs of their battle. They understand that cancer should never be about financial burdens. Whether its everyday expenses like groceries or significant bills like mortgages, Cancer Cartel fights tirelessly to eliminate these financial barriers to wellness.",
       "url": "https://thegivingblock.com/donate/cancer-cartel/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.250134334635304
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "WILD Foundation",
       "mission": "WILD expands & empowers global coalitions that defend Earths life-saving wilderness. WILD does this by combining on-the-ground projects with subtle activism and policy interventions to achieve lasting protections for Earths wildlife and wild places.",
       "url": "https://thegivingblock.com/donate/wild-foundation/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.2832423633166795
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Lupus Foundation of America",
       "mission": "Our mission is to improve the quality of life for all people affected by lupus through programs of research, education, support and advocacy.",
       "url": "https://thegivingblock.com/donate/lupus-foundation-of-america/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.11852804632100067
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Moynihan Scholarship Fund",
       "mission": "Moynihan Scholarship Fund (MSF) supports the education and development of students in New York State and facilitates their exposure to accounting and business careers.",
       "url": "https://thegivingblock.com/donate/moynihan-scholarship-fund/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Education Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.13731337394352794
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Unbound",
       "mission": "Unbound is an international nonprofit that works to bring people together to challenge poverty in new and innovative ways. We create a practical and trustworthy way to empower individuals and families living in poverty to become more self-sufficient and fulfill their desired potential. Working in 19 countries, we build relationships of mutual respect and support that bridge cultural, religious and economic divides.",
       "url": "https://thegivingblock.com/donate/unbound/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.01365419026768211
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "PNOC Foundation",
       "mission": "To urgently raise funds, resources and awareness to support research and clinical trials, to ultimately improve outcomes for all children with brain tumors.",
       "url": "https://thegivingblock.com/donate/pnoc-foundation/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Education Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.10524462109190613
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "CEI Foundation",
       "mission": "Because we are all caregivers, the CEI Foundation is committed to engaging the community in empowering seniors to remain in their homes and contribute to their communities.  Through the power of philanthropy, we pledge our voices, time, and determination to strengthen and ensure access to the holistic health and social care provided by the Center for Elders Independence of All-Inclusive Care for the Elderly (PACE).",
       "url": "https://thegivingblock.com/donate/cei-foundation/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.4991455418620915
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "World Central Kitchen",
       "mission": "World Central Kitchen (WCK) uses the power of food to nourish communities and strengthen economies in times of crisis and beyond. WCK is first to the frontlines, providing meals in response to humanitarian, climate, and community crises. When disaster strikes, WCKs Relief Team mobilizes to the frontlines with the urgency of now to start cooking and provide meals to people in need. By partnering with organizations on the ground and activating a network of local restaurants, food trucks, or emergency kitchens, WCK serves comforting meals to survivors of disasters quickly and effectively. We know that good food provides not only nourishment, but also comfort and hope, especially in times of crisis.WCK has provided more than 400 million fresh, nourishing meals for communities around the world. Your donation today will be used to support our emergency food relief efforts. Learn more at wck.org.",
       "url": "https://thegivingblock.com/donate/world-central-kitchen/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.8017327213872193
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Fisher House Foundation",
       "mission": "Fisher House Foundation builds comfort homes at or near military and Department of Veterans Affairs medical centers. Families of wounded, ill, or injured veterans and service members can stay at no cost while their loved ones receive treatment away from home. There are 99+ Fisher Houses across the United States, including two in Germany and one in the UK.This year, Fisher Houses are under construction at the Captain James A. Lovell Federal Health Care Center in North Chicago; John L. McClellan Memorial Veterans Hospital in Little Rock, AR; and at the H. John Heinz III Department of Veterans Affairs Medical Center in Pittsburgh, PA. Two more locations are being planned: the Franklin Delano Roosevelt Hospital in Montrose, NY, and the West Palm Beach VA Medical Center in West Palm Beach, FL.",
       "url": "https://thegivingblock.com/donate/fisher-house-foundation/",
-      "score": 5
+      "score": 5,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.37280776457898723
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Elizabeth Glaser Pediatric AIDS Foundation",
       "mission": "The Elizabeth Glaser Pediatric AIDS Foundation (EGPAF) is a proven leader in the fight for an AIDS-free generation and an advocate for children, youth, and families to live long, healthy lives. Founded over 30 years ago through a mothers determination, EGPAF is committed to a comprehensive response to the global fight to end HIV and AIDS through research, global advocacy, strengthening of local health care systems, and growing the capacity of governments and communities in the worlds most affected regions to respond to urgent needs.",
       "url": "https://thegivingblock.com/donate/elizabeth-glaser-pediatric-aids-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.45508235521399354
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Coalition for the Homeless, Inc.",
       "mission": "The Coalition for the Homeless is the nations oldest advocacy and direct service organization helping homeless individuals and families. We believe that affordable housing, sufficient food and the chance to work for a living wage are fundamental rights in a civilized society. Since our inception in 1981, the Coalition has worked through litigation, public education and direct services to ensure that these goals are realized.",
       "url": "https://thegivingblock.com/donate/coalition-for-the-homeless-inc/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.030994135215212326
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "WildAid",
       "mission": "Be a force for change in protecting wildlife and vital habitats from imminent threats to realize a sustainable future.",
       "url": "https://thegivingblock.com/donate/wildaid/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.07954370774585151
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Alight",
       "mission": "When we find people displaced from their homes, countries or lives, we help them with their basic needs and essentials. But that is living  it is not a life. We work closely with refugees, trafficked persons, and economic migrants, to co-design solutions that help them build full and fulfilling lives.",
       "url": "https://thegivingblock.com/donate/alight/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.1580801571485415
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Pancreatic Cancer Action Network, Inc.",
       "mission": "Our mission is to take bold action to improve the lives of everyone impacted by pancreatic cancer by advancing scientific research, building community, sharing knowledge and advocating for patients.",
       "url": "https://thegivingblock.com/donate/pancreatic-cancer-action-network-inc/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Community Development",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.9433331305051128
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Wildlife Conservation Society",
       "mission": "For 125 years, WCS has been dedicated to saving wildlife and wild places, powered by the expertise and science in our zoos, aquarium, and global conservation program. WCS saves wildlife and wild places worldwide through science, conservation action, education, and inspiring people to value nature. WCS envisions a world where wildlife thrives in healthy lands and seas, valued by societies that embrace and benefit from the diversity and integrity of life on earth.",
       "url": "https://thegivingblock.com/donate/wildlife-conservation-society/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.08296540624624427
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "National Breast Cancer Foundation, Inc.",
       "mission": "We provide help and inspire hope to those affected by breast cancer through early detection, education, and support services.",
       "url": "https://thegivingblock.com/donate/national-breast-cancer-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.7414861965022417
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "FNE International",
       "mission": "FNE International (Facilitate, Network, Empower) is a 501(c)3 organization that partners with communities in developing nations to improve housing, health, and education.By Facilitating collaboration and Networking with local and international organizations, we Empower individuals to become engaged in their community and the world.",
       "url": "https://thegivingblock.com/donate/fne-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.9439117001028731
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "MAP International",
       "mission": "MAP International is a Christian organization providing medicines and health supplies to those in need around the world so they might experience life to the fullest. MAP serves all people regardless of religion, gender, race, nationality or ethnic background.. MAP Internationals donors are primarily individuals, yet they also receive donations from organizations.",
       "url": "https://thegivingblock.com/donate/map-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.18338826581316892
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Breast Cancer Research Foundation",
       "mission": "The mission of the Breast Cancer Research Foundation is to prevent and cure breast cancer by advancing the worlds most promising research.",
       "url": "https://thegivingblock.com/donate/breast-cancer-research-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.047795337292228735
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "National Health Foundation",
       "mission": "To improve the health of under-resourced communities.",
       "url": "https://thegivingblock.com/donate/national-health-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Community Development",
+          "similarity": 1.0
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.26329325548626126
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Ama International",
       "mission": "Love without borders. Ama sin fronteras. ",
       "url": "https://thegivingblock.com/donate/ama-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.04658525086858423
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Doctors Without Borders U.S.A., Inc.",
       "mission": "Medecins Sans Frontieres/Doctors Without Borders (MSF) is an international and independent medical humanitarian organization delivering emergency medical aid to people affected by armed conflict, epidemics, natural disasters, and exclusion from healthcare. We offer assistance based on need and irrespective of race, religion, gender or political affiliation.",
       "url": "https://thegivingblock.com/donate/doctors-without-borders-u-s-a-inc/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.6940431520808126
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Action Against Hunger USA",
       "mission": "As the worlds hunger specialist, Action Against Hunger leads the global movement to end deadly hunger within our lifetimes. For more than 40 years, our teams have been on the front lines, treating and preventing malnutrition across more than 45 countries.We save the lives of children and their families. We are there for them before and after disaster strikes. We enable people to provide for themselves, see their children grow up strong, and for whole communities to prosper. We constantly search for more effective solutions, while sharing our knowledge and expertise with the world. We push for long-term change.Together, were creating a better way to deal with hunger. For everyone. For good.",
       "url": "https://thegivingblock.com/donate/action-against-hunger/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.7596126681328658
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "SOS Childrens Villages",
       "mission": "SOS Childrens Villages envisions a world in which every child belongs to a family and grows up with love, respect and security. We build families for children in need, help them shape their own futures and share in the development of their communities.",
       "url": "https://thegivingblock.com/donate/sos-childrens-villages-usa/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.5021484866785715
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "American Foundation for Suicide Prevention",
       "mission": "Our mission is to save lives and bring hope to those affected by suicide.",
       "url": "https://thegivingblock.com/donate/american-foundation-for-suicide-prevention/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.37277188922748494
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Dave Thomas Foundation for Adoption",
       "mission": "Established by Wendys Founder Dave Thomas, an adoptee himself, the Dave Thomas Foundation for adoption works to dramatically increase the number of adoptions of children waiting in North Americas foster care systems.  For nearly thirty years, the Foundation has continued Daves legacy, that every child will have a permanent home and loving family.",
       "url": "https://thegivingblock.com/donate/dave-thomas-foundation-for-adoption/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Education Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.11027598181590448
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "National Kidney Foundation, Inc",
       "mission": "The National Kidney Foundation (NKF) is the largest, most comprehensive, and longstanding patient-centric organization dedicated to the awareness, prevention, and treatment of kidney disease in the U.S. For more information about NKF, visit www.kidney.org.",
       "url": "https://thegivingblock.com/donate/national-kidney-foundation-inc/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.07723183819023094
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Bowery Residents Committee (BRC)",
       "mission": "BRC recognizes that the effort to end homelessness requires more than passion and experience, but also a sense of organizational responsibility and the strength to manage professionally. In the nearly 50 years that BRC has provided housing and treatment services to homeless adults in New York City, we have demonstrated continuing expertise in developing and delivering services with efficiency and positive outcomes.",
       "url": "https://thegivingblock.com/donate/bowery-residents-committee-brc/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.04473797223444864
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Wildlife Conservation Network",
       "mission": "Wildlife Conservation Network (WCN) protects endangered wildlife by supporting conservationists who ensure wildlife and people coexist and thrive.",
       "url": "https://thegivingblock.com/donate/wildlife-conservation-network/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.14584782533475693
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Brain & Behavior Research Foundation",
       "mission": "The Brain & Behavior Research Foundation is a global nonprofit organization focused on improving the understanding, prevention and treatment of psychiatric and mental illnesses.",
       "url": "https://thegivingblock.com/donate/brain-and-behavior-research-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.03981146633090504
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Institute for Justice",
       "mission": "Through strategic litigation, training, communication and outreach, the Institute for Justice advances a rule of law under which individuals can control their destinies as free and responsible members of society.",
       "url": "https://thegivingblock.com/donate/institute-for-justice/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Human Rights",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.039655227495835166
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Global Fund for Children",
       "mission": "Global Fund for Children (GFC) works to build a world where all children and youth enjoy equal resources and opportunities in society and live free from violence, discrimination, and exploitation. To that end, GFC partners with innovative local organizations, helping them deepen their impact and build their capacity for social change. Together, GFC and its partners advance the rights of children and youth facing poverty and injustice and equip them with the tools and skills to reach their full potential. Since 1997, Global Fund for Children has invested $46 million in more than 725 organizations, reaching more than 11 million children and youth worldwide.",
       "url": "https://thegivingblock.com/donate/global-fund-for-children/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.09623848361952914
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Jackson Health Foundation",
       "mission": "JACKSON HEALTH FOUNDATION is the private fundraising arm of Jackson Health System (JHS), the most comprehensive healthcare provider in South Florida. Established in 1991, the Foundation is governed by a volunteer board of directors committed to philanthropic activities that benefit the medical programs and services at JHS. Through the generosity of compassionate donors, the Foundation helps to fill the gaps of major capital projects and programmatic needs that cannot be financed by public bond support.",
       "url": "https://thegivingblock.com/donate/jackson-health-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.4457887739648111
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Fistula Foundation",
       "mission": "Fistula Foundation is dedicated to treating women suffering from obstetric fistula, a devastating childbirth injury that leaves a woman incontinent. Surgery is the only cure.At Fistula Foundation, we believe that no woman should endure a life of misery and isolation simply for trying to bring a child into the world. We provide more life-transforming fistula repair surgeries than any other organization in the world, and receive the highest ratings from every nonprofit sector watchdog group.",
       "url": "https://thegivingblock.com/donate/fistula-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.3930742463100544
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Population Connection",
       "mission": "Overpopulation threatens the quality of life for people everywhere. Population Connection is the national grassroots population organization that educates young people and advocates progressive action to stabilize world population at a level that can be sustained by Earths resources.",
       "url": "https://thegivingblock.com/donate/population-connection/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.2161603674679311
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Orlando Health Foundation",
       "mission": "To improve the health and quality of life of the individuals and communities we serve.",
       "url": "https://thegivingblock.com/donate/orlando-health-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Community Development",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.6659373337345653
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "National Park Foundation",
       "mission": "As the official nonprofit partner of the National Park Service, the National Park Foundation generates private support and builds strategic partnerships to protect and enhance Americas national parks for present and future generations.",
       "url": "https://thegivingblock.com/donate/national-park-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.11410338308592094
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Rape, Abuse and Incest National Network (RAINN)",
       "mission": "RAINN (Rape, Abuse & Incest National Network) is the nations largest anti-sexual violence organization. RAINN created and operates the National Sexual Assault Hotline (800.656.HOPE, online.rainn.org y rainn.org/es) in partnership with more than 1,000 local sexual assault service providers across the country and operates the DoD Safe Helpline for the Department of Defense. RAINN also carries out programs to prevent sexual violence, help survivors, and ensure that perpetrators are brought to justice.",
       "url": "https://thegivingblock.com/donate/rape-abuse-and-incest-national-network-rainn/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.2950958591850017
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Kettering Health Foundation",
       "mission": "Kettering Health Foundation supports the work of Kettering Health, a network of hospitals, a college, clinics, and emergency departments across Southwest Ohio. Our mission is to improve the quality of life of people in the communities we serve through healthcare and education.",
       "url": "https://thegivingblock.com/donate/kettering-health-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.20861712503906027
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "SERV International",
       "mission": "SERV International uses food as a platform to share Christ. We exist to physically and spiritually feed people and develop stronger communities in some of the most remote regions in the world.To date SERV has distributed over 32 million meals to underserved people groups and communities in 9 countries.",
       "url": "https://thegivingblock.com/donate/serv-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.14466725847254547
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "JOY International",
       "mission": "JOY International is dedicated to the rescue, restoration, and reintegration of children, teens, and young adults affected by trafficking and the prevention of human trafficking, especially the trafficking of children, worldwide. JOY International is committed to a multi-faceted approach to fighting child trafficking.  We partner with police, task forces, prosecutors, and NGOs to find and rescue captive children throughout the world and bring their captors to justice, partner with safe houses and rehabilitation professionals to ensure the safety and care for these precious women and children as they walk the road of healing, and strive to address the driving forces behind the sexual exploitation of children around the world to prevent child trafficking.",
       "url": "https://thegivingblock.com/donate/joy-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.08902542675586755
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "CARE",
       "mission": "Last year, CARE reached more than 174 million people in 111 countries with humanitarian relief and poverty-fighting programs. However, continued fallout from COVID-19 combined with climate-driven disasters, health epidemics, and conflicts threaten already fragile communities with deeper levels of poverty and suffering  pushing equality for women and girls increasingly out of reach. Bold ideas and fast action are needed to accelerate progress for women and families around the world. ",
       "url": "https://thegivingblock.com/donate/care/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.2586125023671021
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Mental Health America",
       "mission": "Mental Health America, founded in 1909, is the nations leading national nonprofit dedicated to the promotion of mental health, well-being, and prevention. Our work is informed, designed, and led by the lived experience of those most affected.",
       "url": "https://thegivingblock.com/donate/mental-health-america/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.14231608585040323
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Relief International",
       "mission": "Relief International partners with communities in some of the most fragile and hard-to-reach places in the world; provide life-saving and life-changing programs that relieve poverty, ensure well-being, and advance dignity. We work alongside these communities to plan programs with their input, because programs designed, built and judged by the community they serve are more likely to succeed. And we stay in these communities for as long as we are needed  often for over a decade. Today, we operate in 15 countries around the world, providing vital services for hundreds of thousands of people each year.",
       "url": "https://thegivingblock.com/donate/relief-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.8250730990429456
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Lupus Research Alliance, Inc.",
       "mission": "Putting people with lupus at the center of all we do, the Lupus Research Alliance drives the discovery and development of next generation lupus diagnostics and curative treatments throughinnovative research and collaborations.",
       "url": "https://thegivingblock.com/donate/lupus-research-alliance-inc/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Community Development",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.04836606648445707
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Outright International",
       "mission": "Outright International fights for human rights and equality for lesbian, gay, bisexual, transgender, intersex and queer (LGBTIQ) people everywhere and to eliminate the systemic violence, persecution and discrimination LGBTIQ people face around the world. Outright conducts vital and original research, advocates with governments at the United Nations and beyond, and supports grassroots LGBTIQ activists and organizations in dozens of countries each year.",
       "url": "https://thegivingblock.com/donate/outright-action-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Human Rights",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.4400543626517083
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Glasswing International",
       "mission": "Our mission is to address the root causes and consequences of violence and poverty through education and health programs that empower youth and communities, and strengthen public systems. At Glasswing, we believe that every person has both the potential and the right to thrive, no matter what adversity they face. We engage thousands of volunteers to ensure sustainable change, while fostering hope and community pride.",
       "url": "https://thegivingblock.com/donate/glasswing-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.29890426252249314
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Mercy Corps",
       "mission": "Mercy Corps is a global team of humanitarians working together on the front lines of todays biggest crises to create a future of possibility, where everyone can prosper. Our mission is to alleviate suffering, poverty, and oppression by helping people build secure, productive, and just communities.",
       "url": "https://thegivingblock.com/donate/mercy-corps/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.4721262457071367
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "International Medical Corps",
       "mission": "We are a global humanitarian organization dedicated to saving lives and relieving suffering. Established in 1984 by volunteer doctors and nurses, we are a nonprofit with no political or religious affiliation, and now have more than 7,000 staff members around the world, more than 90% of whom are local. Our mission is to improve the quality of life through health interventions and related activities that strengthen underserved communities worldwide. With the flexibility to respond rapidly to emergencies, we offer medical services and training to people at the highest risk, always working to strengthen local healthcare systems and promote self-reliance.",
       "url": "https://thegivingblock.com/donate/international-medical-corps/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.4362513073202616
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Team Rubicon",
       "mission": "Team Rubicon is a veteran-led humanitarian organization that serves global communities before, during, and after disasters and crises.",
       "url": "https://thegivingblock.com/donate/team-rubicon/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.09034691381431115
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Pediatric Cancer Research Foundation",
       "mission": "Fund research to power cures that reduce the percentage of children who perish from cancer until that number reaches zero.",
       "url": "https://thegivingblock.com/donate/pediatric-cancer-research-foundation/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.2395862240541783
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "GiveDirectly",
       "mission": "GiveDirectly is a nonprofit that lets donors send money directly to the worlds poorest households. In doing so, we aim to accelerate the end of extreme poverty globally.",
       "url": "https://thegivingblock.com/donate/givedirectly/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.25842241825110224
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "K9 Rescue International",
       "mission": "K9 Rescue International is focused on making a difference to the treatment of abandoned dogs in developing countries with our work primarily in Eastern Europe where dogs are seen as vermin by the majority and treated accordingly with poisoning, beatings and torture. Please help us make a difference today",
       "url": "https://thegivingblock.com/donate/k9-rescue-international/",
-      "score": 4
+      "score": 4,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.5398211064431404
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Food Bank For New York City",
       "mission": "To end hunger by organizing food, information and support for community survival and dignity. Food Bank For New York City has been working to end food poverty in our five boroughs for over 36 years. As the citys largest hunger-relief organization, we employ a multifaceted approach centered on helping low-income New Yorkers overcome their circumstances and achieve greater independence.",
       "url": "https://thegivingblock.com/donate/food-bank-for-new-york-city/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.21067863103661577
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Be Team International",
       "mission": "Be Team International works in Afghanistan with national and international partners to improve healthcare resources, service delivery, and training capacity while helping hospitals and clinics towards operational and financial sustainability.",
       "url": "https://thegivingblock.com/donate/be-team-international/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.06953710893260112
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "FundLife International",
       "mission": "FundLife is a purpose-driven, not-for-profit organisation, dedicated to creating educational and employment pathways for highly vulnerable youth so they may unleash their potential to the world  or as we like to say, to ensure every child is free to dream in colour.",
       "url": "https://thegivingblock.com/donate/fundlife-international/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Education Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.8825442626615358
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Samaritan House",
       "mission": "Fighting Poverty. Lifting Lives. Since 1974, Samaritan House has led the fight against poverty in San Mateo County. We mobilize the resources of our community to help those among us who are in need. We are the only organization delivering the full breadth of essential services and personalized support to the working poor while preserving dignity, promoting self-sufficiency, and providing hope. We combine access to food, clothing, housing, and healthcare with personalized case management giving our clients a way to combat all the pressures of poverty that they face.",
       "url": "https://thegivingblock.com/donate/samaritan-house/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.9072175112832623
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Waco Foundation",
       "mission": "The mission of Waco Foundation is to promote solutions to community challenges, strengthen local nonprofits, engage philanthropists and manage charitable assets in order to improve quality of life in McLennan County.",
       "url": "https://thegivingblock.com/donate/waco-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.023417994785763452
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "CityServe International",
       "mission": "CityServe trains, equips, and mobilizes the local church to live out the Gospel of Jesus Christ in its community through compassion.",
       "url": "https://thegivingblock.com/donate/cityserve-international/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Community Development",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.1895927693771059
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Women for Women International",
       "mission": "In countries affected by conflict and war, Women for Women International supports the most marginalized women to earn and save money, improve health and well-being, influence decisions in their home and community, and connect to networks for support. By utilizing skills, knowledge, and resources, she is able to create sustainable change for herself, her family, and community.",
       "url": "https://thegivingblock.com/donate/women-for-women-international/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.4113302552493179
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "International Centre for Missing and Exploited Children",
       "mission": "The International Centre for Missing & Exploited Children (ICMEC) works every single day to make the world safer for children by eradicating child abduction, sexual abuse and exploitation.",
       "url": "https://thegivingblock.com/donate/icmec/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.4088822845028931
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Children International",
       "mission": "Like the world-changers who support our organization, we are focused on making a long-term impact by helping kids living in poverty. We have a bold vision: graduating healthy, educated, empowered and employed young adults from our program so they can achieve the goal of breaking the cycle of poverty.",
       "url": "https://thegivingblock.com/donate/children-international/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.13920208718987503
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Desai Foundation",
       "mission": "We empower women and children through community programs to elevate health, livelihood, and menstrual equity in rural India.",
       "url": "https://thegivingblock.com/donate/desai-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.1811123181567862
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Drug Policy Alliance",
       "mission": "The Drug Policy Alliance (DPA) is the leading organization in the U.S. working to end the drug war. We are people impacted by the drug war. We have lost loved ones to overdose. We are in recovery. We use drugs. We have experienced the harms of drug criminalization. Join us. Together, we will end the drug war and build a better future shaped by love, not war.",
       "url": "https://thegivingblock.com/donate/drug-policy-alliance/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.010304000459392282
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Christopher & Dana Reeve Foundation",
       "mission": "We are dedicated to curing spinal cord injury by advancing innovative research and improving the quality of life for individuals and families impacted by paralysis.",
       "url": "https://thegivingblock.com/donate/christopher-dana-reeve-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.9843529517442687
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Mona Foundation",
       "mission": "Founded in 1999, Mona Foundation supports grassroots initiatives around the world that educate all children, empower women and girls, and enable them to transform their own communities.We support schools and programs that serve economically disadvantaged communities. These initiatives focus on academic excellence, fine arts, character development, and service to train capable, ethical, and altruistic students who contribute to the betterment of their families, communities, and ultimately their nation.",
       "url": "https://thegivingblock.com/donate/mona-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.4315303963102075
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Ovarian Cancer Research Alliance",
       "mission": "Ovarian Cancer Research Alliance (OCRA) is the leading organization in the world fighting ovarian cancer from all fronts, including in the lab and on Capitol Hill, while supporting women and their families. OCRAs ongoing investment in the most promising scientific research is funding discoveries, creating new treatments, and hastening desperately needed breakthroughs. Our programs help women navigate an overwhelming diagnosis, supporting patients and their families when and where they need it most and our advocacy programs ensure ovarian cancer is a priority when it comes to policy and federal research funding.",
       "url": "https://thegivingblock.com/donate/ovarian-cancer-research-alliance/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.8795467156765956
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "The Leukemia & Lymphoma Society",
       "mission": "The Leukemia & Lymphoma Society (LLS) is a global leader in the fight against cancer. The LLS mission: Cure leukemia, lymphoma, Hodgkins disease and myeloma, and improve the quality of life of patients and their families. LLS funds lifesaving blood cancer research around the world, provides free information and support services, and is the voice for all blood cancer patients seeking access to quality, affordable, coordinated care.",
       "url": "https://thegivingblock.com/donate/the-leukemia-and-lymphoma-society/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.4905498027633777
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "EngenderHealth",
       "mission": "We know that sexual and reproductive health and rights are completely and inextricably intertwined with gender equality. We also know that marginalized groupssuch as girls, women, and gender minorities; adolescents and youth; people with disabilities; economically disadvantaged groups; and rural and other hard-to-reach populationsare particularly vulnerable to discriminatory practices that can prevent them from leading healthy lives. But that can change. We believe that if all people are empowered and engaged; and if they live in supportive communities where systems and institutions provide high-quality, gender-equitable sexual and reproductive healthcare; and if policies, laws, and process are supportive, then they will exercise their rights to gender-equitable sexual and reproductive health services and participate as equal members of society.",
       "url": "https://thegivingblock.com/donate/engenderhealth/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Women's Empowerment",
+          "similarity": 1.0
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.025677621124936323
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "The Water Project",
       "mission": "Clean hands need soap AND water. Were working in Africa right now, ensuring vulnerable communities can stay healthy in this crisis.The Water Project, Inc. is a 501(c)(3) non-profit organization unlocking human potential by providing reliable water projects to communities in sub-Saharan Africa who suffer needlessly from a lack of access to clean water and proper sanitation.  For ten years, we have been helping communities gain access to clean, safe water by providing training, expertise and financial support for water project construction through our staff and implementing partners.",
       "url": "https://thegivingblock.com/donate/the-water-project/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Clean Water Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.20760569347048163
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Opportunity International Inc",
       "mission": "By providing financial solutions and training, we empower people living in poverty to transform their lives, their childrens futures, and their communities.",
       "url": "https://thegivingblock.com/donate/opportunity-international/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.5955893545858454
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Feed the Children",
       "mission": "Create a world where no child goes to bed hungry. ",
       "url": "https://thegivingblock.com/donate/feed-the-children/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.5984551606945703
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Stasis Foundation",
       "mission": "To conduct and support scientific research and education in the areas of cryobiology, critical care, and extension of the healthy human lifespan.",
       "url": "https://thegivingblock.com/donate/stasis-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.06713313190216474
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Breakthrough T1D",
       "mission": "Founded in 1970 by families whose loved ones had been diagnosed with type 1 diabetes (T1D), Breakthrough T1D is a tax-exempt nonprofit (501c3) organization. As the leading global type 1 diabetes research and advocacy organization, we help make everyday life better while driving toward cures. We are opening doors that were once closed by T1D diagnosis. We lead the way to more effective solutions by connecting the brightest minds to advance treatments, influence policy, and improve access to care. By driving innovation forward, we will make T1D a thing of the past.",
       "url": "https://thegivingblock.com/donate/breakthrough-t1d/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.1509458479527629
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Breakthrough",
       "mission": "Breakthrough partners with those affected by poverty to build connections, develop skills, and open doors of opportunity. With a hyper-local, 40-block focus, Breakthrough provides a myriad of services focused on a profoundly simple formula: people first.",
       "url": "https://thegivingblock.com/donate/breakthrough/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.08059861738861562
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Marine Toys for Tots Foundation",
       "mission": "Toys for Tots, a national charitable program run by the U.S. Marine Corps Reserve, provides happiness, and hope to less fortunate children during each Christmas holiday season. The toys, books, and other gifts collected and distributed by our Marines and volunteers during the Christmas season offer these children recognition, confidence, and a positive memory for a lifetime. Toys for Tots also provides support year-round to less fortunate families experiencing challenges and exceptional circumstances, thus sending a message of hope beyond the holiday season.",
       "url": "https://thegivingblock.com/donate/marine-toys-for-tots-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.9285545095359728
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "The Hunger Project",
       "mission": "Ending hunger starts with people. We at The Hunger Project know that each person has within themselves the capacity to create lasting change for their families and communities. Thats why weve pioneered sustainable, grassroots, women-centered strategies to end hunger and poverty. Our vision: a world where everyone leads a healthy, fulfilling life of self-reliance and dignity. BIG visions call for BOLD solutions. Join us in our mission to end hunger. Lets make change happen.",
       "url": "https://thegivingblock.com/donate/the-hunger-project/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.056903665066772136
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Space Foundation",
       "mission": "Imagine that when a child looks up at the night sky, they see endless possibilities. We want to ensure they know that space IS their future. At Space Foundation, we passionately believe everyone has a place in space, and we are dedicated to sharing the joy of learning with students of all ages and backgrounds.Space Foundation is a nonprofit organization founded in 1983, offering a gateway to education, information, and collaboration for space exploration and space-inspired industries that define the global space ecosystem.",
       "url": "https://thegivingblock.com/donate/the-space-foundation/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Education Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.8917982790978265
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "American Bird Conservancy",
       "mission": "American Bird Conservancy is dedicated to conserving wild birds and their habitats throughout the Americas. This mission has guided us throughout our 30-year history. With an emphasis on achieving results and working in partnership, we take on the greatest problems facing birds today, innovating and building on rapid advancements in science to halt extinctions, protect habitats and ecosystems, eliminate threats, and build capacity for conservation.",
       "url": "https://thegivingblock.com/donate/american-bird-conservancy/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.34635848241233813
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "League of Conservation Voters Education Fund",
       "mission": "The LCV Education Fund envisions a world in which tackling the climate crisis, confronting environmental injustice, and strengthening our democracy lead to cleaner and healthier communities, good, well-paying jobs, and a more just, equitable, and sustainable planet for all.",
       "url": "https://thegivingblock.com/donate/league-of-conservation-voters-education-fund/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.5513005625710142
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Save the Chimps, Inc.",
       "mission": "Save the Chimps is one of the largest chimpanzee sanctuaries in the world whose mission is to provide refuge and exemplary care to chimpanzees in need. Save the Chimps offers a permanent sanctuary for the lifelong care of chimpanzees rescued from the US Air Force, research laboratories, the pet trade, and entertainment industry.",
       "url": "https://thegivingblock.com/donate/save-the-chimps-inc/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.44608617411926066
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Feeding America",
       "mission": "Our mission is to advance change in America by ensuring equitable access to nutritious food for all in partnership with food banks, policymakers, supporters, and the communities we serve.",
       "url": "https://thegivingblock.com/donate/feeding-america/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.24359760775846595
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Save the Children",
       "mission": "Save the Children is passionately committed to one goal: Giving all children the best chance for the future they deserve  a healthy start in life, to be protected from harm and the opportunity to learn. Every day, in times of crisis, here in the U.S. and in more than 110 countries around the world, we do whatever it takes to reach the most vulnerable children and their families.",
       "url": "https://thegivingblock.com/donate/save-the-children/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Child Welfare",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.4766662792195253
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Good360",
       "mission": "Good360s mission is to close the need gap. As the global leader in product philanthropy and purposeful giving, we partner with some of the worlds largest corporations to source essential goods and distribute them through our network of diverse nonprofits, supporting people in need to open opportunity for all.",
       "url": "https://thegivingblock.com/donate/good360/",
-      "score": 3
+      "score": 3,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.37326669868769546
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Sea Turtle Conservancy",
       "mission": "Sea Turtle Conservancy is the oldest sea turtle research and conservation organization in the world. Founded in 1959 by renowned sea turtle biologist Dr. Archie Carr, STCs mission is to study and protect sea turtles and associated marine and coastal habitats worldwide, with an emphasis on the Southeast United States, Atlantic and Wider Caribbean. To achieve its mission, STC uses research, habitat protection, public education, biologist training, community outreach, networking and advocacy as its basic tools. The group conducts ongoing programs in Florida, Costa Rica, Panama, Bermuda, Cuba and the Eastern Caribbean.",
       "url": "https://thegivingblock.com/donate/sea-turtle-conservancy/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Environmental Conservation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.022045233853138724
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Action on Smoking and Health",
       "mission": "To advocate for innovative legal and policy measures to end the global tobacco epidemic.",
       "url": "https://thegivingblock.com/donate/action-on-smoking-and-health/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Environmental Conservation",
+          "similarity": 0.1711572294088013
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "The Center for Reproductive Rights, Inc",
       "mission": "The Center for Reproductive Rights uses the power of law to advance reproductive rights as fundamental human rights around the world. We envision a world where every person participates with dignity as an equal member of society, regardless of gender.Where every woman is free to decide whether or when to have children and whether to get married; where access to quality reproductive health care is guaranteed; and where every woman can make these decisions free from coercion or discrimination.",
       "url": "https://thegivingblock.com/donate/the-center-for-reproductive-rights-inc/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Human Rights",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.5091888623180698
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "National Multiple Sclerosis Society",
       "mission": "We will cure MS while empowering people affected by MS to live their best lives.. The National MS Society is supported by individuals, organizations and corporations who are committed to changing the world for people affected by multiple sclerosis and driving progress toward cures.",
       "url": "https://thegivingblock.com/donate/national-multiple-sclerosis-society/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.7499096185379036
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Catholic Medical Mission Board, Inc. (CMMB)",
       "mission": "Our vision is a world in which every human life is valued, and health and human dignity are shared by all. Inspired by the example of Jesus, CMMB works in partnership globally to deliver locally sustainable, quality health solutions to women, children, and their communities..",
       "url": "https://thegivingblock.com/donate/cmmb/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.043244143525043244
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Committee to Protect Journalists",
       "mission": "The Committee to Protect Journalists promotes press freedom worldwide and defends the right of journalists to report the news safely and without fear of reprisal. CPJ protects the free flow of news and commentary by taking action wherever journalists are under threat.",
       "url": "https://thegivingblock.com/donate/committee-to-protect-journalists/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Human Rights",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.8860751410767865
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "American Liver Foundation",
       "mission": "ALFs mission is to promote education, advocacy, support services and research for the prevention, treatment and cure of liver disease.",
       "url": "https://thegivingblock.com/donate/american-liver-foundation/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Refugee Assistance",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.2487868483087432
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Food for the Hungry",
       "mission": "Food for the Hungry seeks to end ALL forms of human poverty by going to the hard places and walking with the worlds most vulnerable people. For fifty years, weve been serving through purposeful relief and development. We believe in the fight against poverty, which is why we serve the vulnerable in over 20 countries globally.",
       "url": "https://thegivingblock.com/donate/food-for-the-hungry/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.8536336738678632
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "American Brain Foundation",
       "mission": "The American Brain Foundation promotes and invests in research across the whole spectrum of brain disease. We believe that when we cure one of these diseases, we will cure many. We unite donors and researchers to improve the lives of those living with brain disease and their loved ones. We invest in research of the whole brain and all neurologic disorders knowing they are interconnected.This holistic, innovative approach allows us to build bridges between diseases and break new ground in research and application.",
       "url": "https://thegivingblock.com/donate/american-brain-foundation/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.2190671927724206
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "American Heart Association",
       "mission": "The American Heart Association is a relentless force for a world of longer, healthier lives. Heart disease is the No. 1 killer worldwide, and stroke ranks second globally. Even when those conditions dont result in death, they cause disability and diminish quality of life. We want to see a world free of cardiovascular diseases and stroke.",
       "url": "https://thegivingblock.com/donate/american-heart-association/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.2690607298347142
+        },
+        {
+          "category": "Environmental Conservation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Best Friends Animal Society",
       "mission": "Best Friends Animal Society is working to save the lives of cats and dogs all across the country, giving pets second chances and happy homes. Working collaboratively with a network of 3,500 animal welfare and shelter partners, and community members like you nationwide, we are determined to take the entire country to no-kill by 2025.",
       "url": "https://thegivingblock.com/donate/best-friends-animal-society/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.34657970192138543
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Thousand Currents",
       "mission": "Thousand Currents envisions a world where humanity is in a reciprocal and interdependent relationship with nature and creates loving, equitable, and just societies. We leverage relationships, and financial and intellectual resources worldwide, with and in support of grassroots groups and social movements building loving, equitable, and just futures. We work to transform philanthropic and investment practices towards justice and equity.",
       "url": "https://thegivingblock.com/donate/thousand-currents/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.1225428048999605
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Faithful Friends Animal Society",
       "mission": "Faithful Friends Animal Societys mission is to end the neglect, abandonment and killing of pets in Delaware and enrich the lives of people by promoting and providing compassionate animal-related welfare and social services.",
       "url": "https://thegivingblock.com/donate/faithful-friends-animal-society/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Housing & Shelter",
+          "similarity": 1.0
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.17697997022474576
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Water.org",
       "mission": "Water.org is an international nonprofit organization that has positively transformed millions of lives around the world with access to safe water and sanitation through affordable financing. Founded by Gary White and Matt Damon, Water.org pioneers market-driven financial solutions to the global water crisis. For 30 years, weve been providing women hope, children health, and families a future.",
       "url": "https://thegivingblock.com/donate/water-org/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Clean Water Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.03844651147213485
+        },
+        {
+          "category": "Environmental Conservation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Mercy for Animals",
       "mission": "To construct a compassionate food system by reducing suffering and ending the exploitation of animals for food.",
       "url": "https://thegivingblock.com/donate/mercy-for-animals/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Food Security",
+          "similarity": 1.0
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.18881708163954836
+        },
+        {
+          "category": "Disaster Relief",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Foundation Fighting Blindness, Inc.",
       "mission": "The urgent mission of the Foundation Fighting Blindness is to drive the research that will provide preventions, treatments and cures for people affected by retinitis pigmentosa, age-related macular degeneration, Usher syndrome and others in the spectrum of retinal degenerative diseases.",
       "url": "https://thegivingblock.com/donate/foundation-fighting-blindness/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.9085151845288153
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Alzheimers Association",
       "mission": "The Alzheimers Association leads the way to end Alzheimers and all other dementia  by accelerating global research, driving risk reduction and early detection, and maximizing quality care and support.",
       "url": "https://thegivingblock.com/donate/alzheimers-association/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Mental Health Support",
+          "similarity": 1.0
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.24854796572889604
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Litecoin Foundation",
       "mission": "Litecoin Foundation Inc. is a nonprofit organization whose mission is to promote the adoption, awareness & development of Litecoin & its ecosystem.",
       "url": "https://thegivingblock.com/donate/litecoin-foundation-inc/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.9411732138170483
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Physicians Committee for Responsible Medicine",
       "mission": "The Physicians Committee is dedicated to saving and improving human and animal lives through plant-based diets and ethical and effective scientific research. PCRM donors are primarily individuals.",
       "url": "https://thegivingblock.com/donate/physicians-committee-for-responsible-medicine/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Healthcare Access",
+          "similarity": 1.0
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.2120522989269682
+        },
+        {
+          "category": "Food Security",
+          "similarity": 0.0
+        }
+      ]
     },
     {
       "name": "Project HOPE",
       "mission": "Project HOPE is a global health & humanitarian org that believes in the power of HOPE. During disasters, conflicts & health emergencies, we bring medical aid, provide mental health support, equip clinics, help new mothers with limited access to care, and more.Were responding to the Los Angeles wildfires ... providing urgent aid in Lebanon, Gaza and Ukraine ... addressing the global mental health crisis ... supporting health workers ... and spreading health & HOPE to the world.Our mission: Placing power in the hands of local health workers to save lives in their communities around the world.Weve received Charity Navigators highest 4-star rating for responsible stewardship of donor funds.",
       "url": "https://thegivingblock.com/donate/project-hope/",
-      "score": 2
+      "score": 2,
+      "categories": [
+        {
+          "category": "Disaster Relief",
+          "similarity": 1.0
+        },
+        {
+          "category": "Refugee Assistance",
+          "similarity": 0.38182621188636134
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.0
+        }
+      ]
     }
   ],
   "stats": {
