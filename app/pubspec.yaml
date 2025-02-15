@@ -90,4 +90,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   assets:
+    - assets/images/sky_bg.png
+    - assets/images/ground_fg.png
+    - assets/images/blue_header_bg.png
     - assets/images/
