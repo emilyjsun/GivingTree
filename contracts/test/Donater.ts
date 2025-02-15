@@ -91,20 +91,33 @@ describe("Donater", function () {
       await donater.connect(user1).enroll(topics, charities, percentages);
     });
 
-    it("should allow owner to add new charities", async function () {
-      await donater.connect(owner).addCharity(user1.address, charity2.address, 30);
+    it("should allow owner to set new charities and percentages", async function () {
+      const newCharities = [charity2.address, charity3.address];
+      const newPercentages = [60, 40];
+      
+      await donater.connect(owner).setCharities(user1.address, newCharities, newPercentages);
       
       const userTopics = await donater.getUserTopics(user1.address);
-      expect(userTopics[1]).to.include(charity2.address);
-      expect(userTopics[2].map((p: any) => Number(p))).to.include(30);
+      expect(userTopics[1]).to.deep.equal(newCharities);
+      expect(userTopics[2].map((p: any) => Number(p))).to.deep.equal(newPercentages);
     });
 
-    it("should allow owner to update charity proportions", async function () {
-      const newPercentage = 80;
-      await donater.connect(owner).updateProportion(user1.address, charity1.address, newPercentage);
+    it("should emit CharitiesUpdated event", async function () {
+      const newCharities = [charity2.address, charity3.address];
+      const newPercentages = [60, 40];
       
-      const userTopics = await donater.getUserTopics(user1.address);
-      expect(userTopics[2][0]).to.equal(newPercentage);
+      await expect(donater.connect(owner).setCharities(user1.address, newCharities, newPercentages))
+        .to.emit(donater, "CharitiesUpdated")
+        .withArgs(user1.address, newCharities, newPercentages);
+    });
+
+    it("should revert when charities and percentages arrays have different lengths", async function () {
+      const newCharities = [charity2.address, charity3.address];
+      const newPercentages = [100];
+      
+      await expect(
+        donater.connect(owner).setCharities(user1.address, newCharities, newPercentages)
+      ).to.be.revertedWith("Charities and percentages must be the same length");
     });
   });
 
@@ -154,27 +167,34 @@ describe("Donater", function () {
       await donater.connect(user1).enroll(topics, charities, percentages);
     });
 
-    it("should allow users to change their topics", async function () {
+    it("should allow users to set their topics", async function () {
       const newTopics = ["Art", "Music", "Sports"];
-      await donater.connect(user1).changeTopics(user1.address, newTopics);
+      await donater.connect(user1).setTopics(user1.address, newTopics);
       
       const userTopics = await donater.getTopics(user1.address);
       expect(userTopics).to.deep.equal(newTopics);
     });
 
-    it("should allow owner to change user topics", async function () {
+    it("should allow owner to set user topics", async function () {
       const newTopics = ["Art", "Music", "Sports"];
-      await donater.connect(owner).changeTopics(user1.address, newTopics);
+      await donater.connect(owner).setTopics(user1.address, newTopics);
       
       const userTopics = await donater.getTopics(user1.address);
       expect(userTopics).to.deep.equal(newTopics);
     });
 
-    it("should revert when unauthorized user tries to change topics", async function () {
+    it("should revert when unauthorized user tries to set topics", async function () {
       const newTopics = ["Art", "Music", "Sports"];
       await expect(
-        donater.connect(user2).changeTopics(user1.address, newTopics)
+        donater.connect(user2).setTopics(user1.address, newTopics)
       ).to.be.revertedWith("Not authorized");
+    });
+
+    it("should revert when topics array length is not 3", async function () {
+      const newTopics = ["Art", "Music"];
+      await expect(
+        donater.connect(user1).setTopics(user1.address, newTopics)
+      ).to.be.revertedWith("Topics must be 3");
     });
   });
 });

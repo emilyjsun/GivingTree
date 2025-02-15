@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@nomicfoundation/hardhat-verify": "^2.0.12",
     "hardhat": "^2.22.18",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
