@@ -97,5 +97,7 @@ flutter:
     - assets/images/ground_fg.png
     - assets/images/blue_header_bg.png
     - assets/images/flower.svg
-    - assets/images/
+    - assets/images/flower_heart.png
+    - assets/images/green_header_bg.png
+    - assets/images/tree.png
     - .env
