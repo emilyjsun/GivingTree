@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Text, ForeignKey, String, Boolean
+from sqlalchemy import Column, Text, ForeignKey, String, Boolean, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.mysql import VARCHAR
 
@@ -8,13 +8,13 @@ Base = declarative_base()
 class CharityCategory(Base):
     __tablename__ = 'charitycategory'
 
-    category = Column(Text, nullable=False, index=True, primary_key=True)
-    charityname = Column(Text, nullable=False)
+    category = Column(Text, nullable=False, primary_key=True)
+    charityname = Column(Text, nullable=False, primary_key=True)
 
 class UserCategory(Base):
     __tablename__ = 'usercategory'
 
-    category = Column(Text, nullable=False, index=True, primary_key=True)
+    category = Column(Text, nullable=False, primary_key=True)
     userid = Column(Text, nullable=False, primary_key=True)
 
 class Charity(Base):
@@ -31,3 +31,9 @@ class UserPreferences(Base):
     mission_statement = Column(Text)
     push_notifications = Column(Boolean, default=False)
     prioritize_current_events   = Column(Boolean, default=False)
+
+class Counter(Base):
+    __tablename__ = 'counter'
+
+    userid = Column(VARCHAR(255), primary_key=True)
+    countvalue = Column(Integer)
