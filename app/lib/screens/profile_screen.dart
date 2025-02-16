@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'transaction_screen.dart';
+import 'transactions_screen.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
