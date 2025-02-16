@@ -24,8 +24,8 @@ class WalletService {
   }
 
   Future<void> init(BuildContext context) async {
-    // Always dispose existing instance before creating a new one
-    await dispose();
+    // If already initialized with same context, just return
+    if (_isInitialized && _appKit != null) return;
 
     final projectId = dotenv.env['REOWN_PROJECT_ID'];
     _appKit = ReownAppKitModal(
@@ -41,6 +41,13 @@ class WalletService {
           linkMode: false,
         ),
       ),
+      requiredNamespaces: const {
+        'eip155': RequiredNamespace(
+          chains: ['eip155:1'], // Ethereum mainnet
+          methods: ['eth_sendTransaction', 'personal_sign'],
+          events: ['chainChanged', 'accountsChanged'],
+        ),
+      },
     );
 
     await _appKit?.init();

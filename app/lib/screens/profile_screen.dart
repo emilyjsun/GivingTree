@@ -29,6 +29,7 @@ class _ProfileTabState extends State<ProfileTab> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          automaticallyImplyLeading: false,
           title: Padding(
             padding: const EdgeInsets.only(top: 8),
             child: Column(
