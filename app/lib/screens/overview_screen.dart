@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:reown_appkit/modal/models/public/appkit_modal_session.dart';
 import '../widgets/growing_tree.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:web3dart/web3dart.dart';
 import '../services/wallet_service.dart';
+import '../services/web3_service.dart';
+import '../widgets/toast_notification.dart';
+import '../services/toast_service.dart';
 
 class OverviewTab extends StatefulWidget {
   const OverviewTab({super.key});
@@ -22,7 +26,46 @@ class _OverviewTabState extends State<OverviewTab> {
     super.dispose();
   }
 
-  Future<void> _showDonationModal() {
+  void _showToast(ToastNotification toast) {
+    final overlay = Overlay.of(context);
+    late OverlayEntry overlayEntry;
+    
+    overlayEntry = OverlayEntry(
+      builder: (context) => toast,
+    );
+
+    overlay.insert(overlayEntry);
+    
+    Future.delayed(const Duration(seconds: 2), () async {
+      final toastState = toast.toastKey.currentState;
+      if (toastState != null) {
+        try {
+          await toastState.dismiss();
+          if (mounted) {  // Check if widget is still mounted
+            overlayEntry.remove();
+          }
+        } catch (e) {
+          print('Toast dismiss error: $e');
+        }
+      } else {
+        overlayEntry.remove();
+      }
+    });
+  }
+
+  Future<void> _showDonationModal() async {
+    final appKit = WalletService.instance.appKit;
+    final web3 = Web3Service.instance;
+    String? balance;
+
+    if (appKit.session != null) {
+      final address = appKit.session!.getAddress('eip155');
+      if (address != null) {
+        final ethBalance = await web3.client.getBalance(EthereumAddress.fromHex(address));
+        balance = '${ethBalance.getValueInUnit(EtherUnit.ether).toStringAsFixed(4)} ETH';
+      }
+    }
+
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -50,6 +93,16 @@ class _OverviewTabState extends State<OverviewTab> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              if (balance != null) ...[
+                const SizedBox(height: 8),
+                Text(
+                  'Current Balance: $balance',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Color(0xFF666666),
+                  ),
+                ),
+              ],
               const SizedBox(height: 16),
               TextField(
                 controller: _amountController,
@@ -96,13 +149,71 @@ class _OverviewTabState extends State<OverviewTab> {
   }
 
   Future<void> donateContract(double amount) async {
-    // TODO: Implement donation contract interaction
-    print('Donation amount: $amount ETH');
-    
-    // For now, just grow the tree
-    final state = _treeKey.currentState;
-    if (!_isMaxDepthReached) {
-      state?.addBranch();
+    try {
+      // Show pending notification
+      ToastService.instance.showToast(
+        message: 'Transaction Submitted',
+        backgroundColor: Colors.grey,
+        icon: const Icon(Icons.info_outline, color: Colors.white, size: 16),
+      );
+
+      final appKit = WalletService.instance.appKit;
+      final web3 = Web3Service.instance;
+      if (appKit.session != null) {
+        final address = appKit.session!.getAddress('eip155');
+        if (address == null) {
+          debugPrint('Error: No wallet address found');
+          return;
+        }
+
+        final weiAmount = BigInt.from(amount * 1e18);
+        
+        print("Sending donation transaction");
+        
+        final txHash = await web3.sendDonation(address, weiAmount);
+        print('Transaction hash: $txHash');
+        
+        // Wait for transaction confirmation
+        bool confirmed = false;
+        while (!confirmed) {
+          final receipt = await web3.getTransactionReceipt(txHash);
+          if (receipt != null) {
+            confirmed = true;
+            if (receipt.status!) {
+              print('Donation confirmed!');
+              // Show success notification
+              ToastService.instance.showToast(
+                message: 'Donation successful!',
+                backgroundColor: const Color(0xFF27BF9D),
+                icon: const Icon(Icons.check_circle, color: Colors.white, size: 16),
+              );
+              
+              final state = _treeKey.currentState;
+              if (!_isMaxDepthReached) {
+                state?.addBranch();
+              }
+            } else {
+              print('Donation failed');
+              // Show error notification
+              ToastService.instance.showToast(
+                message: 'Transaction failed',
+                backgroundColor: Colors.red,
+                icon: const Icon(Icons.error, color: Colors.white, size: 16),
+              );
+            }
+          } else {
+            await Future.delayed(const Duration(seconds: 1));
+          }
+        }
+      }
+    } catch (e) {
+      print('Error during donation: $e');
+      // Show simplified error notification
+      ToastService.instance.showToast(
+        message: 'An error occurred',
+        backgroundColor: Colors.red,
+        icon: const Icon(Icons.error, color: Colors.white, size: 16),
+      );
     }
   }
 
