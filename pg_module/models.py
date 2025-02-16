@@ -21,3 +21,11 @@ class Charity(Base):
     name = Column(String(255), nullable=False, unique=True, primary_key=True)
     mission = Column(Text)
     url = Column(String(2083))
+
+class UserPreferences(Base):
+    __tablename__ = 'userpreferences'
+
+    userid = Column(VARCHAR(100), primary_key=True)
+    missionStatement = Column(Text)
+    prioritizeCurrentEvents = Column(Boolean, default=False)
+    pushNotifications = Column(Boolean, default=False)

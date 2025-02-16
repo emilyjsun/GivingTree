@@ -1,28 +1,83 @@
 import 'package:flutter/material.dart';
 import 'settings_toggle.dart';
 import '../services/wallet_service.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class SettingsContent extends StatefulWidget {
-  final VoidCallback? onComplete;
+  final Function onComplete;
+  final String walletAddress;
 
   const SettingsContent({
-    super.key,
-    this.onComplete,
-  });
+    required this.onComplete,
+    required this.walletAddress,
+    Key? key
+  }) : super(key: key);
 
   @override
-  State<SettingsContent> createState() => _SettingsContentState();
+  _SettingsContentState createState() => _SettingsContentState();
 }
 
 class _SettingsContentState extends State<SettingsContent> {
   bool _prioritizeCurrentEvents = false;
   bool _enablePushNotifications = false;
   final TextEditingController _missionController = TextEditingController();
+  bool _instantUpdates = false;
+  bool _isLoading = false;
 
   @override
   void dispose() {
     _missionController.dispose();
     super.dispose();
+  }
+
+  Future<void> _submitPreferences() async {
+    if (_missionController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter a mission statement')),
+      );
+      return;
+    }
+
+    setState(() => _isLoading = true);
+
+    try {
+      final response = await http.post(
+        Uri.parse('${dotenv.env['API_URL']}/preferences/create'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'userId': widget.walletAddress,
+          'missionStatement': _missionController.text,
+          'pushNotifs': _enablePushNotifications,
+          'prioritizeCurrentEvents': _prioritizeCurrentEvents,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        final result = json.decode(response.body);
+        
+        // Show success message
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Preferences saved successfully!'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+        
+        widget.onComplete();
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: ${response.body}')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Network error: $e')),
+      );
+    } finally {
+      setState(() => _isLoading = false);
+    }
   }
 
   @override
@@ -115,9 +170,7 @@ class _SettingsContentState extends State<SettingsContent> {
           child: SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: widget.onComplete ?? () {
-                // Handle save
-              },
+              onPressed: _submitPreferences,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF27BF9D),
                 padding: const EdgeInsets.symmetric(vertical: 8),
@@ -126,7 +179,7 @@ class _SettingsContentState extends State<SettingsContent> {
                 ),
               ),
               child: Text(
-                widget.onComplete != null ? 'Get Started' : 'Save Changes',
+                _isLoading ? 'Saving...' : 'Save Preferences',
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,

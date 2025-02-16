@@ -1,7 +1,7 @@
 from api.pg_module.crud import put_user_preferences
 from pg_module import Charity, CharityCategory, UserCategory, get_db, UserPreferences, put_user_preferences, create_user_preferences
 
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
@@ -15,6 +15,12 @@ class UserPrefModel(BaseModel):
     missionStatement: Optional[str]
     pushNotifs: Optional[bool]
     prioritizeCurrentEvents: Optional[bool]
+
+class CreatePreferencesRequest(BaseModel):
+    userId: str
+    missionStatement: str
+    pushNotifs: bool
+    prioritizeCurrentEvents: bool
 
 app = FastAPI()
 
@@ -55,3 +61,33 @@ async def get_user_preferences(userId: str, db: Session = Depends(get_db)):
 @app.post("/userpreferences")
 async def create_user_preferences(userId: str, preferences: UserPrefModel, db: Session = Depends(get_db)):
     return create_user_preferences(db, userId, UserPreferences(**preferences.model_dump()))
+
+@app.post("/userpreferences/create")
+async def create_preferences(
+    request: CreatePreferencesRequest,
+    db: Session = Depends(get_db)
+):
+    try:
+        user_prefs = create_user_preferences(
+            db=db,
+            user_id=request.userId,
+            mission_statement=request.missionStatement,
+            push_notifs=request.pushNotifs,
+            prioritize_events=request.prioritizeCurrentEvents
+        )
+        
+        return {
+            "status": "success",
+            "data": {
+                "userId": user_prefs.userid,
+                "missionStatement": user_prefs.missionStatement,
+                "pushNotifications": user_prefs.pushNotifications,
+                "prioritizeCurrentEvents": user_prefs.prioritizeCurrentEvents
+            }
+        }
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Error creating preferences: {str(e)}"
+        )
