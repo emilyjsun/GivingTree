@@ -1,5 +1,7 @@
 from api.pg_module.crud import put_user_preferences
 from pg_module import Charity, CharityCategory, UserCategory, get_db, UserPreferences, put_user_preferences, create_user_preferences
+from users import CharityInputCategorizer
+from web3_utils.interact_with_contract import enroll_user
 
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -68,6 +70,7 @@ async def create_preferences(
     db: Session = Depends(get_db)
 ):
     try:
+        # First create user preferences in database
         user_prefs = create_user_preferences(
             db=db,
             user_id=request.userId,
@@ -76,13 +79,65 @@ async def create_preferences(
             prioritize_events=request.prioritizeCurrentEvents
         )
         
+        # Process mission statement to get categories
+        categorizer = CharityInputCategorizer()
+        categorization_result = categorizer.process_input(
+            user_input=request.missionStatement,
+            instant_updates=request.pushNotifs,
+            user_id=request.userId
+        )
+        
+        # Get top 3 categories for contract
+        categories = categorization_result['categories']
+        topics = [cat for cat, _ in categories[:3]]
+
+            
+        # Calculate charity allocations
+        charity_addresses = []
+        charity_percentages = []
+        total_score = sum(score for _, score in categories[:3])
+        
+        for category, score in categories[:3]:
+            # Get charity for this category
+            charity = db.query(Charity).filter(
+                Charity.category == category
+            ).first()
+            
+            if charity:
+                charity_addresses.append(charity.wallet_address)
+                percentage = int((score / total_score) * 100)
+                charity_percentages.append(percentage)
+        
+        # Adjust percentages to sum to 100 using weighted distribution
+        if charity_percentages:
+            current_sum = sum(charity_percentages)
+            if current_sum != 100:
+                # Calculate adjustment factor
+                adjustment = (100 - current_sum) / len(charity_percentages)
+                # Distribute remaining percentage proportionally
+                charity_percentages = [p + adjustment for p in charity_percentages]
+                # Round to integers while preserving sum of 100
+                charity_percentages = [round(p) for p in charity_percentages[:-1]] + [
+                    100 - sum(round(p) for p in charity_percentages[:-1])
+                ]
+            
+        # Enroll user in smart contract
+        contract_result = enroll_user(
+            contract,
+            topics=topics,
+            charities=charity_addresses,
+            charityPercents=charity_percentages
+        )
+        
         return {
             "status": "success",
             "data": {
                 "userId": user_prefs.userid,
                 "missionStatement": user_prefs.missionStatement,
                 "pushNotifications": user_prefs.pushNotifications,
-                "prioritizeCurrentEvents": user_prefs.prioritizeCurrentEvents
+                "prioritizeCurrentEvents": user_prefs.prioritizeCurrentEvents,
+                "categories": categories,
+                "contract_tx": contract_result['transactionHash'].hex()
             }
         }
         

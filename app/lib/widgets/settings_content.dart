@@ -44,7 +44,7 @@ class _SettingsContentState extends State<SettingsContent> {
 
     try {
       final response = await http.post(
-        Uri.parse('${dotenv.env['API_URL']}/preferences/create'),
+        Uri.parse('${dotenv.env['API_URL']}/userpreferences/create'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'userId': widget.walletAddress,
@@ -57,11 +57,27 @@ class _SettingsContentState extends State<SettingsContent> {
       if (response.statusCode == 200) {
         final result = json.decode(response.body);
         
-        // Show success message
+        // Show success message with categories
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Preferences saved successfully!'),
-            duration: Duration(seconds: 2),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Preferences saved!'),
+                SizedBox(height: 4),
+                Text(
+                  'Categories: ${(result['data']['categories'] as List).map((c) => c[0]).join(", ")}',
+                  style: TextStyle(fontSize: 12),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Transaction: ${result['data']['contract_tx']}',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+            duration: Duration(seconds: 4),
           ),
         );
         
