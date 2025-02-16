@@ -1,1 +1,3 @@
-readme for treehacks 2025 project
+### The Giving Tree ###
+
+Intelligent, efficient donation agents.
