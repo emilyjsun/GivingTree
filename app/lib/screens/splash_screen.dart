@@ -22,8 +22,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _checkWalletConnection() async {
     await WalletService.instance.init(context);
     
-    if (!mounted) return;
-
     if (WalletService.instance.isConnected) {
       Navigator.pushReplacementNamed(context, '/home');
     } else {

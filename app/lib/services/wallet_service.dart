@@ -22,7 +22,6 @@ class WalletService {
   }
 
   Future<void> init(BuildContext context) async {
-    // If already initialized with same context, just return
     if (_isInitialized && _appKit != null) return;
 
     final projectId = dotenv.env['REOWN_PROJECT_ID'];
@@ -64,17 +63,19 @@ class WalletService {
 
   Future<void> disconnect() async {
     if (_isInitialized && _appKit != null) {
-      try {
-        // Only disconnect if currently connected
-        if (_appKit!.isConnected) {
-          await _appKit!.disconnect();
-        }
-      } catch (e) {
-        debugPrint('Error during disconnect: $e');
-      } finally {
-        // Ensure dispose happens even if disconnect fails
-        await dispose();
+      if (_appKit!.isConnected) {
+        await _appKit!.disconnect();
+        await dispose(); // dispose to clear the appkit instance
       }
+    }
+  }
+
+  String? getAddress() {
+    try {
+      const namespace = 'eip155';
+      return _appKit?.session?.getAddress(namespace);
+    } catch (e) {
+      return null;
     }
   }
 } 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'dart:math' as math;
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -9,13 +8,13 @@ class ProfileTab extends StatefulWidget {
   State<ProfileTab> createState() => _ProfileTabState();
 }
 
+// final address = WalletService.instance.getAddress(); to get address
+
 class _ProfileTabState extends State<ProfileTab> {
   int _currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
