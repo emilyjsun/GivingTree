@@ -967,15 +967,15 @@
       "score": 4,
       "categories": [
         {
-          "category": "1. Disaster Relief",
+          "category": "Disaster Relief",
           "similarity": 0.8
         },
         {
-          "category": "2. Refugee Assistance",
+          "category": "Refugee Assistance",
           "similarity": 0.7
         },
         {
-          "category": "3. Healthcare Access",
+          "category": "Healthcare Access",
           "similarity": 0.6
         }
       ]
