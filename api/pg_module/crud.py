@@ -14,12 +14,12 @@ def get_charity(db: Session, id: str) -> Optional[Charity]:
     return db.query(Charity).filter(Charity.name == id).first()
 
 def put_user_preferences(db: Session, userId: str, preferences: UserPreferences) -> None:    
-    db.query(UserPreferences).filter(UserPreferences.userId == userId).update(preferences)
+    db.query(UserPreferences).filter(UserPreferences.userid == userId).update(preferences)
     db.commit()
     db.refresh(preferences)
 
 def get_user_preferences(db: Session, userId: str) -> Optional[UserPreferences]:
-    return db.query(UserPreferences).filter(UserPreferences.userId == userId).first()
+    return db.query(UserPreferences).filter(UserPreferences.userid == userId).first()
 
 def create_user_preferences(db: Session, userId: str, preferences: UserPreferences) -> None:
     db.add(preferences)

@@ -27,7 +27,7 @@ class Charity(Base):
 class UserPreferences(Base):
     __tablename__ = 'userpreferences'
 
-    userId = Column(VARCHAR(100), primary_key=True)
-    missionStatement = Column(Text)
-    pushNotifs = Column(Boolean, default=False)
-    prioritizeCurrentEvents = Column(Boolean, default=False)
+    userid = Column(VARCHAR(100), primary_key=True)
+    mission_statement = Column(Text)
+    push_notifications = Column(Boolean, default=False)
+    prioritize_current_events   = Column(Boolean, default=False)
