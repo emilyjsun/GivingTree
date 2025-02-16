@@ -196,9 +196,13 @@ class _SettingsContentState extends State<SettingsContent> {
                   );
 
                   if (confirmed == true && context.mounted) {
-                    await WalletService.instance.disconnect();
-                    if (context.mounted) {
+                    try {
+                      // First navigate away from the current screen
                       Navigator.pushReplacementNamed(context, '/login');
+                      // Then disconnect the wallet
+                      await WalletService.instance.disconnect();
+                    } catch (e) {
+                      debugPrint('Error during logout: $e');
                     }
                   }
                 },
