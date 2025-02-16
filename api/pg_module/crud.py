@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from typing import Optional, List
-from .models import UserCategory, CharityCategory, Charity, UserPreferences
+from .models import UserCategory, CharityCategory, Charity, UserPreferences, CharityAddress
 
 def get_users_for_category(db: Session, category: str) -> Optional[List[UserCategory]]:
     return db.query(UserCategory).filter(UserCategory.category == category).all()
@@ -25,3 +25,6 @@ def create_user_preferences(db: Session, userId: str, preferences: UserPreferenc
     db.add(preferences)
     db.commit()
     db.refresh(preferences)
+
+def get_names_of_charities(db: Session, addresses: list[str]) -> Optional[List[CharityAddress]]:
+    return db.query(CharityAddress).filter(CharityAddress.address.in_(addresses)).all()

@@ -1,4 +1,4 @@
-from api.pg_module import put_user_preferences, Charity, CharityCategory, UserCategory, get_db, UserPreferences, put_user_preferences, create_user_preferences, get_charities_for_category, get_users_for_category, get_user_preferences, Counter
+from api.pg_module import put_user_preferences, Charity, CharityCategory, UserCategory, get_db, UserPreferences, put_user_preferences, create_user_preferences, get_charities_for_category, get_users_for_category, get_user_preferences, Counter, get_names_of_charities, CharityAddress
 
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,6 +14,10 @@ class UserPrefModel(BaseModel):
     missionStatement: Optional[str]
     pushNotifs: Optional[bool]
     prioritizeCurrentEvents: Optional[bool]
+
+class PydanticCharityAddress(BaseModel):
+    name: str
+    address: str
 
 app = FastAPI()
 
@@ -71,3 +75,9 @@ async def getCounter(userId: str, db: Session = Depends(get_db)):
         return {"count": match.countvalue}
     
     return {"count": 0}
+
+@app.get("/charityaddress")
+async def getCharityNames(addresses: list[str], db: Session = Depends(get_db)):
+    res = get_names_of_charities(db, addresses)
+
+    return [PydanticCharityAddress(name=charity.name, address=charity.address) for charity in res]

@@ -37,3 +37,10 @@ class Counter(Base):
 
     userid = Column(VARCHAR(255), primary_key=True)
     countvalue = Column(Integer)
+
+class CharityAddress(Base):
+    __tablename__ = 'charity_address'
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255), nullable=False)
+    address = Column(String(100), nullable=False)
