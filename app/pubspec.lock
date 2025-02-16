@@ -571,10 +571,9 @@ packages:
   reown_appkit:
     dependency: "direct main"
     description:
-      name: reown_appkit
-      sha256: "4760e8ca6ed9a75dea60659806cb8f0ca088c812324e2e7960a99026e95f07a6"
-      url: "https://pub.dev"
-    source: hosted
+      path: "/Users/rallin/.pub-cache/hosted/pub.dev/reown_appkit-1.3.0"
+      relative: false
+    source: path
     version: "1.3.0"
   reown_core:
     dependency: transitive

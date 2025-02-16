@@ -53,6 +53,45 @@ class _ProfileTabState extends State<ProfileTab> {
     });
   }
 
+  Future<void> donateContract() async {
+      rootBundle.loadString('assets/abi/contract.json').then((abiString) {
+        final ethContract = DeployedContract(
+          ContractAbi.fromJson(abiString, 'Owner'),
+          EthereumAddress.fromHex('0x01786AA502BEeF1862691399C5A526E4Ce16F43d'),
+        );  
+
+      final appKit = WalletService.instance.appKit;
+      if (appKit.session != null) {
+        final address = appKit.session!.getAddress('eip155');
+        if (address == null) {
+          debugPrint('Error: No wallet address found');
+          return;
+        }
+
+        final q = EthereumAddress.fromHex('0x0000000000000000000000000000000000000005');
+        
+        print(address);
+        print(q);
+        print(ethContract);
+        print(appKit.session?.topic);
+
+        print("Requesting Write Contract");
+        appKit.requestWriteContract(
+          topic: appKit.session?.topic,
+          chainId: 'eip155:11155111',
+          deployedContract: ethContract,
+          functionName: 'enroll',
+          transaction: Transaction(
+            from: EthereumAddress.fromHex(address),
+          ),
+          parameters: [ ['a' , 'b', 'c'], [q, q, q], [BigInt.from(50), BigInt.from(25), BigInt.from(25)] ],
+        ).then((result) {
+          debugPrint('Donation transaction result: $result');
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
