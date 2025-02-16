@@ -80,12 +80,16 @@
     "instant_updates": false,
     "portfolio": [
       [
-        "Sea Turtle Conservancy",
-        0.37136050615674465
+        "Drug Policy Alliance",
+        0.8
       ],
       [
-        "American Jewish Joint Distribution Committee",
-        0.3683170676440533
+        "Feeding America",
+        0.75
+      ],
+      [
+        "Sea Turtle Conservancy",
+        0.37136050615674465
       ],
       [
         "Team Rubicon",
@@ -114,10 +118,6 @@
       [
         "JOY International",
         0.24251015305931944
-      ],
-      [
-        "American Jewish Joint Distribution Committee",
-        0.24148855765674443
       ]
     ]
   },
@@ -159,6 +159,14 @@
       [
         "Committee to Protect Journalists",
         0.3285698679122777
+      ],
+      [
+        "- Outright International",
+        0.17
+      ],
+      [
+        "- Foundation Fighting Blindness, Inc.",
+        0.08
       ]
     ]
   }

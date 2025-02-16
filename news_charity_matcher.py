@@ -164,7 +164,7 @@ class NewsCharityMatcher:
             
             # Now do similarity search between article and filtered charities' missions
             article_text = f"{article['title']} {article.get('description', '')}"
-            similar_charities = []  # Move this outside the try block
+            similar_charities = []
             
             # Create a temporary collection for similarity search
             temp_collection = self.chroma_client.get_or_create_collection(
@@ -176,7 +176,7 @@ class NewsCharityMatcher:
                 # Add filtered charities to temp collection
                 temp_collection.add(
                     documents=[c['mission'] for c in category_filtered],
-                    metadatas=[{'name': c['name'], 'url': c['url']} for c in category_filtered],
+                    metadatas=[{'name': c['name'], 'url': c['url'], 'mission': c['mission']} for c in category_filtered],
                     ids=[str(i) for i in range(len(category_filtered))]
                 )
                 
@@ -196,6 +196,7 @@ class NewsCharityMatcher:
                         charity_data = {
                             'name': search_results['metadatas'][0][i]['name'],
                             'url': search_results['metadatas'][0][i]['url'],
+                            'mission': search_results['metadatas'][0][i]['mission'],
                             'similarity_score': 1 - (search_results['distances'][0][i] / 2)
                         }
                         similar_charities.append(charity_data)
@@ -349,15 +350,14 @@ Brief Reason: [one-line explanation]"
             print(f"Error getting urgency score: {e}")
             return "Urgency Score: N/A\nBrief Reason: Error in assessment"
 
-    def update_user_portfolios(self, subscribers, category, similar_charities, article_urgency):
-        """Update user portfolios with relevant charities and scores"""
+    def update_user_portfolios(self, subscribers, category, similar_charities, article):
+        """Update user portfolios using an AI portfolio manager"""
         try:
-            # Parse urgency score from string
-            urgency_line = article_urgency.split('\n')[0]
-            try:
-                urgency_score = float(urgency_line.split(': ')[1])
-            except:
-                urgency_score = 5.0  # Default if parsing fails
+            # Get urgency score for the article
+            urgency_result = self.get_urgency_score(article)
+            print("\nUrgency Assessment:")
+            print(urgency_result)
+            urgency_score = float(urgency_result.split('\n')[0].split(': ')[1]) if 'Score:' in urgency_result else 5.0
             
             # Load user database
             with open('user_database.json', 'r') as f:
@@ -365,59 +365,148 @@ Brief Reason: [one-line explanation]"
             
             # For each subscriber
             for user_id in subscribers:
-                print(f"Updating portfolio for user {user_id}")
+                print(f"\nAnalyzing portfolio for user {user_id}")
                 if user_id not in user_db:
                     continue
                 
-                # Get existing portfolio
-                existing_portfolio = user_db[user_id].get('portfolio', [])
+                # Get user's current portfolio and preferences
+                current_portfolio = user_db[user_id].get('portfolio', [])
+                user_categories = user_db[user_id]['categories']
                 
-                # Calculate relevance scores for each charity
-                portfolio_updates = []
-                for charity in similar_charities:
-                    # Calculate relevance score using:
-                    # - Charity similarity score (0-1)
-                    # - Article urgency (1-10)
-                    # - User's category confidence (0-1)
-                    similarity = charity['similarity_score']
+                # Prepare context for AI portfolio manager
+                portfolio_prompt = f"""
+As an experienced charity donation portfolio manager, analyze this situation and optimize the portfolio.
+
+ARTICLE CONTEXT:
+Title: {article['title']}
+Description: {article['description']}
+Category: {category}
+Urgency Level: {urgency_score}/10
+
+USER PROFILE:
+Current Portfolio (max 10 charities):
+{[f"- {name}: {score:.2%}" for name, score in current_portfolio]}
+
+Category Preferences: {user_categories}
+
+AVAILABLE CHARITIES TO CONSIDER:
+{[f"- {c['name']}\nMission: {c['mission'][:200]}...\nSimilarity Score: {c['similarity_score']:.2f}" for c in similar_charities]}
+
+TASK:
+1. Analyze the potential impact of new charities compared to existing portfolio
+2. Consider:
+   - Article's urgency ({urgency_score}/10)
+   - User's category preferences
+   - Portfolio diversity
+   - Charity mission alignment
+   - Current portfolio composition
+3. If portfolio is full (10 charities), decide if any new charities should replace existing ones
+
+Provide your recommendations in this exact format:
+PORTFOLIO_UPDATE:
+KEEP:
+charity_name1||relevance_score
+charity_name2||relevance_score
+[list charities to keep]
+
+ADD:
+charity_name3||relevance_score
+charity_name4||relevance_score
+[list new charities to add]
+
+REMOVE:
+charity_name5||previous_score
+charity_name6||previous_score
+[list charities to remove if needed]
+
+Notes:
+- Relevance scores must be between 0 and 1
+- Total portfolio size cannot exceed 10 charities
+- Only recommend removing charities if new ones would significantly improve the portfolio
+- Explain your reasoning after the recommendations
+"""
+
+                try:
+                    response = self.client.chat.completions.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are an experienced charity donation portfolio manager with expertise in impact investing and charitable giving. Your goal is to help users maintain well-balanced, impactful charitable portfolios that align with their interests and current events. Make strategic decisions about portfolio composition."},
+                            {"role": "user", "content": portfolio_prompt}
+                        ],
+                        temperature=0.3
+                    )
                     
-                    # Get user's confidence for the category
-                    user_categories = user_db[user_id]['categories']
-                    category_confidence = 0.5  # Default if category not found
-                    for cat, conf in user_categories:
-                        if cat == category:
-                            category_confidence = float(conf)
-                            break
+                    # Parse AI recommendations
+                    recommendations = response.choices[0].message.content
+                    keep_charities = []
+                    add_charities = []
+                    remove_charities = set()
                     
-                    # Combine factors into final relevance score
-                    relevance = (similarity * 0.4 + 
-                               (urgency_score/10) * 0.3 + 
-                               category_confidence * 0.3)
+                    # Parse sections
+                    if "PORTFOLIO_UPDATE:" in recommendations:
+                        sections = recommendations.split("PORTFOLIO_UPDATE:")[1].split("\n\n")
+                        for section in sections:
+                            if section.startswith("KEEP:"):
+                                for line in section.split("\n")[1:]:
+                                    if "||" in line:
+                                        name, score = line.split("||")
+                                        try:
+                                            keep_charities.append((name.strip(), float(score.strip())))
+                                        except:
+                                            continue
+                            elif section.startswith("ADD:"):
+                                for line in section.split("\n")[1:]:
+                                    if "||" in line:
+                                        name, score = line.split("||")
+                                        try:
+                                            add_charities.append((name.strip(), float(score.strip())))
+                                        except:
+                                            continue
+                            elif section.startswith("REMOVE:"):
+                                for line in section.split("\n")[1:]:
+                                    if "||" in line:
+                                        name, _ = line.split("||")
+                                        remove_charities.add(name.strip())
                     
-                    # Add tuple of (charity_name, relevance_score)
-                    portfolio_updates.append((charity['name'], relevance))
-                
-                # Combine existing portfolio with new updates
-                # Convert existing portfolio items to tuples if they aren't already
-                existing_tuples = []
-                for item in existing_portfolio:
-                    if isinstance(item, tuple):
-                        existing_tuples.append(item)
-                    elif isinstance(item, list):
-                        existing_tuples.append(tuple(item))
-                
-                combined_portfolio = existing_tuples + portfolio_updates
-                
-                # Sort by relevance score (descending) and keep top 10
-                user_db[user_id]['portfolio'] = sorted(combined_portfolio, 
-                                                     key=lambda x: x[1], 
-                                                     reverse=True)[:10]
-                
-                print(f"\nUpdated portfolio for user {user_id}:")
-                for charity_name, relevance in user_db[user_id]['portfolio']:
-                    print(f"Charity: {charity_name}")
-                    print(f"Relevance Score: {relevance:.2%}")
-                    print("-" * 30)
+                    # Build new portfolio
+                    new_portfolio = []
+                    
+                    # Add kept charities
+                    for charity in current_portfolio:
+                        if charity[0] not in remove_charities:
+                            new_portfolio.append(charity)
+                    
+                    # Add new charities
+                    new_portfolio.extend(add_charities)
+                    
+                    # Sort and limit to top 10
+                    user_db[user_id]['portfolio'] = sorted(
+                        new_portfolio, 
+                        key=lambda x: x[1], 
+                        reverse=True
+                    )[:10]
+                    
+                    # Print updates
+                    print(f"\nPortfolio updates for user {user_id}:")
+                    if remove_charities:
+                        print("\nRemoved charities:")
+                        for name in remove_charities:
+                            print(f"- {name}")
+                    
+                    if add_charities:
+                        print("\nAdded charities:")
+                        for name, score in add_charities:
+                            print(f"- {name} ({score:.2%})")
+                    
+                    print("\nFinal Portfolio:")
+                    for charity_name, relevance in user_db[user_id]['portfolio']:
+                        print(f"Charity: {charity_name}")
+                        print(f"Relevance Score: {relevance:.2%}")
+                        print("-" * 30)
+                    
+                except Exception as e:
+                    print(f"Error in AI portfolio analysis: {e}")
+                    continue
             
             # Save updated user database
             with open('user_database.json', 'w') as f:
@@ -425,87 +514,6 @@ Brief Reason: [one-line explanation]"
             
         except Exception as e:
             print(f"Error updating user portfolios: {e}")
-
-    def process_feed(self, feed_url):
-        """Process RSS feed and find charity matches."""
-        try:
-            feed = feedparser.parse(feed_url)
-            print(f"\nProcessing feed: {feed.feed.title}")
-            
-            for entry in feed.entries:
-                # Skip if already processed
-                if entry.link in self.processed_articles:
-                    continue
-                
-                title = entry.get('title', '')
-                description = entry.get('description', '')
-                
-                print("\n" + "="*50)  # Add separator for clarity
-                print(f"Processing new article...")
-                
-                # Use GPT to check relevance
-                if not self.is_relevant_article(title, description):
-                    print("Skipping article based on GPT response")
-                    continue
-                
-                print("Article deemed relevant - continuing analysis...")
-                
-                try:
-                    # Get full article text
-                    article_text = self.get_article_text(entry.link)
-                    if not article_text:
-                        print("Could not fetch article text - skipping")
-                        continue
-                    
-                    # Create article dict for analysis
-                    article = {
-                        'title': title,
-                        'description': description,
-                        'text': article_text,
-                        'link': entry.link
-                    }
-                    
-                    # Find matching categories and subscribers
-                    matching_categories, subscribers = self.find_matching_categories(article)
-                    print("\nMatching Categories:")
-                    for i, cat in enumerate(matching_categories, 1):
-                        print(f"{i}. {cat['category']}")
-                        print(f"   Similarity Score: {cat['similarity']:.4f}")
-                    
-                    # Find similar charities
-                    similar_charities = self.find_similar_charities(article)
-                    
-                    if similar_charities:
-                        print("\nTop Similar Charities:")
-                        for i, charity in enumerate(similar_charities, 1):
-                            print(f"{i}. {charity['name']}")
-                            print(f"   Similarity Score: {charity['similarity_score']:.4f}")
-                            print(f"   URL: {charity['url']}\n")
-                        
-                        # Add similar charities to article before GPT analysis
-                        article['similar_charities'] = similar_charities
-                        
-                    else:
-                        print("No similar charities found.")
-                    
-                    # Add after finding matching categories:
-                    print("\nUrgency Assessment:")
-                    urgency_result = self.get_urgency_score(article)
-                    print(urgency_result)
-                    print(f"Updating portfolios for {len(subscribers)} subscribers")
-                    self.update_user_portfolios(subscribers, matching_categories[0]['category'],similar_charities, urgency_result)
-
-                    
-                    # Mark article as processed
-                    self.processed_articles.add(entry.link)
-                    self.save_processed_articles()
-                    
-                except Exception as e:
-                    print(f"Error processing article: {e}")
-                    continue
-                
-        except Exception as e:
-            print(f"Error processing feed: {e}")
 
     def run(self, rss_urls, interval=300):  # interval in seconds (default 5 minutes)
         while True:
@@ -536,16 +544,8 @@ Brief Reason: [one-line explanation]"
                     similar_charities = self.find_similar_charities(article)
                     
                     if similar_charities and subscribers:
-                        # Get urgency score
-                        urgency_result = self.get_urgency_score(article)
-                        print("\nUrgency Assessment:")
-                        print(urgency_result)
-                        
-                        # Add similar charities to article before GPT analysis
-                        article['similar_charities'] = similar_charities
-                        
                         # Update user portfolios
-                        self.update_user_portfolios(subscribers, matching_categories[0]['category'],similar_charities, urgency_result)
+                        self.update_user_portfolios(subscribers, matching_categories[0]['category'],similar_charities, article)
                     
                     else:
                         print("No similar charities found.")
