@@ -3,44 +3,66 @@ import 'overview_screen.dart';
 import 'profile_screen.dart';
 import 'settings_screen.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    OverviewTab(),
+    ProfileTab(),
+    SettingsTab(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        extendBody: true,
-        body: const TabBarView(
-          children: [
-            OverviewTab(),
-            ProfileTab(),
-            SettingsTab(),
+    return Scaffold(
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 10,
+            ),
           ],
         ),
-        bottomNavigationBar: Container(
-          margin: const EdgeInsets.all(24),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: Colors.white,
-            border: Border.all(
-              color: const Color(0xFFB6B8BE),
-              width: 1,
+        child: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(Icons.home),
+              label: 'Overview',
             ),
-          ),
-          child: TabBar(
-            tabs: const [
-              Tab(icon: Icon(Icons.dashboard_outlined)),
-              Tab(icon: Icon(Icons.person_outline)),
-              Tab(icon: Icon(Icons.settings_outlined)),
-            ],
-            indicator: const BoxDecoration(),
-            labelColor: const Color(0xFF27BF9D),
-            unselectedLabelColor: const Color(0xFFB6B8BE),
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            dividerColor: Colors.transparent,
-          ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline),
+              activeIcon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_outlined),
+              activeIcon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: const Color(0xFF27BF9D),
+          unselectedItemColor: Colors.grey,
+          onTap: _onItemTapped,
         ),
       ),
     );

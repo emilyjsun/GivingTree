@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'dart:math' as math;
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -80,7 +81,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     },
                     children: [
                       _buildPieChart(),
-                      _buildPieChart(), // Second view - you can customize this
+                      _buildSecondPieChart(),
                     ],
                   ),
                 ),
@@ -149,6 +150,30 @@ class _ProfileTabState extends State<ProfileTab> {
             value: 20,
             color: const Color(0xFFCAEEDE),
             showTitle: false,
+          ),
+        ],
+        sectionsSpace: 0,
+        centerSpaceRadius: 65,
+        centerSpaceColor: Colors.white,
+        startDegreeOffset: 270,
+      ),
+    );
+  }
+
+  Widget _buildSecondPieChart() {
+    return PieChart(
+      PieChartData(
+        sections: [
+          PieChartSectionData(
+            value: 100,
+            showTitle: false,
+            gradient: const SweepGradient(
+              colors: [
+                Color(0xFFC6EDDB),
+                Color(0xFF27BF9D),
+                Color(0xFFC6EDDB),
+              ],
+            ),
           ),
         ],
         sectionsSpace: 0,

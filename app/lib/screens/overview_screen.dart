@@ -30,11 +30,6 @@ class _OverviewTabState extends State<OverviewTab> {
             Center(
               child: GrowingTree(
                 key: _treeKey,
-                onMaxDepthReached: () {
-                  setState(() {
-                    _isMaxDepthReached = true;
-                  });
-                },
               ),
             ),
             Positioned(
