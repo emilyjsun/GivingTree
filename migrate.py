@@ -89,24 +89,12 @@ def migrate_data():
                     "mission_statement": charity.get('mission', 'Mission statement not available')
                 })
                 
-                # Get all high-scoring categories (>0.8)
-                high_scoring_categories = []
-                for cat_info in charity.get('categories', []):
-                    category_name = cat_info.get('category')
-                    category_score = float(cat_info.get('similarity', 0))
-                    if category_score >= 0.8 and category_name in CATEGORY_TO_ID:
-                        high_scoring_categories.append(CATEGORY_TO_ID[category_name])
-                
-                # Default to first category if no high scoring ones found
-                if not high_scoring_categories:
-                    category_name = charity.get('categories', [{}])[0].get('category', 'Unknown')
-                    category_id = CATEGORY_TO_ID.get(category_name, "-1")
-                    high_scoring_categories = [category_id]
+                # Get category ID instead of name
+                category_name = charity.get('categories', [{}])[0].get('category', 'Unknown')
+                category_id = CATEGORY_TO_ID.get(category_name, "-1")  # -1 for unknown categories
                 
                 documents.append(doc)
-                metadatas.append({
-                    "categories": ",".join(high_scoring_categories)  # All categories with score >= 0.8
-                })
+                metadatas.append({"category_id": category_id})
                 ids.append(str(j))
             
             charities_collection.add(
@@ -135,14 +123,13 @@ def migrate_data():
         )
         if char_result['documents'][0]:
             doc = json.loads(char_result['documents'][0][0])
-            high_scoring_ids = char_result['metadatas'][0][0]['categories'].split(',')
+            category_id = char_result['metadatas'][0][0]['category_id']
+            category_name = CATEGORIES.get(category_id, "Unknown")
             
             print("\nCharities test query:")
             print(f"Found charity: {doc['name']}")
             print(f"Mission: {doc['mission_statement'][:100]}...")
-            print("High Scoring Categories:")
-            for cat_id in high_scoring_ids:
-                print(f"- {CATEGORIES.get(cat_id, 'Unknown')} (ID: {cat_id})")
+            print(f"Category: {category_name} (ID: {category_id})")
         
         print("\nMigration completed successfully!")
         

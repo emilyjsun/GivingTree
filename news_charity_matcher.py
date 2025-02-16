@@ -28,102 +28,36 @@ class NewsCharityMatcher:
         self.processed_articles = set()
         self.postgres_db = postgres_db
         
-        # Initialize ChromaDB with OpenAI embeddings
-        self.chroma_client = chromadb.PersistentClient(path="./chroma_db")
-        openai_ef = embedding_functions.DefaultEmbeddingFunction()
-        
-        # Create/Get collection
-        self.collection = self.chroma_client.get_or_create_collection(
-            name="charity_embeddings",
-            embedding_function=openai_ef
-        )
-        
-        # Load charities from charities_final.json
+        # Initialize ChromaDB client
         try:
-            with open('charities_final.json', 'r') as f:
-                data = json.load(f)
-                self.charities = data['charities']
-                
-            if self.collection.count() == 0:
-                # Process in smaller batches
-                batch_size = 50
-                for i in range(0, len(self.charities), batch_size):
-                    batch = self.charities[i:i + batch_size]
-                    
-                    # Prepare batch for ChromaDB
-                    documents = []
-                    metadatas = []
-                    ids = []
-                    
-                    for j, charity in enumerate(batch):
-                        # Combine name and mission for better semantic matching
-                        mission = charity.get('mission', '')
-                        if not mission or mission == "Mission statement not found":
-                            print(f"Warning: Missing mission for {charity['name']}")
-                            mission = f"This is a charity focused on {charity['name'].lower()}"
-                        
-                        combined_text = f"{charity['name']}: {mission}"
-                        documents.append(combined_text)
-                        metadatas.append({
-                            "name": charity['name'],
-                            "url": charity['url'],
-                            "score": charity.get('score', 0),
-                            "categories": json.dumps(charity.get('categories', []))  # Store categories in metadata
-                        })
-                        ids.append(str(i + j))
-                    
-                    # Add batch to ChromaDB
-                    self.collection.add(
-                        documents=documents,
-                        metadatas=metadatas,
-                        ids=ids
-                    )
-                    print(f"Added batch of {len(documents)} charities to ChromaDB ({i + len(batch)}/{len(self.charities)} total)")
-                    time.sleep(1)  # Rate limiting pause
-                    
-        except FileNotFoundError:
-            print("Error: charities_final.json not found")
-            self.charities = []
-            
+            self.chroma_client = chromadb.HttpClient(
+                ssl=True,
+                host='api.trychroma.com',
+                tenant='06afecae-2671-4d45-ae27-4d721cfbdbf5',
+                database='treehacks_charities',
+                headers={
+                    'x-chroma-token': os.getenv('CHROMA_API_KEY')
+                }
+            )
+        except Exception as e:
+            print(f"Error initializing ChromaDB client: {e}")
+            raise RuntimeError(f"Failed to initialize ChromaDB client: {str(e)}")
+        
+        # Get existing collections
+        self.categories_collection = self.chroma_client.get_collection('categories')
+        self.charities_collection = self.chroma_client.get_collection('charities')
+        
+        # Load categories from ChromaDB
+        categories_result = self.categories_collection.get()
+        self.CATEGORIES = [doc for doc in categories_result['documents']]
+        self.category_ids = {cat: id for id, cat in zip(categories_result['ids'], categories_result['documents'])}
+    
         # Load processed articles history
         try:
             with open('processed_articles.json', 'r') as f:
                 self.processed_articles = set(json.load(f))
         except FileNotFoundError:
             self.processed_articles = set()
-
-        # Add categories
-        self.CATEGORIES = [
-            "Disaster Relief",
-            "Education Support",
-            "Healthcare Access",
-            "Food Security",
-            "Refugee Assistance",
-            "Child Welfare",
-            "Environmental Conservation",
-            "Women's Empowerment",
-            "Housing & Shelter",
-            "Clean Water Access",
-            "Mental Health Support",
-            "Poverty Alleviation",
-            "Human Rights",
-            "Community Development",
-            "Animal Welfare"
-        ]
-        
-        # Create categories collection
-        self.category_collection = self.chroma_client.get_or_create_collection(
-            name="category_embeddings",
-            embedding_function=openai_ef
-        )
-        
-        # Initialize categories if empty
-        if self.category_collection.count() == 0:
-            self.category_collection.add(
-                documents=self.CATEGORIES,
-                metadatas=[{"category": cat} for cat in self.CATEGORIES],
-                ids=[str(i) for i in range(len(self.CATEGORIES))]
-            )
 
     def get_rss_feeds(self, rss_urls):
         articles = []
@@ -152,73 +86,39 @@ class NewsCharityMatcher:
             top_category = matching_categories[0]['category']
             print(f"\nFiltering charities by top category: {top_category}")
             
-            # Get all charities that match the category
-            category_filtered = get_charities_for_category(self.postgres_db, top_category)
-            
-            print(f"Found {len(category_filtered)} charities in category '{top_category}'")
-            
-            if not category_filtered:
-                print("No charities found in this category")
+            # Get category ID
+            category_id = self.category_ids.get(top_category)
+            if not category_id:
+                print(f"Category ID not found for {top_category}")
                 return []
             
-            # Now do similarity search between article and filtered charities' missions
+            print(f"Searching for charities with category ID: {category_id}")
+            # Query charities collection with category filter
             article_text = f"{article['title']} {article.get('description', '')}"
-            similar_charities = []
+
             
-            # Create a temporary collection for similarity search
-            temp_collection = self.chroma_client.get_or_create_collection(
-                name="temp_category_search",
-                embedding_function=self.collection._embedding_function
+            results = self.charities_collection.query(
+                query_texts=[article_text],
+                where={"category_id": {"$eq": category_id}},
+                n_results=n_results
             )
             
-            try:
-                # Add filtered charities to temp collection
-                temp_collection.add(
-                    documents=[c.mission for c in category_filtered],
-                    metadatas=[{'name': c.name, 'url': c.url, 'mission': c.mission} for c in category_filtered],
-                    ids=[str(i) for i in range(len(category_filtered))]
-                )
-                
-                print(f"Added {len(category_filtered)} charities to temp collection")
-                
-                # Perform similarity search
-                search_results = temp_collection.query(
-                    query_texts=[article_text],
-                    n_results=min(n_results, len(category_filtered))
-                )
-                
-                print(f"Query results: {len(search_results['ids'][0])} matches found")
-                
-                # Process results
-                if len(search_results['ids'][0]) > 0:
-                    for i in range(len(search_results['ids'][0])):
-                        charity_data = {
-                            'name': search_results['metadatas'][0][i]['name'],
-                            'url': search_results['metadatas'][0][i]['url'],
-                            'mission': search_results['metadatas'][0][i]['mission'],
-                            'similarity_score': 1 - (search_results['distances'][0][i] / 2)
-                        }
-                        similar_charities.append(charity_data)
-                    print(f"Processed {len(similar_charities)} charity matches")
-                else:
-                    print("No matches found in similarity search")
-                
-            except Exception as e:
-                print(f"Error during similarity search: {e}")
-            finally:
-                # Delete temporary collection
-                try:
-                    self.chroma_client.delete_collection("temp_category_search")
-                    print("Temporary collection deleted")
-                except Exception as e:
-                    print(f"Error deleting temporary collection: {e}")
+            similar_charities = []
+            if results['documents'][0]:
+                for i in range(len(results['documents'][0])):
+                    doc = json.loads(results['documents'][0][i])
+                    print(f"Charity: {doc['name']}")
+                    charity_data = {
+                        'name': doc['name'],
+                        'mission': doc['mission_statement'],
+                        'similarity_score': 1 - (results['distances'][0][i] / 2)
+                    }
+                    similar_charities.append(charity_data)
             
             return similar_charities
             
         except Exception as e:
-            print(f"Error in overall process: {e}")
-            print(f"Article text: {article_text[:100]}...")
-            print(f"Category filtered charities: {len(category_filtered)}")
+            print(f"Error finding similar charities: {e}")
             return []
 
     def save_processed_articles(self):
@@ -265,39 +165,51 @@ Answer:"""
 
     def find_matching_categories(self, article):
         """Find top 3 matching categories for an article."""
-        # Combine title and description for better matching
-        article_text = f"{article['title']} {article.get('description', '')}"
-        
-        # Query the category collection
-        results = self.category_collection.query(
-            query_texts=[article_text],
-            n_results=3
-        )
-        
-        # Format results
-        categories = []
-        distances = results['distances'][0]
-        
-        # Normalize distances to similarities (0 to 1 range)
-        max_distance = max(distances)
-        min_distance = min(distances)
-        range_distance = max_distance - min_distance if max_distance != min_distance else 1
-        
-        for i in range(len(distances)):
-            category = results['metadatas'][0][i]['category']
-            # Convert distance to normalized similarity score
-            normalized_similarity = 1 - ((distances[i] - min_distance) / range_distance)
-            categories.append({
-                'category': category,
-                'similarity': normalized_similarity
-            })
+        try:
+            # Combine title and description for better matching
+            article_text = f"{article['title']} {article.get('description', '')}"
             
-            # Get subscribers for top category
-            if i == 0:  # Only for the top category
-                subscribers = get_users_for_category(self.postgres_db, category)
-                    
-        
-        return categories, subscribers
+            print("\nQuerying categories collection...")
+            # Query the category collection
+            results = self.categories_collection.query(
+                query_texts=[article_text],
+                n_results=3
+            )
+                        
+            # Check if we got valid results
+            if not results or not results.get('documents') or not results['documents'][0]:
+                print("No matching categories found")
+                return [], []
+            
+            # Format results
+            categories = []
+            distances = results['distances'][0]
+            
+            # Normalize distances to similarities (0 to 1 range)
+            max_distance = max(distances)
+            min_distance = min(distances)
+            range_distance = max_distance - min_distance if max_distance != min_distance else 1
+            
+            for i in range(len(distances)):
+                category = results['documents'][0][i]  # Get category name directly from documents
+                # Convert distance to normalized similarity score
+                normalized_similarity = 1 - ((distances[i] - min_distance) / range_distance)
+                categories.append({
+                    'category': category,
+                    'similarity': normalized_similarity
+                })
+                
+                # Get subscribers for top category
+                if i == 0:  # Only for the top category
+                    subscribers = get_users_for_category(self.postgres_db, category)
+            
+            print(f"\nMatched categories: {json.dumps(categories, indent=2)}")
+            return categories, subscribers
+            
+        except Exception as e:
+            print(f"Error in find_matching_categories: {str(e)}")
+            print(f"Article text: {article_text}")
+            return [], []
 
     def get_urgency_score(self, article):
         """Get urgency score from 1-10 for the article using GPT."""
