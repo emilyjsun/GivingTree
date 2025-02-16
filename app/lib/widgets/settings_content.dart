@@ -129,7 +129,7 @@ class _SettingsContentState extends State<SettingsContent> {
                   ),
                 ),
                 child: Text(
-                  widget.onComplete != null ? 'Get Started' : 'Save Mission Statement',
+                  widget.onComplete != null ? 'Get Started' : 'Save Changes',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
