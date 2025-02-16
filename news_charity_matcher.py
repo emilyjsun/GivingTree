@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 from pg_module import get_charities_for_category, get_users_for_category
 import os
 
+from pg_module.models import UserCategory
+
 load_dotenv()
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -151,15 +153,7 @@ class NewsCharityMatcher:
             print(f"\nFiltering charities by top category: {top_category}")
             
             # Get all charities that match the category
-            category_filtered = []
-            for charity in self.charities:
-                charity_categories = charity.get('categories', [])
-                if any(cat['category'] == top_category for cat in charity_categories):
-                    category_filtered.append({
-                        'name': charity['name'],
-                        'url': charity['url'],
-                        'mission': charity['mission']
-                    })
+            category_filtered = get_charities_for_category(self.postgres_db, top_category)
             
             print(f"Found {len(category_filtered)} charities in category '{top_category}'")
             
@@ -180,8 +174,8 @@ class NewsCharityMatcher:
             try:
                 # Add filtered charities to temp collection
                 temp_collection.add(
-                    documents=[c['mission'] for c in category_filtered],
-                    metadatas=[{'name': c['name'], 'url': c['url'], 'mission': c['mission']} for c in category_filtered],
+                    documents=[c.mission for c in category_filtered],
+                    metadatas=[{'name': c.name, 'url': c.url, 'mission': c.mission} for c in category_filtered],
                     ids=[str(i) for i in range(len(category_filtered))]
                 )
                 
@@ -269,16 +263,6 @@ Answer:"""
             print(f"Error checking article relevance: {e}")
             return True  # Default to including article if check fails
 
-    def get_subscribers_for_category(self, category):
-        """Get list of subscribers for a category from category_subscribers.json"""
-        try:
-            with open('category_subscribers.json', 'r') as f:
-                subscribers = json.load(f)
-                return subscribers.get(category, [])
-        except FileNotFoundError:
-            print("No subscribers database found")
-            return []
-
     def find_matching_categories(self, article):
         """Find top 3 matching categories for an article."""
         # Combine title and description for better matching
@@ -353,7 +337,7 @@ Brief Reason: [one-line explanation]"
             print(f"Error getting urgency score: {e}")
             return "Urgency Score: N/A\nBrief Reason: Error in assessment"
 
-    def update_user_portfolios(self, subscribers, category, similar_charities, article):
+    def update_user_portfolios(self, subscribers: list[UserCategory], category, similar_charities, article):
         """Update user portfolios using an AI portfolio manager"""
         try:
             # Get urgency score for the article
@@ -367,8 +351,10 @@ Brief Reason: [one-line explanation]"
                 user_db = json.load(f)
             
             # For each subscriber
-            for user_id in subscribers:
+            for user in subscribers:
+                user_id = user.userid
                 print(f"\nAnalyzing portfolio for user {user_id}")
+
                 if user_id not in user_db:
                     continue
                 
