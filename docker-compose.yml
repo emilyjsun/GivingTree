@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  charity-matcher:
+    build: .
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./vector_db:/app/vector_db
+      - ./.env:/app/.env
+      - ./user_database.json:/app/user_database.json
+      - ./category_subscribers.json:/app/category_subscribers.json
+      - ./charities_final.json:/app/charities_final.json
+      - ./processed_articles.json:/app/processed_articles.json
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped 

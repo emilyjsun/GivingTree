@@ -1,20 +1,19 @@
 from news_charity_matcher import NewsCharityMatcher
 
-# List of RSS feeds to monitor
-RSS_FEEDS = [
-    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-    "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
-    "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
-    "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
-    "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml"
-]
-
 def main():
-    # Create matcher without passing API key (it will load from .env)
-    matcher = NewsCharityMatcher()
-    print("Starting News Charity Matcher...")
-    matcher.run(RSS_FEEDS)
+    # List of RSS feeds to monitor
+    rss_feeds = [
+        'http://feeds.reuters.com/reuters/worldNews',
+        'http://feeds.reuters.com/Reuters/domesticNews',
+        # Add more RSS feeds as needed
+    ]
+    
+    try:
+        matcher = NewsCharityMatcher()
+        print("Starting charity matcher...")
+        matcher.run(rss_feeds)
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main() 

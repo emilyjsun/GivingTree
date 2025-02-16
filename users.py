@@ -5,6 +5,7 @@ import json
 from datetime import datetime
 from queue import PriorityQueue
 import heapq
+from chromadb.utils import embedding_functions
 
 class User:
     def __init__(self, uid, wallet_address, categories=None, instant_updates=False):
@@ -100,7 +101,15 @@ class CharityInputCategorizer:
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
         
         # Initialize ChromaDB
-        self.chroma_client = chromadb.PersistentClient(path="./vector_db")
+        self.chroma_client = chromadb.HttpClient(
+            ssl=True,
+            host='api.trychroma.com',
+            tenant='06afecae-2671-4d45-ae27-4d721cfbdbf5',
+            database='test',
+            headers={
+                'x-chroma-token': 'ck-4nbKD36SnTF5UGTVJVXaqzy4pigSLSykruJXThE4EpJr'
+            }
+        )
         self.collection = self.chroma_client.get_or_create_collection(
             name="user_inputs",
             metadata={"description": "User input categorization"}
@@ -186,15 +195,14 @@ class CharityInputCategorizer:
         if user_id not in self.processed_inputs:
             # Store in ChromaDB
             embedding = self.model.encode(user_input).tolist()
+            
+            # Only store top category in metadata
+            top_category = categories[0][0] if categories else "Unknown"
+            
             self.collection.add(
                 documents=[user_input],
                 metadatas=[{
-                    "primary_category": categories[0][0],
-                    "all_categories": ",".join([cat for cat, _ in categories]),
-                    "all_scores": ",".join([f"{score:.4f}" for _, score in categories]),
-                    "timestamp": datetime.now().isoformat(),
-                    "instant_updates": instant_updates,
-                    "user_id": user_id  # Use provided user_id
+                    "category": top_category
                 }],
                 embeddings=[embedding],
                 ids=[user_id]
@@ -210,7 +218,7 @@ class CharityInputCategorizer:
             self.processed_inputs.add(user_id)
             self.save_processed_inputs()
             
-            return user_id  # Return the generated user ID
+            return user_id
 
     def process_input(self, user_input: str, instant_updates: str = 'false', user_id: str = None) -> dict:
         """
@@ -242,20 +250,8 @@ class CharityInputCategorizer:
         # Display each entry
         for i in range(len(results['ids'])):
             print(f"\nEntry {i+1}:")
-            print(f"User ID: {results['ids'][i]}")
             print(f"Input: {results['documents'][i]}")
-            print(f"Primary Category: {results['metadatas'][i]['primary_category']}")
-            print(f"Instant Updates: {'✅' if results['metadatas'][i]['instant_updates'] == 'true' else '❌'}")
-            
-            # Split and display all categories and scores
-            categories = results['metadatas'][i]['all_categories'].split(',')
-            scores = [float(score) for score in results['metadatas'][i]['all_scores'].split(',')]
-            
-            print("\nTop 3 Categories:")
-            for cat, score in zip(categories, scores):
-                print(f"- {cat}: {score:.2%}")
-            
-            print(f"Timestamp: {results['metadatas'][i]['timestamp']}")
+            print(f"Top Category: {results['metadatas'][i]['category']}")
             print("-" * 30)
 
     def view_category_subscribers(self):
