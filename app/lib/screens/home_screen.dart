@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'overview_screen.dart';
 import 'profile_screen.dart';
 import 'settings_screen.dart';
-import '../services/wallet_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
