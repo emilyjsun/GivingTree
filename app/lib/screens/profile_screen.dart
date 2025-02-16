@@ -138,7 +138,9 @@ class _ProfileTabState extends State<ProfileTab> {
                   child: SafeArea(
                     child: Container(
                       padding: const EdgeInsets.all(16),
-                      child: const RecentTransactionsWidget(),
+                      child: RecentTransactionsWidget(
+                        donations: _donations,
+                      ),
                     ),
                   ),
                 ),
@@ -151,35 +153,27 @@ class _ProfileTabState extends State<ProfileTab> {
   }
 
   Widget _buildPieChart() {
-    return PieChart(
-      PieChartData(
-        sections: [
-          PieChartSectionData(
-            value: 35,
-            color: const Color(0xFF27BF9D),
-            showTitle: false,
-          ),
-          PieChartSectionData(
-            value: 25,
-            color: const Color(0xFF13A47D),
-            showTitle: false,
-          ),
-          PieChartSectionData(
-            value: 20,
-            color: const Color(0xFF119068),
-            showTitle: false,
-          ),
-          PieChartSectionData(
-            value: 20,
-            color: const Color(0xFFCAEEDE),
-            showTitle: false,
-          ),
-        ],
-        sectionsSpace: 0,
-        centerSpaceRadius: 65,
-        centerSpaceColor: Colors.white,
-        startDegreeOffset: 270,
-      ),
+    if (_userAddress == null) {
+      return const Center(
+        child: Text('Please connect your wallet'),
+      );
+    }
+
+    return FutureBuilder<UserTopicsData>(
+      future: Web3Service.instance.getUserTopics(_userAddress!),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        
+        if (snapshot.hasError || !snapshot.hasData) {
+          return const Center(child: Text('Error loading portfolio data'));
+        }
+
+        return PortfolioChart(
+          charities: snapshot.data!.charities,
+        );
+      },
     );
   }
 
@@ -222,8 +216,9 @@ class RecentTransactionsWidget extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(30),
       ),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(24),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
