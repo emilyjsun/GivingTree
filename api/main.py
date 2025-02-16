@@ -1,4 +1,5 @@
-from pg_module import Charity, CharityCategory, UserCategory, get_db, UserPreferences
+from api.pg_module.crud import put_user_preferences
+from pg_module import Charity, CharityCategory, UserCategory, get_db, UserPreferences, put_user_preferences, create_user_preferences
 
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -44,9 +45,13 @@ async def get_charity(id: str, db: Session = Depends(get_db)):
 
 @app.put("/userpreferences")
 async def update_user_preferences(userId: str, preferences: UserPrefModel, db: Session = Depends(get_db)):
-    return update_user_preferences(db, userId, UserPreferences(**preferences.model_dump()))
+    return put_user_preferences(db, userId, UserPreferences(**preferences.model_dump()))
 
 @app.get("/userpreferences/{userId}")
 async def get_user_preferences(userId: str, db: Session = Depends(get_db)):
     return get_user_preferences(db, userId)
 
+
+@app.post("/userpreferences")
+async def create_user_preferences(userId: str, preferences: UserPrefModel, db: Session = Depends(get_db)):
+    return create_user_preferences(db, userId, UserPreferences(**preferences.model_dump()))
