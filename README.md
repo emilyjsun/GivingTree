@@ -1,3 +1,3 @@
-### The Giving Tree ###
+# The Giving Tree 
 
 Intelligent, efficient donation agents.
