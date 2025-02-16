@@ -1067,15 +1067,15 @@
       "score": 4,
       "categories": [
         {
-          "category": "- Healthcare Access",
+          "category": "Healthcare Access",
           "similarity": 0.9
         },
         {
-          "category": "- Disaster Relief",
+          "category": "Disaster Relief",
           "similarity": 0.8
         },
         {
-          "category": "- Community Development",
+          "category": "Community Development",
           "similarity": 0.6
         }
       ]
@@ -1687,15 +1687,15 @@
       "score": 3,
       "categories": [
         {
-          "category": "- Environmental Conservation",
+          "category": "Environmental Conservation",
           "similarity": 0.9
         },
         {
-          "category": "- Community Development",
+          "category": "Community Development",
           "similarity": 0.7
         },
         {
-          "category": "- Human Rights",
+          "category": "Human Rights",
           "similarity": 0.5
         }
       ]
@@ -1747,15 +1747,15 @@
       "score": 3,
       "categories": [
         {
-          "category": "- Child Welfare",
+          "category": "Child Welfare",
           "similarity": 0.9
         },
         {
-          "category": "- Education Support",
+          "category": "Education Support",
           "similarity": 0.8
         },
         {
-          "category": "- Healthcare Access",
+          "category": "Healthcare Access",
           "similarity": 0.7
         }
       ]

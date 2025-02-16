@@ -101,7 +101,8 @@ class NewsCharityMatcher:
             "Mental Health Support",
             "Poverty Alleviation",
             "Human Rights",
-            "Community Development"
+            "Community Development",
+            "Animal Welfare"
         ]
         
         # Create categories collection

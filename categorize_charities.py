@@ -27,7 +27,8 @@ class CharityCategorizer:
             "Mental Health Support",
             "Poverty Alleviation",
             "Human Rights",
-            "Community Development"
+            "Community Development",
+            "Animal Welfare"
         ]
     
     def analyze_charity(self, charity):
