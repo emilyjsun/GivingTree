@@ -8,11 +8,14 @@ from datetime import datetime
 import chromadb
 from chromadb.utils import embedding_functions
 from dotenv import load_dotenv
+from pg_module import get_charities_for_category, get_users_for_category
 import os
+
+load_dotenv()
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 class NewsCharityMatcher:
-    def __init__(self):
+    def __init__(self, postgres_db):
         # Load environment variables
         load_dotenv()
         self.api_key = os.getenv('OPENAI_API_KEY')
@@ -21,6 +24,7 @@ class NewsCharityMatcher:
             
         self.client = openai.OpenAI(api_key=self.api_key)
         self.processed_articles = set()
+        self.postgres_db = postgres_db
         
         # Initialize ChromaDB with OpenAI embeddings
         self.chroma_client = chromadb.PersistentClient(path="./chroma_db")
@@ -306,10 +310,8 @@ Answer:"""
             
             # Get subscribers for top category
             if i == 0:  # Only for the top category
-                subscribers = self.get_subscribers_for_category(category)
-                if subscribers:
-                    print(f"\n📢 Subscribers for {category}:")
-                    print(f"Found {len(subscribers)} subscribers: {subscribers}")
+                subscribers = get_users_for_category(self.postgres_db, category)
+                    
         
         return categories, subscribers
 
@@ -559,4 +561,4 @@ Notes:
                 
             except Exception as e:
                 print(f"Error occurred: {str(e)}")
-                time.sleep(60)  # Wait a minute before retrying 
+                time.sleep(60)  # Wait a minute before retrying
