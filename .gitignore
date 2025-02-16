@@ -20,3 +20,4 @@ __pycache__/
 
 # Project specific
 processed_articles.json 
+__pycache__
