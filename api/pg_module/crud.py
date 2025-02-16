@@ -13,7 +13,7 @@ def get_charities_for_category(db: Session, category: str)  -> Optional[List[Cha
 def get_charity(db: Session, id: str) -> Optional[Charity]:
     return db.query(Charity).filter(Charity.name == id).first()
 
-def update_user_preferences(db: Session, userId: str, preferences: UserPreferences) -> None:    
+def put_user_preferences(db: Session, userId: str, preferences: UserPreferences) -> None:    
     db.query(UserPreferences).filter(UserPreferences.userId == userId).update(preferences)
     db.commit()
     db.refresh(preferences)
