@@ -36,6 +36,13 @@ class _LoginScreenState extends State<LoginScreen> {
           linkMode: false,
         ),
       ),
+      requiredNamespaces: const {
+        'eip155': RequiredNamespace(
+          chains: ['eip155:1'], // Ethereum mainnet
+          methods: ['eth_sendTransaction', 'personal_sign'],
+          events: ['chainChanged', 'accountsChanged'],
+        ),
+      },
     );
 
     // Register here the event callbacks on the service you'd like to use. See `Events` section.
