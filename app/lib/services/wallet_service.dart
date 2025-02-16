@@ -56,9 +56,14 @@ class WalletService {
 
   Future<void> dispose() async {
     if (_isInitialized && _appKit != null) {
-      await _appKit!.dispose();
-      _appKit = null;
-      _isInitialized = false;
+      try {
+        await _appKit!.dispose();
+      } catch (e) {
+        debugPrint('Error during dispose: $e');
+      } finally {
+        _appKit = null;
+        _isInitialized = false;
+      }
     }
   }
 
@@ -66,8 +71,17 @@ class WalletService {
 
   Future<void> disconnect() async {
     if (_isInitialized && _appKit != null) {
-      await _appKit!.disconnect();
-      await dispose();
+      try {
+        // Only disconnect if currently connected
+        if (_appKit!.isConnected) {
+          await _appKit!.disconnect();
+        }
+      } catch (e) {
+        debugPrint('Error during disconnect: $e');
+      } finally {
+        // Ensure dispose happens even if disconnect fails
+        await dispose();
+      }
     }
   }
 } 
