@@ -7,10 +7,8 @@ class WalletService {
   ReownAppKitModal? _appKit;
   bool _isInitialized = false;
 
-  // Private constructor
   WalletService._();
 
-  // Singleton instance getter
   static WalletService get instance {
     _instance ??= WalletService._();
     return _instance!;
@@ -56,14 +54,9 @@ class WalletService {
 
   Future<void> dispose() async {
     if (_isInitialized && _appKit != null) {
-      try {
-        await _appKit!.dispose();
-      } catch (e) {
-        debugPrint('Error during dispose: $e');
-      } finally {
-        _appKit = null;
-        _isInitialized = false;
-      }
+      await _appKit!.dispose();
+      _appKit = null;
+      _isInitialized = false;
     }
   }
 
