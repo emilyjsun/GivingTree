@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+<<<<<<< HEAD
 import 'transactions_screen.dart';
+=======
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:reown_appkit/modal/models/public/appkit_modal_models.dart';
+import 'package:web3dart/web3dart.dart';
+import '../services/wallet_service.dart';
+>>>>>>> 460f027 (fixed read endpoint finally holy shit)
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -10,8 +17,41 @@ class ProfileTab extends StatefulWidget {
 }
 
 // final address = WalletService.instance.getAddress(); to get address
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> 460f027 (fixed read endpoint finally holy shit)
 class _ProfileTabState extends State<ProfileTab> {
   int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _initializeContract();
+    });
+  }
+
+  Future<void> _initializeContract() async {
+   rootBundle.loadString('assets/abi/contract.json').then((abiString) {
+        final ethContract = DeployedContract(
+          ContractAbi.fromJson(abiString, 'Owner'),
+          EthereumAddress.fromHex('0x01786AA502BEeF1862691399C5A526E4Ce16F43d'),
+        ); 
+    final appKit = WalletService.instance.appKit;
+    if (appKit.session != null && appKit.selectedChain != null) {
+        appKit.requestReadContract(
+          topic: appKit.session?.topic,
+          chainId: 'eip155:11155111', //appKit.selectedChain!.chainId,
+          deployedContract: ethContract,
+          functionName: 'owner',
+        ).then((owner) {
+          debugPrint('Contract decimals: $owner');
+        });
+    }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

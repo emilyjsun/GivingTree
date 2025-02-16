@@ -40,7 +40,7 @@ class WalletService {
       ),
       requiredNamespaces: const {
         'eip155': RequiredNamespace(
-          chains: ['eip155:1'], // Ethereum mainnet
+          chains: ['eip155:11155111'], // Ethereum mainnet
           methods: ['eth_sendTransaction', 'personal_sign'],
           events: ['chainChanged', 'accountsChanged'],
         ),
