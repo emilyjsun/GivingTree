@@ -4,12 +4,10 @@ import '../services/wallet_service.dart';
 
 class SettingsContent extends StatefulWidget {
   final VoidCallback? onComplete;
-  final bool showSaveButton;
 
   const SettingsContent({
     super.key,
     this.onComplete,
-    this.showSaveButton = true,
   });
 
   @override
@@ -112,35 +110,34 @@ class _SettingsContentState extends State<SettingsContent> {
           ),
         ),
         const SizedBox(height: 24),
-        if (widget.showSaveButton)
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: widget.onComplete ?? () {
-                  // Handle save
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF27BF9D),
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: widget.onComplete ?? () {
+                // Handle save
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF27BF9D),
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
                 ),
-                child: Text(
-                  widget.onComplete != null ? 'Get Started' : 'Save Changes',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+              ),
+              child: Text(
+                widget.onComplete != null ? 'Get Started' : 'Save Changes',
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
             ),
           ),
+        ),
         const SizedBox(height: 16),
-        if (widget.showSaveButton)
+        if (widget.onComplete == null)
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: SizedBox(

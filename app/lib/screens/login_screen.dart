@@ -359,7 +359,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         child: SettingsContent(
-                          showSaveButton: true,
                           onComplete: _onGetStartedPressed,
                         ),
                       ),
