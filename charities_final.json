@@ -7,16 +7,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Mental Health Support",
-          "similarity": 0.1842052880230125
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Education Support",
-          "similarity": 0.1631621464679064
+          "category": "Medical Research",
+          "similarity": 0.8
         },
         {
           "category": "Community Development",
-          "similarity": 0.1306273558393929
+          "similarity": 0.6
         }
       ]
     },
@@ -27,16 +27,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Environmental Conservation",
-          "similarity": 0.2646975360857039
+          "category": "Education Support",
+          "similarity": 0.8
         },
         {
           "category": "Community Development",
-          "similarity": 0.24454384398685058
+          "similarity": 0.6
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.18204304063043653
+          "category": "Healthcare Access",
+          "similarity": 0.4
         }
       ]
     },
@@ -47,16 +47,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Community Development",
-          "similarity": 0.20226874722611643
-        },
-        {
-          "category": "Women's Empowerment",
-          "similarity": 0.19947423515075524
-        },
-        {
           "category": "Education Support",
-          "similarity": 0.19871297147654032
+          "similarity": 0.9
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -67,16 +67,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.38207749509328515
-        },
-        {
           "category": "Disaster Relief",
-          "similarity": 0.32861534324282216
+          "similarity": 0.8
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.2537356056238217
+          "category": "Refugee Assistance",
+          "similarity": 0.7
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -88,15 +88,15 @@
       "categories": [
         {
           "category": "Disaster Relief",
-          "similarity": 0.46596887017815614
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.45326551583072494
+          "category": "Healthcare Access",
+          "similarity": 0.7
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.3805431011276472
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -107,16 +107,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.24138315708379754
-        },
-        {
-          "category": "Food Security",
-          "similarity": 0.22758009454908368
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.22297577670587243
+          "similarity": 0.9
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.7
+        },
+        {
+          "category": "Women's Empowerment",
+          "similarity": 0.6
         }
       ]
     },
@@ -128,15 +128,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.3896004489807946
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.28995195935710616
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.25057369220315406
+          "similarity": 0.7
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.5
         }
       ]
     },
@@ -147,16 +147,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.26312152215497886
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.25928450509391
+          "category": "Education Support",
+          "similarity": 0.7
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.2587685565897623
+          "category": "Human Rights",
+          "similarity": 0.5
         }
       ]
     },
@@ -168,15 +168,15 @@
       "categories": [
         {
           "category": "Education Support",
-          "similarity": 0.3452560176456526
+          "similarity": 0.9
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.18772179699993385
+          "category": "Community Development",
+          "similarity": 0.6
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.16264715842890332
+          "category": "Business & Entrepreneurship",
+          "similarity": 0.4
         }
       ]
     },
@@ -188,15 +188,15 @@
       "categories": [
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.4266159929177503
+          "similarity": 0.9
         },
         {
-          "category": "Human Rights",
-          "similarity": 0.3344596393106182
+          "category": "Community Development",
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3331838997331681
+          "category": "Education Support",
+          "similarity": 0.6
         }
       ]
     },
@@ -207,16 +207,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Education Support",
-          "similarity": 0.2092800848363776
-        },
-        {
-          "category": "Mental Health Support",
-          "similarity": 0.19589863507333227
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
           "category": "Child Welfare",
-          "similarity": 0.1943246567065403
+          "similarity": 0.7
+        },
+        {
+          "category": "Research & Clinical Trials",
+          "similarity": 0.6
         }
       ]
     },
@@ -227,16 +227,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.30246421054464345
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.2847029575671639
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.2670023060155057
+          "category": "Elderly Care",
+          "similarity": 0.6
         }
       ]
     },
@@ -247,16 +247,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Food Security",
-          "similarity": 0.43521353199858503
+          "category": "Disaster Relief",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3981790693748385
+          "category": "Food Security",
+          "similarity": 0.8
         },
         {
           "category": "Community Development",
-          "similarity": 0.24842293859928055
+          "similarity": 0.6
         }
       ]
     },
@@ -267,16 +267,16 @@
       "score": 5,
       "categories": [
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.3272794717212675
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.2862676246158252
+          "similarity": 0.9
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.2618898753754001
+          "category": "Housing & Shelter",
+          "similarity": 0.8
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -287,16 +287,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.2949500089960001
-        },
-        {
-          "category": "Education Support",
-          "similarity": 0.2802227557720115
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
           "category": "Child Welfare",
-          "similarity": 0.2679234420185771
+          "similarity": 0.8
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -308,15 +308,15 @@
       "categories": [
         {
           "category": "Housing & Shelter",
-          "similarity": 0.5078063054186146
+          "similarity": 0.9
         },
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.4243474033831004
+          "similarity": 0.8
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.42167792883335
+          "category": "Human Rights",
+          "similarity": 0.7
         }
       ]
     },
@@ -328,15 +328,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.4435203829007893
+          "similarity": 0.9
         },
         {
-          "category": "Food Security",
-          "similarity": 0.2586056663236852
+          "category": "Wildlife Protection",
+          "similarity": 0.8
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.24262576342433617
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -348,15 +348,15 @@
       "categories": [
         {
           "category": "Refugee Assistance",
-          "similarity": 0.6236646537209554
+          "similarity": 0.9
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.4669129125752093
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.4374809659546105
+          "category": "Human Rights",
+          "similarity": 0.6
         }
       ]
     },
@@ -367,16 +367,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Community Development",
-          "similarity": 0.21348183536563892
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.21064254213718392
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.16337684008773368
+          "similarity": 0.9
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.6
+        },
+        {
+          "category": "Cancer Research",
+          "similarity": 0.5
         }
       ]
     },
@@ -388,15 +388,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.43800522935720887
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.23123392369466567
+          "category": "Education Support",
+          "similarity": 0.7
         },
         {
-          "category": "Food Security",
-          "similarity": 0.21252703358255098
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -408,15 +408,15 @@
       "categories": [
         {
           "category": "Women's Empowerment",
-          "similarity": 0.28012828328150974
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.27356040928709835
+          "category": "Healthcare Access",
+          "similarity": 0.8
         },
         {
           "category": "Education Support",
-          "similarity": 0.2547220035952943
+          "similarity": 0.7
         }
       ]
     },
@@ -427,16 +427,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.2280874841633268
+          "category": "Community Development",
+          "similarity": 0.9
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.2254242927702026
+          "category": "Housing & Shelter",
+          "similarity": 0.8
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.18060536404186045
+          "category": "Healthcare Access",
+          "similarity": 0.7
         }
       ]
     },
@@ -447,16 +447,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.2821247777555219
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.1887071663510006
+          "similarity": 0.9
         },
         {
           "category": "Disaster Relief",
-          "similarity": 0.1677281710284032
+          "similarity": 0.6
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.4
         }
       ]
     },
@@ -467,16 +467,16 @@
       "score": 4,
       "categories": [
         {
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
           "category": "Women's Empowerment",
-          "similarity": 0.2305965411039549
+          "similarity": 0.7
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.14937820900963084
-        },
-        {
-          "category": "Food Security",
-          "similarity": 0.14530150393897756
+          "category": "Research & Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -487,16 +487,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Community Development",
-          "similarity": 0.457518863934697
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.3872307725314921
+          "similarity": 0.9
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.36211035583206197
+          "category": "Community Development",
+          "similarity": 0.7
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -507,16 +507,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3513545731976251
-        },
-        {
           "category": "Human Rights",
-          "similarity": 0.21469241128755123
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.20801489648864147
+          "category": "Refugee Assistance",
+          "similarity": 0.7
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -527,16 +527,16 @@
       "score": 4,
       "categories": [
         {
+          "category": "Disaster Relief",
+          "similarity": 0.9
+        },
+        {
           "category": "Healthcare Access",
-          "similarity": 0.3858172759180779
+          "similarity": 0.8
         },
         {
           "category": "Refugee Assistance",
-          "similarity": 0.3424143279264982
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.2439575715618486
+          "similarity": 0.7
         }
       ]
     },
@@ -548,15 +548,15 @@
       "categories": [
         {
           "category": "Food Security",
-          "similarity": 0.4547889915676442
+          "similarity": 0.9
         },
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.43730929012492337
+          "category": "Healthcare Access",
+          "similarity": 0.8
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3820742552836951
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -568,15 +568,15 @@
       "categories": [
         {
           "category": "Child Welfare",
-          "similarity": 0.40401541200878843
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.3419087244544541
+          "similarity": 0.8
         },
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.2792659919658763
+          "category": "Education Support",
+          "similarity": 0.7
         }
       ]
     },
@@ -587,16 +587,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3652140545266749
-        },
-        {
           "category": "Mental Health Support",
-          "similarity": 0.3309582474641053
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3105994630021034
+          "category": "Healthcare Access",
+          "similarity": 0.7
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.5
         }
       ]
     },
@@ -607,16 +607,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Education Support",
-          "similarity": 0.20337455887755218
+          "category": "Child Welfare",
+          "similarity": 0.9
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.1838199326183767
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
           "category": "Housing & Shelter",
-          "similarity": 0.18139625340358512
+          "similarity": 0.6
         }
       ]
     },
@@ -628,15 +628,15 @@
       "categories": [
         {
           "category": "Healthcare Access",
-          "similarity": 0.23954998720201437
+          "similarity": 0.9
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.1663068819457416
+          "category": "Education Support",
+          "similarity": 0.7
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.1601767401746944
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -648,15 +648,15 @@
       "categories": [
         {
           "category": "Housing & Shelter",
-          "similarity": 0.47201959081784817
-        },
-        {
-          "category": "Refugee Assistance",
-          "similarity": 0.3072505808678744
+          "similarity": 0.9
         },
         {
           "category": "Mental Health Support",
-          "similarity": 0.2995339217963503
+          "similarity": 0.7
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -668,15 +668,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.443645134681694
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.24684547409850466
+          "similarity": 0.7
         },
         {
-          "category": "Food Security",
-          "similarity": 0.21324162296515647
+          "category": "Wildlife Conservation Network",
+          "similarity": 0.5
         }
       ]
     },
@@ -688,15 +688,15 @@
       "categories": [
         {
           "category": "Mental Health Support",
-          "similarity": 0.4254898649033375
+          "similarity": 0.9
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.20365740474810767
+          "category": "Healthcare Access",
+          "similarity": 0.7
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.19445975740188837
+          "category": "Education Support",
+          "similarity": 0.4
         }
       ]
     },
@@ -708,15 +708,15 @@
       "categories": [
         {
           "category": "Human Rights",
-          "similarity": 0.31065477110180917
+          "similarity": 0.9
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.23843307111986622
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Education Support",
-          "similarity": 0.23545084221112556
+          "category": "Legal Advocacy",
+          "similarity": 0.6
         }
       ]
     },
@@ -728,15 +728,15 @@
       "categories": [
         {
           "category": "Child Welfare",
-          "similarity": 0.3335564814781381
+          "similarity": 0.9
+        },
+        {
+          "category": "Human Rights",
+          "similarity": 0.8
         },
         {
           "category": "Education Support",
-          "similarity": 0.2371586275359222
-        },
-        {
-          "category": "Poverty Alleviation",
-          "similarity": 0.22689354861916278
+          "similarity": 0.7
         }
       ]
     },
@@ -748,15 +748,15 @@
       "categories": [
         {
           "category": "Healthcare Access",
-          "similarity": 0.2708160640778907
+          "similarity": 0.9
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.24497021481852543
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.22418068744673558
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -768,15 +768,15 @@
       "categories": [
         {
           "category": "Women's Empowerment",
-          "similarity": 0.26620334036466364
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.2255218056666497
+          "category": "Healthcare Access",
+          "similarity": 0.8
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.199174491365126
+          "category": "Human Rights",
+          "similarity": 0.7
         }
       ]
     },
@@ -787,16 +787,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.3213835397494077
+          "category": "Education Support",
+          "similarity": 0.8
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.26827455657312105
+          "category": "Environmental Conservation",
+          "similarity": 0.7
         },
         {
-          "category": "Community Development",
-          "similarity": 0.2536286304898101
+          "category": "Women's Empowerment",
+          "similarity": 0.6
         }
       ]
     },
@@ -807,16 +807,16 @@
       "score": 4,
       "categories": [
         {
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
           "category": "Community Development",
-          "similarity": 0.3126953186894351
+          "similarity": 0.6
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.30675336863843894
-        },
-        {
-          "category": "Housing & Shelter",
-          "similarity": 0.29490838632305416
+          "category": "Poverty Alleviation",
+          "similarity": 0.4
         }
       ]
     },
@@ -828,15 +828,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.31856764243266644
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.1989138208590563
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.18350242230527647
+          "category": "Education Support",
+          "similarity": 0.5
         }
       ]
     },
@@ -847,16 +847,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Child Welfare",
-          "similarity": 0.2386295793508879
+          "category": "Human Rights",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.21349971507689458
+          "category": "Mental Health Support",
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.20297953444557837
+          "category": "Women's Empowerment",
+          "similarity": 0.7
         }
       ]
     },
@@ -867,16 +867,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Mental Health Support",
-          "similarity": 0.369429212041846
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
           "category": "Education Support",
-          "similarity": 0.29260060285207334
+          "similarity": 0.7
         },
         {
-          "category": "Healthcare Access",
-          "similarity": 0.2723477466467745
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -888,15 +888,15 @@
       "categories": [
         {
           "category": "Food Security",
-          "similarity": 0.40769830876514257
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.2246411638289817
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.19367967478971782
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -907,16 +907,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.44169812707598366
+          "category": "Human Rights",
+          "similarity": 0.9
         },
         {
           "category": "Child Welfare",
-          "similarity": 0.335287072052289
+          "similarity": 0.8
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.32488800070248114
+          "category": "Women's Empowerment",
+          "similarity": 0.6
         }
       ]
     },
@@ -927,16 +927,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.4922679533841303
+          "category": "Women's Empowerment",
+          "similarity": 0.9
         },
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.44356954142428306
+          "similarity": 0.8
         },
         {
           "category": "Disaster Relief",
-          "similarity": 0.4265824486847234
+          "similarity": 0.6
         }
       ]
     },
@@ -948,15 +948,15 @@
       "categories": [
         {
           "category": "Mental Health Support",
-          "similarity": 0.5782912880351387
-        },
-        {
-          "category": "Women's Empowerment",
-          "similarity": 0.23796210426555608
+          "similarity": 0.9
         },
         {
           "category": "Healthcare Access",
-          "similarity": 0.18149104711302366
+          "similarity": 0.7
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -967,16 +967,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.6192211039180218
+          "category": "1. Disaster Relief",
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.5754864619162019
+          "category": "2. Refugee Assistance",
+          "similarity": 0.7
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.369204429738463
+          "category": "3. Healthcare Access",
+          "similarity": 0.6
         }
       ]
     },
@@ -987,16 +987,16 @@
       "score": 4,
       "categories": [
         {
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
+          "category": "Research Alliance",
+          "similarity": 0.8
+        },
+        {
           "category": "Community Development",
-          "similarity": 0.21577089260131754
-        },
-        {
-          "category": "Refugee Assistance",
-          "similarity": 0.13994132753718003
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.1360873479172744
+          "similarity": 0.6
         }
       ]
     },
@@ -1008,15 +1008,15 @@
       "categories": [
         {
           "category": "Human Rights",
-          "similarity": 0.4017389257479276
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3322921681928692
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.2777148189008163
+          "category": "Advocacy & Policy Change",
+          "similarity": 0.6
         }
       ]
     },
@@ -1027,16 +1027,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.3570878727303699
+          "category": "Education Support",
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.33541661888322094
+          "similarity": 0.8
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.32617732415804424
+          "category": "Healthcare Access",
+          "similarity": 0.7
         }
       ]
     },
@@ -1048,15 +1048,15 @@
       "categories": [
         {
           "category": "Disaster Relief",
-          "similarity": 0.360896780140497
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3005183595422348
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.24651636227118134
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -1067,16 +1067,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Healthcare Access",
-          "similarity": 0.3907931332532204
+          "category": "- Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.36425585501659286
+          "category": "- Disaster Relief",
+          "similarity": 0.8
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3437202467326601
+          "category": "- Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1088,15 +1088,15 @@
       "categories": [
         {
           "category": "Disaster Relief",
-          "similarity": 0.3446395709278408
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.24388006744231183
+          "similarity": 0.7
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.23387261480390942
+          "category": "Healthcare Access",
+          "similarity": 0.6
         }
       ]
     },
@@ -1107,16 +1107,16 @@
       "score": 4,
       "categories": [
         {
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
           "category": "Child Welfare",
-          "similarity": 0.32726251904580783
+          "similarity": 0.7
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.2595021624396854
-        },
-        {
-          "category": "Education Support",
-          "similarity": 0.2381526702377159
+          "category": "Research & Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1128,15 +1128,15 @@
       "categories": [
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.4053326190415697
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.32867663081885035
+          "category": "Community Development",
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.30196381433480135
+          "category": "Healthcare Access",
+          "similarity": 0.6
         }
       ]
     },
@@ -1147,16 +1147,16 @@
       "score": 4,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3917801976719425
+          "category": "Animal Welfare",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.34401683850321996
+          "category": "Community Development",
+          "similarity": 0.6
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.2879871731819549
+          "category": "Human Rights",
+          "similarity": 0.4
         }
       ]
     },
@@ -1168,15 +1168,15 @@
       "categories": [
         {
           "category": "Food Security",
-          "similarity": 0.46071313431631766
+          "similarity": 0.9
         },
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.33047928139131466
+          "similarity": 0.8
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.2957184210779834
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -1187,16 +1187,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.3158236219637157
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.22490550341678217
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.2181108389825105
+          "similarity": 0.9
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -1208,15 +1208,15 @@
       "categories": [
         {
           "category": "Education Support",
-          "similarity": 0.2661896176315999
+          "similarity": 0.9
         },
         {
           "category": "Child Welfare",
-          "similarity": 0.26044314841114413
+          "similarity": 0.7
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.21726506655669975
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1228,15 +1228,15 @@
       "categories": [
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.41382649803617766
+          "similarity": 0.9
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.7
         },
         {
           "category": "Housing & Shelter",
-          "similarity": 0.4097656915141833
-        },
-        {
-          "category": "Child Welfare",
-          "similarity": 0.3700595482791832
+          "similarity": 0.6
         }
       ]
     },
@@ -1247,16 +1247,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.2334553326821368
+          "category": "Community Development",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.1814033705939223
+          "category": "Poverty Alleviation",
+          "similarity": 0.8
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.1801551880856821
+          "category": "Education Support",
+          "similarity": 0.7
         }
       ]
     },
@@ -1268,15 +1268,15 @@
       "categories": [
         {
           "category": "Community Development",
-          "similarity": 0.31797271340544986
+          "similarity": 0.9
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.8
         },
         {
           "category": "Disaster Relief",
-          "similarity": 0.2804271816359083
-        },
-        {
-          "category": "Housing & Shelter",
-          "similarity": 0.2716434972400371
+          "similarity": 0.6
         }
       ]
     },
@@ -1288,15 +1288,15 @@
       "categories": [
         {
           "category": "Women's Empowerment",
-          "similarity": 0.5568544392021132
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.38442643272308485
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Human Rights",
-          "similarity": 0.263943162520047
+          "category": "Healthcare Access",
+          "similarity": 0.6
         }
       ]
     },
@@ -1307,16 +1307,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.37077707122892867
-        },
-        {
           "category": "Child Welfare",
-          "similarity": 0.3153649834103668
+          "similarity": 0.9
         },
         {
           "category": "Human Rights",
-          "similarity": 0.27703586475542197
+          "similarity": 0.8
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.6
         }
       ]
     },
@@ -1327,16 +1327,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Child Welfare",
-          "similarity": 0.5020566393915249
+          "category": "Poverty Alleviation",
+          "similarity": 0.9
         },
         {
           "category": "Education Support",
-          "similarity": 0.4238037712886561
+          "similarity": 0.8
         },
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.4111492766547732
+          "category": "Child Welfare",
+          "similarity": 0.7
         }
       ]
     },
@@ -1348,15 +1348,15 @@
       "categories": [
         {
           "category": "Women's Empowerment",
-          "similarity": 0.4875714861815045
+          "similarity": 0.9
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.8
         },
         {
           "category": "Community Development",
-          "similarity": 0.4121138125006121
-        },
-        {
-          "category": "Poverty Alleviation",
-          "similarity": 0.39542493744963614
+          "similarity": 0.7
         }
       ]
     },
@@ -1367,16 +1367,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Healthcare Access",
-          "similarity": 0.2873884416176874
+          "category": "Human Rights",
+          "similarity": 0.9
         },
         {
           "category": "Mental Health Support",
-          "similarity": 0.22855607996225702
+          "similarity": 0.7
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.22794355987345594
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1387,16 +1387,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Mental Health Support",
-          "similarity": 0.228620693242354
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.2282474214369652
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Education Support",
-          "similarity": 0.20476496024478397
+          "category": "Human Rights",
+          "similarity": 0.6
         }
       ]
     },
@@ -1407,16 +1407,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.39236622995047166
-        },
-        {
           "category": "Education Support",
-          "similarity": 0.3342722434908936
+          "similarity": 0.9
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.29017257512265904
+          "category": "Women's Empowerment",
+          "similarity": 0.7
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1428,15 +1428,15 @@
       "categories": [
         {
           "category": "Healthcare Access",
-          "similarity": 0.2509752895590953
+          "similarity": 0.9
         },
         {
           "category": "Women's Empowerment",
-          "similarity": 0.24096903395219005
+          "similarity": 0.7
         },
         {
-          "category": "Education Support",
-          "similarity": 0.16790361855310165
+          "category": "Human Rights",
+          "similarity": 0.6
         }
       ]
     },
@@ -1447,16 +1447,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.25247079807094275
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.21949532761072155
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.1877432336513235
+          "category": "Education Support",
+          "similarity": 0.6
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.4
         }
       ]
     },
@@ -1468,15 +1468,15 @@
       "categories": [
         {
           "category": "Women's Empowerment",
-          "similarity": 0.5047499425554116
+          "similarity": 0.9
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.8
         },
         {
           "category": "Human Rights",
-          "similarity": 0.3948701620948495
-        },
-        {
-          "category": "Poverty Alleviation",
-          "similarity": 0.39197435324027396
+          "similarity": 0.7
         }
       ]
     },
@@ -1488,15 +1488,15 @@
       "categories": [
         {
           "category": "Clean Water Access",
-          "similarity": 0.4542526066035627
+          "similarity": 0.9
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.7
         },
         {
           "category": "Community Development",
-          "similarity": 0.3774263552522982
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.3572980339644134
+          "similarity": 0.6
         }
       ]
     },
@@ -1508,15 +1508,15 @@
       "categories": [
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.4514850007992419
+          "similarity": 0.9
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.40966058419177365
+          "category": "Community Development",
+          "similarity": 0.8
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.3480643389503528
+          "category": "Education Support",
+          "similarity": 0.6
         }
       ]
     },
@@ -1527,16 +1527,16 @@
       "score": 3,
       "categories": [
         {
+          "category": "Food Security",
+          "similarity": 0.9
+        },
+        {
           "category": "Child Welfare",
-          "similarity": 0.44140418279681715
+          "similarity": 0.8
         },
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.408545281931865
-        },
-        {
-          "category": "Food Security",
-          "similarity": 0.3595729708161336
+          "similarity": 0.7
         }
       ]
     },
@@ -1547,16 +1547,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.2694933422586222
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.220366754884731
+          "category": "Education Support",
+          "similarity": 0.7
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.21683139332043888
+          "category": "Human Rights",
+          "similarity": 0.6
         }
       ]
     },
@@ -1568,15 +1568,15 @@
       "categories": [
         {
           "category": "Healthcare Access",
-          "similarity": 0.23210122885426754
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.21068111957819824
+          "category": "Education Support",
+          "similarity": 0.6
         },
         {
           "category": "Community Development",
-          "similarity": 0.206873027302669
+          "similarity": 0.4
         }
       ]
     },
@@ -1588,15 +1588,15 @@
       "categories": [
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.3220579261603661
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.30939934611330533
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.30828964139761483
+          "similarity": 0.8
+        },
+        {
+          "category": "Education Support",
+          "similarity": 0.7
         }
       ]
     },
@@ -1607,16 +1607,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3006377053521172
-        },
-        {
           "category": "Child Welfare",
-          "similarity": 0.29428005597451046
+          "similarity": 0.9
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.21165169187086297
+          "category": "Community Development",
+          "similarity": 0.7
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -1627,16 +1627,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.36713762639602177
-        },
-        {
           "category": "Food Security",
-          "similarity": 0.3053283152605569
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.30159892282355905
+          "category": "Women's Empowerment",
+          "similarity": 0.8
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -1648,15 +1648,15 @@
       "categories": [
         {
           "category": "Education Support",
-          "similarity": 0.19644444170635544
+          "similarity": 0.9
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.19542060278008888
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.18698212523181224
+          "category": "Environmental Conservation",
+          "similarity": 0.6
         }
       ]
     },
@@ -1668,15 +1668,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.3839662376067715
+          "similarity": 0.9
         },
         {
-          "category": "Food Security",
-          "similarity": 0.22778597493087904
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
           "category": "Housing & Shelter",
-          "similarity": 0.14502752506554029
+          "similarity": 0.4
         }
       ]
     },
@@ -1687,16 +1687,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Environmental Conservation",
-          "similarity": 0.4363051533496193
+          "category": "- Environmental Conservation",
+          "similarity": 0.9
         },
         {
-          "category": "Education Support",
-          "similarity": 0.3929910607281023
+          "category": "- Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Community Development",
-          "similarity": 0.3397726217518453
+          "category": "- Human Rights",
+          "similarity": 0.5
         }
       ]
     },
@@ -1708,15 +1708,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.396803760198834
+          "similarity": 0.9
         },
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.35840675744603623
+          "category": "Animal Welfare",
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.32748430840189535
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1728,15 +1728,15 @@
       "categories": [
         {
           "category": "Food Security",
-          "similarity": 0.6188441411756003
+          "similarity": 0.9
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.34591101895365106
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.2580135501813873
+          "similarity": 0.6
         }
       ]
     },
@@ -1747,16 +1747,16 @@
       "score": 3,
       "categories": [
         {
-          "category": "Child Welfare",
-          "similarity": 0.42192515339185777
+          "category": "- Child Welfare",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3751067547395127
+          "category": "- Education Support",
+          "similarity": 0.8
         },
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.3324633113715837
+          "category": "- Healthcare Access",
+          "similarity": 0.7
         }
       ]
     },
@@ -1768,15 +1768,15 @@
       "categories": [
         {
           "category": "Disaster Relief",
-          "similarity": 0.34733999185594944
-        },
-        {
-          "category": "Refugee Assistance",
-          "similarity": 0.3095639156970279
+          "similarity": 0.8
         },
         {
           "category": "Community Development",
-          "similarity": 0.287065428369658
+          "similarity": 0.7
+        },
+        {
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -1788,15 +1788,15 @@
       "categories": [
         {
           "category": "Environmental Conservation",
-          "similarity": 0.26173773373176445
+          "similarity": 0.9
         },
         {
-          "category": "Food Security",
-          "similarity": 0.1488933441448793
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.14634958543172427
+          "category": "Education Support",
+          "similarity": 0.6
         }
       ]
     },
@@ -1807,16 +1807,16 @@
       "score": 2,
       "categories": [
         {
+          "category": "Human Rights",
+          "similarity": 0.9
+        },
+        {
           "category": "Healthcare Access",
-          "similarity": 0.22498002193595057
+          "similarity": 0.7
         },
         {
           "category": "Environmental Conservation",
-          "similarity": 0.1832872846811513
-        },
-        {
-          "category": "Human Rights",
-          "similarity": 0.1746776742119539
+          "similarity": 0.4
         }
       ]
     },
@@ -1827,16 +1827,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Human Rights",
-          "similarity": 0.5373966352706374
-        },
-        {
           "category": "Women's Empowerment",
-          "similarity": 0.4280377554249509
+          "similarity": 0.9
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.31458408793892534
+          "category": "Human Rights",
+          "similarity": 0.8
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.7
         }
       ]
     },
@@ -1847,16 +1847,16 @@
       "score": 2,
       "categories": [
         {
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
+        },
+        {
           "category": "Mental Health Support",
-          "similarity": 0.2171866832149537
-        },
-        {
-          "category": "Women's Empowerment",
-          "similarity": 0.21259897088431634
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.1988424658011677
+          "similarity": 0.6
         }
       ]
     },
@@ -1867,16 +1867,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.28700510885388497
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
+          "category": "Child Welfare",
+          "similarity": 0.7
         },
         {
           "category": "Community Development",
-          "similarity": 0.2747928995766167
-        },
-        {
-          "category": "Healthcare Access",
-          "similarity": 0.2742409233047496
+          "similarity": 0.6
         }
       ]
     },
@@ -1888,15 +1888,15 @@
       "categories": [
         {
           "category": "Human Rights",
-          "similarity": 0.2908857230089341
+          "similarity": 0.9
         },
         {
-          "category": "Food Security",
-          "similarity": 0.2748312491816922
+          "category": "Press Freedom",
+          "similarity": 0.8
         },
         {
-          "category": "Women's Empowerment",
-          "similarity": 0.14996411925199826
+          "category": "Freedom of Speech",
+          "similarity": 0.7
         }
       ]
     },
@@ -1907,16 +1907,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.26947936416565743
+          "category": "Healthcare Access",
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.21529476309573248
+          "category": "Education Support",
+          "similarity": 0.7
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.19734990137878328
+          "category": "Research",
+          "similarity": 0.6
         }
       ]
     },
@@ -1928,15 +1928,15 @@
       "categories": [
         {
           "category": "Poverty Alleviation",
-          "similarity": 0.5357849344702417
+          "similarity": 0.9
         },
         {
           "category": "Food Security",
-          "similarity": 0.507653028345227
+          "similarity": 0.8
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3435828968265713
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -1947,16 +1947,16 @@
       "score": 2,
       "categories": [
         {
+          "category": "Healthcare Access",
+          "similarity": 0.9
+        },
+        {
           "category": "Mental Health Support",
-          "similarity": 0.29323837895519644
+          "similarity": 0.8
         },
         {
-          "category": "Education Support",
-          "similarity": 0.18211380116976073
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.15094114575283746
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -1968,15 +1968,15 @@
       "categories": [
         {
           "category": "Healthcare Access",
-          "similarity": 0.2942889016451028
+          "similarity": 0.9
         },
         {
-          "category": "Mental Health Support",
-          "similarity": 0.21928232076133092
+          "category": "Education Support",
+          "similarity": 0.7
         },
         {
-          "category": "Environmental Conservation",
-          "similarity": 0.19167219469650665
+          "category": "Community Development",
+          "similarity": 0.6
         }
       ]
     },
@@ -1987,16 +1987,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Food Security",
-          "similarity": 0.26129548865892305
-        },
-        {
-          "category": "Housing & Shelter",
-          "similarity": 0.23742096978772953
+          "category": "Animal Welfare",
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.22475772125041638
+          "similarity": 0.7
+        },
+        {
+          "category": "Housing & Shelter",
+          "similarity": 0.6
         }
       ]
     },
@@ -2007,16 +2007,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.3313060548334338
+          "category": "Environmental Conservation",
+          "similarity": 0.9
         },
         {
           "category": "Community Development",
-          "similarity": 0.282541651744052
+          "similarity": 0.8
         },
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.2757313745394029
+          "category": "Human Rights",
+          "similarity": 0.7
         }
       ]
     },
@@ -2027,16 +2027,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Housing & Shelter",
-          "similarity": 0.26349017339530734
+          "category": "Animal Welfare",
+          "similarity": 0.9
         },
         {
-          "category": "Food Security",
-          "similarity": 0.24365691198913864
+          "category": "Community Development",
+          "similarity": 0.6
         },
         {
-          "category": "Child Welfare",
-          "similarity": 0.23939202184535702
+          "category": "Healthcare Access",
+          "similarity": 0.4
         }
       ]
     },
@@ -2048,15 +2048,15 @@
       "categories": [
         {
           "category": "Clean Water Access",
-          "similarity": 0.4827676678386448
+          "similarity": 0.9
         },
         {
-          "category": "Disaster Relief",
-          "similarity": 0.2856282203797158
+          "category": "Healthcare Access",
+          "similarity": 0.7
         },
         {
-          "category": "Environmental Conservation",
-          "similarity": 0.2777458465765237
+          "category": "Poverty Alleviation",
+          "similarity": 0.6
         }
       ]
     },
@@ -2067,16 +2067,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Food Security",
-          "similarity": 0.4496650538830862
+          "category": "Animal Welfare",
+          "similarity": 0.9
+        },
+        {
+          "category": "Environmental Conservation",
+          "similarity": 0.7
         },
         {
           "category": "Human Rights",
-          "similarity": 0.3193371893875071
-        },
-        {
-          "category": "Disaster Relief",
-          "similarity": 0.2890010882771592
+          "similarity": 0.5
         }
       ]
     },
@@ -2088,15 +2088,15 @@
       "categories": [
         {
           "category": "Healthcare Access",
-          "similarity": 0.15385201666825254
+          "similarity": 0.9
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
         },
         {
           "category": "Education Support",
-          "similarity": 0.15339910265697798
-        },
-        {
-          "category": "Human Rights",
-          "similarity": 0.148901315189085
+          "similarity": 0.6
         }
       ]
     },
@@ -2107,16 +2107,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Mental Health Support",
-          "similarity": 0.2278041603458193
-        },
-        {
-          "category": "Education Support",
-          "similarity": 0.17726517534227915
-        },
-        {
           "category": "Healthcare Access",
-          "similarity": 0.16054905596305968
+          "similarity": 0.9
+        },
+        {
+          "category": "Mental Health Support",
+          "similarity": 0.8
+        },
+        {
+          "category": "Community Development",
+          "similarity": 0.7
         }
       ]
     },
@@ -2127,16 +2127,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Disaster Relief",
-          "similarity": 0.16892629073714494
-        },
-        {
           "category": "Community Development",
-          "similarity": 0.16783383422913456
+          "similarity": 0.8
         },
         {
-          "category": "Poverty Alleviation",
-          "similarity": 0.15035555827161762
+          "category": "Education Support",
+          "similarity": 0.6
+        },
+        {
+          "category": "Technology Access",
+          "similarity": 0.4
         }
       ]
     },
@@ -2147,16 +2147,16 @@
       "score": 2,
       "categories": [
         {
-          "category": "Healthcare Access",
-          "similarity": 0.2320943559446481
-        },
-        {
-          "category": "Human Rights",
-          "similarity": 0.2102533330188464
-        },
-        {
           "category": "Food Security",
-          "similarity": 0.2043754820954593
+          "similarity": 0.9
+        },
+        {
+          "category": "Healthcare Access",
+          "similarity": 0.8
+        },
+        {
+          "category": "Environmental Conservation",
+          "similarity": 0.7
         }
       ]
     },
@@ -2168,15 +2168,15 @@
       "categories": [
         {
           "category": "Disaster Relief",
-          "similarity": 0.5687818784081177
+          "similarity": 0.8
         },
         {
-          "category": "Refugee Assistance",
-          "similarity": 0.4326597992938451
+          "category": "Healthcare Access",
+          "similarity": 0.7
         },
         {
           "category": "Mental Health Support",
-          "similarity": 0.34858153712601647
+          "similarity": 0.6
         }
       ]
     }

@@ -1,10 +1,18 @@
 import json
-import chromadb
-from chromadb.utils import embedding_functions
+import openai
+from dotenv import load_dotenv
 import os
 
 class CharityCategorizer:
     def __init__(self):
+        # Load environment variables
+        load_dotenv()
+        self.api_key = os.getenv('OPENAI_API_KEY')
+        if not self.api_key:
+            raise ValueError("OPENAI_API_KEY not found in environment variables")
+            
+        self.client = openai.OpenAI(api_key=self.api_key)
+        
         self.CATEGORIES = [
             "Disaster Relief",
             "Education Support",
@@ -21,105 +29,118 @@ class CharityCategorizer:
             "Human Rights",
             "Community Development"
         ]
-        
-        # Initialize ChromaDB
-        self.chroma_client = chromadb.PersistentClient(path="./category_db")
-        openai_ef = embedding_functions.DefaultEmbeddingFunction()
-        
-        # Create categories collection
-        self.category_collection = self.chroma_client.get_or_create_collection(
-            name="category_embeddings",
-            embedding_function=openai_ef
-        )
-        
-        # Initialize categories if empty
-        if self.category_collection.count() == 0:
-            self.category_collection.add(
-                documents=self.CATEGORIES,
-                metadatas=[{"category": cat} for cat in self.CATEGORIES],
-                ids=[str(i) for i in range(len(self.CATEGORIES))]
-            )
     
-    def find_matching_categories(self, charity):
-        """Find top 3 matching categories for a charity."""
-        # Combine charity info for matching
-        charity_text = f"{charity['name']}: {charity['mission']}"
-        
-        # Query the category collection
-        results = self.category_collection.query(
-            query_texts=[charity_text],
-            n_results=3
-        )
-        
-        # Format results
-        categories = []
-        
-        # ChromaDB returns distances by default now
-        distances = results['distances'][0]
-        
-        for i in range(len(distances)):
-            category = results['metadatas'][0][i]['category']
-            # Convert Euclidean distance to a similarity score
-            distance = distances[i]
-            similarity = max(0, min(1, 1 - (distance / 2)))  # Normalize to 0-1 range
+    def analyze_charity(self, charity):
+        """Use AI to analyze charity and determine top 3 matching categories with scores."""
+        prompt = f"""
+As a charity categorization expert, analyze this charity and determine its top 3 most relevant categories.
+
+CHARITY INFORMATION:
+Name: {charity['name']}
+Mission: {charity['mission']}
+
+AVAILABLE CATEGORIES:
+{'\n'.join(f'- {cat}' for cat in self.CATEGORIES)}
+
+Consider:
+1. The charity's primary focus and mission
+2. Direct and indirect impacts
+3. Target beneficiaries
+4. Methods of intervention
+5. Scope of work
+
+Provide your analysis in this exact format:
+CATEGORIES:
+category1||similarity_score
+category2||similarity_score
+category3||similarity_score
+
+Notes:
+- Scores must be between 0 and 1
+- Only use categories from the provided list
+- Score should reflect how central that category is to the charity's mission
+- Explain your reasoning after the recommendations
+"""
+
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are an expert at analyzing charitable organizations and categorizing their work. You understand the nuances of how charities can span multiple categories and can identify primary and secondary focus areas."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3
+            )
             
-            categories.append({
-                'category': category,
-                'similarity': similarity
-            })
-        
-        return categories
+            # Parse categories and scores
+            categories = []
+            response_text = response.choices[0].message.content
+            
+            if "CATEGORIES:" in response_text:
+                category_section = response_text.split("CATEGORIES:")[1].split("\n\n")[0]
+                for line in category_section.strip().split("\n"):
+                    if "||" in line:
+                        category, score = line.split("||")
+                        try:
+                            categories.append({
+                                'category': category.strip(),
+                                'similarity': float(score.strip())
+                            })
+                        except:
+                            continue
+            
+            return categories
+            
+        except Exception as e:
+            print(f"Error analyzing charity {charity['name']}: {e}")
+            return []
     
     def categorize_charities(self):
-        """Create charities_final.json with categorized charities"""
-        print("Loading matched_charities.json...")
+        """Update categories in charities_final.json using AI analysis"""
+        print("Loading charities_final.json...")
         try:
-            with open('matched_charities.json', 'r') as f:
-                data = json.load(f)
+            # Load existing charities_final.json
+            try:
+                with open('charities_final.json', 'r') as f:
+                    final_data = json.load(f)
+                    charities = final_data['charities']
+            except FileNotFoundError:
+                print("charities_final.json not found, creating new file...")
+                with open('matched_charities.json', 'r') as f:
+                    data = json.load(f)
+                    charities = data['matched_charities']
+                    final_data = {
+                        "charities": charities,
+                        "stats": data.get('stats', {})
+                    }
             
-            total_charities = len(data['matched_charities'])
+            total_charities = len(charities)
             print(f"Found {total_charities} charities to categorize")
             
-            # Create new data structure for final output
-            final_data = {
-                "charities": [],
-                "stats": data.get('stats', {})  # Preserve stats if they exist
-            }
-            
             # Process each charity
-            for i, charity in enumerate(data['matched_charities'], 1):
+            for i, charity in enumerate(charities, 1):
                 print(f"\nProcessing charity {i}/{total_charities}: {charity['name']}")
                 
-                # Find matching categories
-                categories = self.find_matching_categories(charity)
+                # Get AI categorization
+                categories = self.analyze_charity(charity)
                 
-                # Create new charity entry with all existing data plus categories
-                final_charity = {
-                    'name': charity['name'],
-                    'mission': charity['mission'],
-                    'url': charity['url'],
-                    'score': charity['score'],
-                    'categories': categories
-                }
-                
-                final_data['charities'].append(final_charity)
+                # Update only the categories field
+                charity['categories'] = categories
                 
                 # Print results
-                print("Matched Categories:")
+                print("Assigned Categories:")
                 for j, cat in enumerate(categories, 1):
                     print(f"{j}. {cat['category']}")
                     print(f"   Similarity Score: {cat['similarity']:.4f}")
             
-            # Save to new file
-            print("\nSaving charities_final.json...")
+            # Save updated data back to file
+            print("\nSaving updated charities_final.json...")
             with open('charities_final.json', 'w') as f:
                 json.dump(final_data, f, indent=2)
             
             print("Categorization complete!")
             print(f"Total charities processed: {total_charities}")
             
-        except FileNotFoundError:
-            print("Error: matched_charities.json not found")
         except Exception as e:
             print(f"An error occurred: {e}")
 
