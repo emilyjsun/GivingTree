@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'dart:math' as math;
 import 'transaction_screen.dart';
 
 class ProfileTab extends StatefulWidget {
@@ -11,12 +10,11 @@ class ProfileTab extends StatefulWidget {
 }
 
 // final address = WalletService.instance.getAddress(); to get address
-
 class _ProfileTabState extends State<ProfileTab> {
   int _currentPage = 0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
