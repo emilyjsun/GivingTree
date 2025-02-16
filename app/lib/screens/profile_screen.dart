@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'dart:math' as math;
+import 'transaction_screen.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -29,7 +30,6 @@ class _ProfileTabState extends State<ProfileTab> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          automaticallyImplyLeading: false,
           title: Padding(
             padding: const EdgeInsets.only(top: 8),
             child: Column(
@@ -228,7 +228,12 @@ class RecentTransactionsWidget extends StatelessWidget {
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
                   onPressed: () {
-                    // Handle view all
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TransactionScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
                     'View All',
