@@ -125,42 +125,155 @@ class NewsCharityMatcher:
         with open('processed_articles.json', 'w') as f:
             json.dump(list(self.processed_articles), f)
 
-    def is_relevant_article(self, title: str, description: str) -> bool:
-        """Use GPT to determine if an article is relevant to charity impact."""
-        prompt = f"""Article Title: {title}
-Description: {description}
 
-Question: Based on this article's title and description, could this news potentially impact charitable giving, fundraising, or the work of charitable organizations? Answer with only 'yes' or 'no'.
+    def is_relevant_article(self, title: str, description: str):
+        """Use an AI agent to determine if an article is relevant to charity impact."""
+    
+        tools = [
+            {
+                "type": "function",
+                "function": {
+                    "name": "mark_relevant",
+                    "description": "Mark an article as relevant to charity impact",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "reason": {"type": "string", "description": "Reason for marking as relevant"}
+                        }
+                    }
+                }
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "mark_irrelevant",
+                    "description": "Mark an article as irrelevant to charity impact",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "reason": {"type": "string", "description": "Reason for marking as irrelevant"}
+                        }
+                    }
+                }
+            }
+        ]
 
-Consider:
-- Could this affect people's willingness or ability to donate?
-- Might this create new needs for charitable assistance?
-- Could this influence how charities operate or deliver services?
-- Might this affect specific charitable causes or communities?
+        is_relevant = False
+        completed = False
+        messages = [
+            {
+                "role": "system", 
+                "content": """You are a charity impact analyst. Your job is to determine if news articles could affect charitable giving or create needs for charitable work.
+                
+    Consider:
+    - Could this affect people's willingness or ability to donate?
+    - Might this create new needs for charitable assistance?
+    - Could this influence how charities operate?
+    - Might this affect vulnerable populations?
 
-Answer:"""
+    If you're uncertain, use request_more_info to research the article before deciding.
+    Mark articles as relevant if there's any potential charitable impact."""
+            },
+            {
+                "role": "user", 
+                "content": f"Analyze this article for charitable impact:\nTitle: {title}\nDescription: {description}"
+            }
+        ]
+
+        def mark_relevant(reason):
+            nonlocal is_relevant, completed
+            print(f"Marking as RELEVANT: {reason}")
+            is_relevant = True
+            completed = True
+
+        def mark_irrelevant(reason):
+            nonlocal is_relevant, completed
+            print(f"Marking as IRRELEVANT: {reason}")
+            is_relevant = False
+            completed = True
+
+        def request_more_info(article_title, article_description):
+            """Use Perplexity Sonar to get deeper context about an article."""
+            try:
+                headers = {
+                    "Authorization": f"Bearer {os.getenv('PERPLEXITY_API_KEY')}",
+                    "Content-Type": "application/json"
+                }
+                
+                prompt = f"""
+                Research this news article in detail:
+                Title: {article_title}
+                Description: {article_description}
+                
+                Please provide:
+                1. Background context
+                2. More information about the article
+                """
+                
+                response = requests.post(
+                    "https://api.perplexity.ai/chat/completions",
+                    headers=headers,
+                    json={
+                        "model": "sonar",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "You are a research analyst specializing in analyzing news articles. Provide comprehensive context and analysis."
+                            },
+                            {
+                                "role": "user",
+                                "content": prompt
+                            }
+                        ]
+                    }
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    return result['choices'][0]['message']['content']
+                else:
+                    return f"Error getting additional information: {response.status_code}"
+                    
+            except Exception as e:
+                return f"Error in research: {str(e)}"
 
         try:
-            response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": "You are a charity impact analyst. Evaluate if news could affect charitable giving or operations. Answer only 'yes' or 'no'."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.3,
-                max_tokens=5
-            )
-            
-            answer = response.choices[0].message.content.strip().lower()
-            is_relevant = answer == 'yes'
-            
-            print(f"\nArticle: {title[:60]}...")
-            print(f"GPT Response: {answer.upper()}")
+            while not completed:
+                response = self.client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=messages,
+                    tools=tools,
+                    tool_choice="auto"
+                )
+                
+                message = response.choices[0].message
+                messages.append(message)
+                
+                if message.tool_calls:
+                    for tool_call in message.tool_calls:
+                        args = json.loads(tool_call.function.arguments)
+                        
+                        if tool_call.function.name == "mark_relevant":
+                            mark_relevant(args.get("reason", "No reason provided"))
+                        
+                        elif tool_call.function.name == "mark_irrelevant":
+                            mark_irrelevant(args.get("reason", "No reason provided"))
+                        
+                        elif tool_call.function.name == "request_more_info":
+                            more_info = request_more_info(
+                                args.get("article_title", title),
+                                args.get("article_description", description)
+                            )
+                            messages.append({
+                                "role": "tool",
+                                "content": more_info,
+                                "tool_call_id": tool_call.id
+                            })
             
             return is_relevant
             
         except Exception as e:
-            print(f"Error checking article relevance: {e}")
+            print(f"Error in article relevance check: {e}")
             return True  # Default to including article if check fails
 
     def find_matching_categories(self, article):
