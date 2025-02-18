@@ -39,4 +39,8 @@ Run the app
 flutter run
 ```
 
-
+## Contact Us
+* Andy Ko (andy.ko@duke.edu)
+* Arvindh Manian (arvindh.manian@duke.edu)
+* Rally Lin (rally.lin@duke.edu)
+* Emily Sun (emily.j.sun@duke.edu)
