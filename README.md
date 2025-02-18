@@ -1,10 +1,12 @@
 # The Giving Tree 
 
+Intelligent, efficient, crypto donation platform powered by AI agents. **Taisu Venture Web3 For Social Good Award @ TreeHacks 2025**
+
 ![Splash Image](splash.png)
 
-The Giving Tree is the most efficient and intelligent charitable donation portfolio manager. It takes the user’s mission statement (topics that they are passionate about) and creates their category portfolio. With live RSS feeds from news websites, our app tracks every article that it deems relevant to charity. It then sorts these articles into categories of impact. With these articles, we find charities that we could donate to and update our user’s charitable donation portfolio in real time to ensure that the user is making the most efficient and intelligent donations.
+## Introduction
 
-**Taisu Venture Web3 For Social Good Award @ TreeHacks 2025**
+The Giving Tree is the most efficient and intelligent charitable donation portfolio manager. It takes the user’s mission statement (topics that they are passionate about) and creates their category portfolio. With live RSS feeds from news websites, our app tracks every article that it deems relevant to charity. It then sorts these articles into categories of impact. With these articles, we find charities that we could donate to and update our user’s charitable donation portfolio in real time to ensure that the user is making the most efficient and intelligent donations.
 
 ## Motivation
 
@@ -43,7 +45,7 @@ Run the app
 flutter run
 ```
 
-## Contact Us
+## Our Team
 * Andy Ko (andy.ko@duke.edu)
 * Arvindh Manian (arvindh.manian@duke.edu)
 * Rally Lin (rally.lin@duke.edu)
