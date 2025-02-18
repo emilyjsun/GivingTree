@@ -1,8 +1,8 @@
 # The Giving Tree 
 
-The Giving Tree is the most efficient and intelligent charitable donation portfolio manager. It takes the user’s mission statement (topics that they are passionate about) and creates their category portfolio. With live RSS feeds from news websites, our app tracks every article that it deems relevant to charity. It then sorts these articles into categories of impact. With these articles, we find charities that we could donate to and update our user’s charitable donation portfolio in real time to ensure that the user is making the most efficient and intelligent donations.
-
 ![Splash Image](splash.png)
+
+The Giving Tree is the most efficient and intelligent charitable donation portfolio manager. It takes the user’s mission statement (topics that they are passionate about) and creates their category portfolio. With live RSS feeds from news websites, our app tracks every article that it deems relevant to charity. It then sorts these articles into categories of impact. With these articles, we find charities that we could donate to and update our user’s charitable donation portfolio in real time to ensure that the user is making the most efficient and intelligent donations.
 
 ## Motivation
 
