@@ -1,5 +1,7 @@
 # The Giving Tree 
 
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
+
 Intelligent, efficient, crypto donation platform powered by AI agents. **Taisu Venture Web3 For Social Good Award @ TreeHacks 2025**
 
 ![Splash Image](splash.png)
