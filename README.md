@@ -2,6 +2,8 @@
 
 The Giving Tree is the most efficient and intelligent charitable donation portfolio manager. It takes the user’s mission statement (topics that they are passionate about) and creates their category portfolio. With live RSS feeds from news websites, our app tracks every article that it deems relevant to charity. It then sorts these articles into categories of impact. With these articles, we find charities that we could donate to and update our user’s charitable donation portfolio in real time to ensure that the user is making the most efficient and intelligent donations.
 
+![Splash Image](splash.png)
+
 ## Motivation
 
 As natural disasters and social crises fill our news feeds today, the need for humanitarian aid is at an all time high. With charitable donations sometimes being the only thing many charities rely on to combat their respective issues, for causes such as natural disasters or international conflicts, timely donations make a real time impact. However, not all types of donations are helpful. Without knowing what a disaster-stricken community might need, donations of material goods can quickly cause problems, classified as the “Second Disaster”.
