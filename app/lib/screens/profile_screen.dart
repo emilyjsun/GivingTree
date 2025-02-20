@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-<<<<<<< HEAD
 import 'transactions_screen.dart';
-=======
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:reown_appkit/modal/models/public/appkit_modal_models.dart';
-import 'package:web3dart/web3dart.dart';
-import '../services/wallet_service.dart';
->>>>>>> 460f027 (fixed read endpoint finally holy shit)
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -17,11 +10,6 @@ class ProfileTab extends StatefulWidget {
 }
 
 // final address = WalletService.instance.getAddress(); to get address
-<<<<<<< HEAD
-=======
-
-  
->>>>>>> 460f027 (fixed read endpoint finally holy shit)
 class _ProfileTabState extends State<ProfileTab> {
   int _currentPage = 0;
   final TextEditingController _amountController = TextEditingController();
