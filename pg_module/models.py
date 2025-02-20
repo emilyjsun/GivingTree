@@ -39,7 +39,7 @@ class Counter(Base):
     countvalue = Column(Integer)
 
 class CharityAddress(Base):
-    __tablename__ = 'charity_address'
+    __tablename__ = 'charityaddress'
     
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)

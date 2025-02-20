@@ -28,3 +28,6 @@ def create_user_preferences(db: Session, userId: str, preferences: UserPreferenc
 
 def get_names_of_charities(db: Session, addresses: list[str]) -> Optional[List[CharityAddress]]:
     return db.query(CharityAddress).filter(CharityAddress.address.in_(addresses)).all()
+
+def get_addresses_of_charities(db: Session, names: list[str]) -> Optional[List[CharityAddress]]:
+    return db.query(CharityAddress).filter(CharityAddress.name.in_(names)).all()
